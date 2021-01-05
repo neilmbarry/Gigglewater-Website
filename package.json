@@ -1,0 +1,22 @@
+{
+  "name": "giggle-vsc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "sass:compile": "node-sass Resources/sass/main.scss Resources/css/style2.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neilmbarry/Gigglewater-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neilmbarry/Gigglewater-Website/issues"
+  },
+  "homepage": "https://github.com/neilmbarry/Gigglewater-Website#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

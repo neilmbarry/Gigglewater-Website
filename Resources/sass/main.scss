@@ -1,0 +1,90 @@
+$giggle-yellow: #faf6cb;
+
+// @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  background-color: #101010;
+  color: $giggle-yellow;
+}
+
+/*--Header--*/
+.nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  &-logo-container {
+    width: 3rem;
+  }
+  &-items {
+    display: flex;
+    flex: 1;
+    list-style: none;
+    justify-content: space-around;
+    a {
+      text-decoration: none;
+      color: $giggle-yellow;
+    }
+  }
+}
+
+.logo {
+  width: 100%;
+}
+
+.landing {
+  height: 100vh;
+  //padding: 5rem;
+  z-index: 3433;
+  position: relative;
+
+  background-image: linear-gradient(
+      to bottom,
+      rgba(#101010, 0.99),
+      rgba(#101010, 0.8)
+    ),
+    url(../img/Gallery/gallery4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // filter: blur(2px);
+
+  &-title-container {
+    width: 75%;
+    margin: auto;
+    padding-top: 6rem;
+    img {
+      width: 100%;
+      padding: 1rem 0;
+    }
+  }
+  &-drinks-banner {
+    width: 65%;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -334;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

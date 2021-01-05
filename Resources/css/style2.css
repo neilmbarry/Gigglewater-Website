@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  background-color: #101010;
+  color: #faf6cb; }
+
+/*--Header--*/
+.nav {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center; }
+  .nav-logo-container {
+    width: 3rem; }
+  .nav-items {
+    display: flex;
+    flex: 1;
+    list-style: none;
+    justify-content: space-around; }
+    .nav-items a {
+      text-decoration: none;
+      color: #faf6cb; }
+
+.logo {
+  width: 100%; }
+
+.landing {
+  height: 100vh;
+  z-index: 3433;
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(16, 16, 16, 0.99), rgba(16, 16, 16, 0.8)), url(../img/Gallery/gallery4.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .landing-title-container {
+    width: 75%;
+    margin: auto;
+    padding-top: 6rem; }
+    .landing-title-container img {
+      width: 100%;
+      padding: 1rem 0; }
+  .landing-drinks-banner {
+    width: 65%;
+    margin: auto; }
+    .landing-drinks-banner img {
+      width: 100%; }
+  .landing-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -334;
+    width: 100%; }
+    .landing-overlay img {
+      object-fit: cover;
+      width: 100%; }
