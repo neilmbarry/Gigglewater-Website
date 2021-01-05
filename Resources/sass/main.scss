@@ -1,4 +1,6 @@
 $giggle-yellow: #faf6cb;
+$giggle-yellow2: #fffcd5;
+$color-black: #101010;
 
 // @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&display=swap");
 
@@ -13,7 +15,7 @@ body {
   font-size: 62.5%;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
-  background-color: #101010;
+  background-color: $color-black;
   color: $giggle-yellow;
 }
 
@@ -30,11 +32,14 @@ body {
     display: flex;
     flex: 1;
     list-style: none;
-    justify-content: space-around;
+    justify-content: flex-end;
     a {
       text-decoration: none;
       color: $giggle-yellow;
     }
+  }
+  &-item {
+    padding-right: 1.5rem;
   }
 }
 
@@ -50,8 +55,8 @@ body {
 
   background-image: linear-gradient(
       to bottom,
-      rgba(#101010, 0.99),
-      rgba(#101010, 0.8)
+      rgba(#13120e, 0.99),
+      rgba(#181714, 0.8)
     ),
     url(../img/Gallery/gallery4.jpg);
   background-position: center;
@@ -87,4 +92,35 @@ body {
       width: 100%;
     }
   }
+  &-btn {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: flex;
+
+    a {
+      margin: 1.5rem auto;
+      padding: 0.7rem 1.6rem;
+      background-color: rgba($color-black, 0.2);
+      color: $giggle-yellow2;
+      text-decoration: none;
+      border-radius: 50rem;
+      border: 1px solid #504e4b;
+      transition: all 0.2s ease;
+      &:hover {
+        background-color: rgba($giggle-yellow2, 1);
+        color: $color-black;
+        transform: translateY(-4px);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+        border: none;
+      }
+      &:active {
+        transform: translateY(-2px);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
 }

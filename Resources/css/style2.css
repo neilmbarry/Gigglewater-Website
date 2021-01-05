@@ -23,10 +23,12 @@ body {
     display: flex;
     flex: 1;
     list-style: none;
-    justify-content: space-around; }
+    justify-content: flex-end; }
     .nav-items a {
       text-decoration: none;
       color: #faf6cb; }
+  .nav-item {
+    padding-right: 1.5rem; }
 
 .logo {
   width: 100%; }
@@ -35,7 +37,7 @@ body {
   height: 100vh;
   z-index: 3433;
   position: relative;
-  background-image: linear-gradient(to bottom, rgba(16, 16, 16, 0.99), rgba(16, 16, 16, 0.8)), url(../img/Gallery/gallery4.jpg);
+  background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0.99), rgba(24, 23, 20, 0.8)), url(../img/Gallery/gallery4.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -60,3 +62,28 @@ body {
     .landing-overlay img {
       object-fit: cover;
       width: 100%; }
+  .landing-btn {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: flex; }
+    .landing-btn a {
+      margin: 1.5rem auto;
+      padding: 0.7rem 1.6rem;
+      background-color: rgba(16, 16, 16, 0.2);
+      color: #fffcd5;
+      text-decoration: none;
+      border-radius: 50rem;
+      border: 1px solid #504e4b;
+      transition: all 0.2s ease; }
+      .landing-btn a:hover {
+        background-color: #fffcd5;
+        color: #101010;
+        transform: translateY(-4px);
+        box-shadow: 0 1rem 2rem rgba(16, 16, 16, 0.2);
+        border: none; }
+      .landing-btn a:active {
+        transform: translateY(-2px);
+        box-shadow: 0 0.5rem 1rem rgba(16, 16, 16, 0.2); }
+
+.hidden {
+  display: none; }
