@@ -1,0 +1,319 @@
+/* Big tablet to 1200px: widths smaller than the 1140px row */
+@media only screen and (max-width: 1200px) {
+
+    
+
+       section{   
+        margin-top: 140px;
+    }
+        .order-contact-form {
+    width: 90%;
+    margin: 0 auto;
+}
+        .order-label{
+    padding-left: 2%;
+}
+    
+    
+       .order-contact-form {
+    width: 75%;
+    margin: 0 auto;
+} 
+    .title-container{
+    
+    width: 70%;
+    
+    
+    }
+    
+    
+}
+
+
+
+/* Small tablet to big tablet: from 768 to 1023px */
+@media only screen and (max-width: 1023px) {
+    body{ font-size: 18px; }
+       section{   
+        margin-top: 140px;
+    }
+   
+    
+    .icon-small{
+    width: 15px;
+    font-size: 100%;
+    margin-right: 1px;
+}
+
+.title-container{
+    
+    width: 70%;
+    
+    
+    }
+
+
+
+    .order-contact-form {
+    width: 95%;
+    margin: 0 auto;
+}
+    .order-contact-form input[type=checkbox]{
+    margin: 5px 5px 10px 1px;
+    padding-left: 0;
+}
+    
+        .order-label{
+    padding-left: 0%;
+            
+}
+
+
+
+    .bottom-email{
+    
+    line-height: 22px;
+    padding-bottom: 37px;
+}
+    
+
+    
+
+}
+
+
+/* Small Phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    body{ font-size: 16px}
+
+    .row,
+    .hero-text-box{padding: 0 4%}
+    .col {
+        width: 49%;
+    
+    }
+
+    .title-container{
+    
+    width: 80%;
+    
+    
+    }
+    
+    .mobile-nav-icon{
+        display: block;
+        padding-top: 4%;
+    
+    }
+    
+    
+    
+    .mylogo{
+        display: block;
+        float: left;
+    }
+    
+ 
+    
+   
+    
+
+
+   
+
+     h1{ font-size: 180%;}
+     h2{ font-size: 200%;}
+
+
+    section{   
+        margin-top: 140px;
+    }
+    .contact-form {
+    width: 95%;
+        
+        
+    
+}
+    .city-box{
+        margin: 0;
+
+    }
+    
+    textarea{
+    height: 100px;
+}
+    
+    .order-contact-form {
+    width: 95%;
+    margin: 0 auto;
+}
+    
+    .order-label{
+    padding-left: 2%;
+}
+    .bottom-form{
+    width: 70%;
+    margin: auto;
+}
+    .bottom-form .row .col{
+    width: 100%;
+}
+
+
+
+
+.bottom-email{
+    margin: 0;
+    line-height:25px;
+    margin-bottom: 7px;
+}
+    
+
+
+
+}
+
+
+
+/* Small Phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    
+    body{ font-size: 16px}
+
+
+
+    .col {
+        width: 100%;
+        margin: 0 0 4% 0;    }  
+
+
+     h1{ font-size: 180%;}
+     h2{ font-size: 180%;}
+     h3{ font-size: 130%;}
+    p {
+        line-height: 22px;
+    }
+    
+    .contact-form {
+    width: 95%;
+        
+        
+    
+}
+    .title-container{
+    
+    width: 100%;
+    
+    
+    }
+    
+    textarea{
+    height: 160px;
+}
+        .order-label{
+    padding-left: 0%;
+}
+ 
+    .gig-foot{
+        visibility: hidden;
+    }
+    
+    .cock-info{
+        margin-left: 30%;
+    }
+    .b{
+        font-size: 140%;
+    }
+
+
+    .bottom-form .row .col{
+        width: 100%;
+    }
+
+    .bottom-form{
+        width: 90%;
+        margin: auto;
+    }
+
+
+
+    .bottom-email{
+    margin: 0;
+    line-height: 17px;
+    
+        font-size: 60%;
+}
+    
+    
+    
+    
+    .delivery-zone{
+    border: 2px #faf6cb solid;
+    width: 80%;
+    margin: auto;
+        padding: 5px;
+        
+}
+    
+    .menu-item-pic{
+    display: flex;
+    //justify-content: center;
+    max-height: 300px;
+ 
+}
+    
+    .menu-item-pic img{
+    max-height: 200px;
+    display: block;
+    width: 100%;
+    flex-shrink: 0;
+    
+}
+    .food-title-feature{
+        margin: 24px;
+    }
+    
+    .merch-photo img{
+    flex-shrink: 0;
+    display: block;
+    width: auto;
+    height: 100%;
+    
+}
+    
+    .buttons{
+    
+    //flex-direction: column;
+    margin: 18px;
+
+}
+    .main-btns{
+    
+    width: 110px;
+    font-size: 70%;
+    cursor: pointer;
+    padding: 9px 5px;
+    margin: 7px 13px;
+    border-radius: 2px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    background: rgba(74, 72, 72, 0.41);
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #faf6cb;
+    text-shadow: 2px 2px #000;   
+}
+    .new-nav{
+    margin: 0 0%;  
+    width: 100%;
+    }
+    
+    .spacing{
+        padding-bottom: 75px
+    }
+    
+    
+}
+
