@@ -14,14 +14,15 @@ body {
 /*--Header--*/
 .nav {
   display: flex;
-  padding: 1rem;
-  justify-content: space-between;
-  align-items: center; }
+  padding: 2rem;
+  align-items: center;
+  margin: auto; }
   .nav-logo-container {
     width: 3rem; }
   .nav-items {
     display: flex;
     flex: 1;
+    font-size: 1rem;
     list-style: none;
     justify-content: flex-end; }
     .nav-items a {
@@ -33,57 +34,58 @@ body {
 .logo {
   width: 100%; }
 
-.landing {
+.header {
   height: 100vh;
-  z-index: 3433;
   position: relative;
   background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0.99), rgba(24, 23, 20, 0.8)), url(../img/Gallery/gallery4.jpg);
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover; }
-  .landing-title-container {
-    width: 75%;
+  .header-box {
     margin: auto;
-    padding-top: 6rem; }
-    .landing-title-container img {
+    padding-top: 6rem;
+    max-width: 700px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    flex-direction: column;
+    transform: translate(-50%, -50%); }
+    .header-box-title img {
       width: 100%;
       padding: 1rem 0; }
-  .landing-drinks-banner {
-    width: 65%;
-    margin: auto; }
-    .landing-drinks-banner img {
-      width: 100%; }
-  .landing-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -334;
-    width: 100%; }
-    .landing-overlay img {
-      object-fit: cover;
-      width: 100%; }
-  .landing-btn {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    display: flex; }
-    .landing-btn a {
-      margin: 1.5rem auto;
-      padding: 0.7rem 1.6rem;
-      background-color: rgba(16, 16, 16, 0.2);
-      color: #fffcd5;
-      text-decoration: none;
-      border-radius: 50rem;
-      border: 1px solid #504e4b;
-      transition: all 0.2s ease; }
-      .landing-btn a:hover {
-        background-color: #fffcd5;
-        color: #101010;
-        transform: translateY(-4px);
-        box-shadow: 0 1rem 2rem rgba(16, 16, 16, 0.2);
-        border: none; }
-      .landing-btn a:active {
-        transform: translateY(-2px);
-        box-shadow: 0 0.5rem 1rem rgba(16, 16, 16, 0.2); }
+    .header-box-banner {
+      width: 90%;
+      margin: auto; }
+      .header-box-banner img {
+        width: 100%;
+        padding-bottom: 1rem; }
 
 .hidden {
   display: none; }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 2.8rem;
+  display: inline-block;
+  border-radius: 20rem;
+  transition: all 0.8s ease;
+  position: relative;
+  font-size: 1.5rem;
+  background-color: rgba(16, 16, 16, 0.2);
+  color: #fffcd5;
+  border: 1px solid #504e4b;
+  margin-top: 3rem;
+  backface-visibility: hidden; }
+
+.btn:hover {
+  transform: translateY(-0.2rem);
+  background-color: #fffcd5;
+  box-shadow: 0 1rem 2rem rgba(16, 16, 16, 0.2);
+  color: #101010; }
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  background-color: #fffcd5;
+  box-shadow: 0 0.5rem 1rem rgba(16, 16, 16, 0.2);
+  color: #101010; }

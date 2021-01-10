@@ -2,8 +2,6 @@ $giggle-yellow: #faf6cb;
 $giggle-yellow2: #fffcd5;
 $color-black: #101010;
 
-// @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -22,15 +20,19 @@ body {
 /*--Header--*/
 .nav {
   display: flex;
-  padding: 1rem;
-  justify-content: space-between;
+  padding: 2rem;
+  //justify-content: space-between;
   align-items: center;
+  //max-width: 1500px;
+  margin: auto;
+
   &-logo-container {
     width: 3rem;
   }
   &-items {
     display: flex;
     flex: 1;
+    font-size: 1rem;
     list-style: none;
     justify-content: flex-end;
     a {
@@ -47,10 +49,10 @@ body {
   width: 100%;
 }
 
-.landing {
+.header {
   height: 100vh;
   //padding: 5rem;
-  z-index: 3433;
+  //z-index: 3433;
   position: relative;
 
   background-image: linear-gradient(
@@ -60,67 +62,99 @@ body {
     ),
     url(../img/Gallery/gallery4.jpg);
   background-position: center;
-  background-repeat: no-repeat;
+  //background-repeat: no-repeat;
   background-size: cover;
-  // filter: blur(2px);
+  //filter: blur(2px);
 
-  &-title-container {
-    width: 75%;
+  &-box {
+    //width: 75%;
     margin: auto;
     padding-top: 6rem;
-    img {
+    max-width: 700px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    //display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    &-title img {
       width: 100%;
       padding: 1rem 0;
     }
-  }
-  &-drinks-banner {
-    width: 65%;
-    margin: auto;
-    img {
-      width: 100%;
-    }
-  }
-  &-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -334;
-    width: 100%;
-
-    img {
-      object-fit: cover;
-      width: 100%;
-    }
-  }
-  &-btn {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    display: flex;
-
-    a {
-      margin: 1.5rem auto;
-      padding: 0.7rem 1.6rem;
-      background-color: rgba($color-black, 0.2);
-      color: $giggle-yellow2;
-      text-decoration: none;
-      border-radius: 50rem;
-      border: 1px solid #504e4b;
-      transition: all 0.2s ease;
-      &:hover {
-        background-color: rgba($giggle-yellow2, 1);
-        color: $color-black;
-        transform: translateY(-4px);
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-        border: none;
-      }
-      &:active {
-        transform: translateY(-2px);
-        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    &-banner {
+      width: 90%;
+      margin: auto;
+      img {
+        width: 100%;
+        padding-bottom: 1rem;
       }
     }
   }
 }
 
+// &-btn {
+//   font-size: 0.8rem;
+//   text-transform: uppercase;
+//   text-align: center;
+//   display: inline-block;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 1.5rem auto;
+//   padding: 0.7rem 1.6rem;
+//   background-color: rgba($color-black, 0.2);
+//   color: $giggle-yellow2;
+//   text-decoration: none;
+//   border-radius: 50rem;
+//   border: 1px solid #504e4b;
+//   transition: all 0.2s ease;
+//   &:hover {
+//     background-color: rgba($giggle-yellow2, 1);
+//     color: $color-black;
+//     transform: translateY(-4px);
+//     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+//     border: none;
+//   }
+//   &:active {
+//     transform: translateY(-2px);
+//     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+//   }
+// }
+
 .hidden {
   display: none;
+}
+
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 2.8rem;
+    display: inline-block;
+    //justify-content: center;
+    border-radius: 20rem;
+    transition: all 0.8s ease;
+    position: relative;
+    font-size: 1.5rem;
+    background-color: rgba($color-black, 0.2);
+    color: $giggle-yellow2;
+    border: 1px solid #504e4b;
+    margin-top: 3rem;
+    backface-visibility: hidden;
+    //width: 40%;
+  }
+
+  &:hover {
+    transform: translateY(-0.2rem);
+    background-color: rgba($giggle-yellow2, 1);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    color: $color-black;
+  }
+  &:active {
+    transform: translateY(-0.1rem);
+    background-color: rgba($giggle-yellow2, 1);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    color: $color-black;
+  }
 }
