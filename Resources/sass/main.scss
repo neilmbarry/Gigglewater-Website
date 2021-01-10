@@ -2,6 +2,68 @@ $giggle-yellow: #faf6cb;
 $giggle-yellow2: #fffcd5;
 $color-black: #101010;
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+    //transform: translate(-70%, -50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    //transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+    //transform: translate(-30%, -50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    //transform: translate(-50%, -50%);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+    //transform: translate(-50%, -30%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    //transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+    //transform: translate(-50%, -30%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    //transform: translate(-50%, -50%);
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +74,7 @@ $color-black: #101010;
 body {
   font-size: 62.5%;
   font-family: "Josefin Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   background-color: $color-black;
   color: $giggle-yellow;
 }
@@ -25,7 +87,9 @@ body {
   align-items: center;
   //max-width: 1500px;
   margin: auto;
-
+  animation: moveInTop 0.4s ease-out 0.6s;
+  animation-fill-mode: backwards;
+  letter-spacing: 2px;
   &-logo-container {
     width: 3rem;
   }
@@ -41,7 +105,7 @@ body {
     }
   }
   &-item {
-    padding-right: 1.5rem;
+    padding-left: 2.5rem;
   }
 }
 
@@ -54,7 +118,8 @@ body {
   //padding: 5rem;
   //z-index: 3433;
   position: relative;
-
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   background-image: linear-gradient(
       to bottom,
       rgba(#13120e, 0.99),
@@ -73,18 +138,25 @@ body {
     max-width: 700px;
     position: absolute;
     text-align: center;
-    top: 40%;
+    top: 45%;
     left: 50%;
+    //animation: moveInLeft 1s ease;
     //display: flex;
     flex-direction: column;
     transform: translate(-50%, -50%);
-    &-title img {
-      width: 100%;
-      padding: 1rem 0;
+    &-title {
+      animation: moveInLeft 1s ease-out;
+      img {
+        width: 100%;
+        padding: 1rem 0;
+        //animation: moveInLeft 1s ease;
+        //animation: moveInLeft 0.3 ease;
+      }
     }
     &-banner {
       width: 90%;
       margin: auto;
+      animation: moveInRight 1s ease-out;
       img {
         width: 100%;
         padding-bottom: 1rem;
@@ -126,27 +198,41 @@ body {
 }
 
 .btn {
+  text-transform: uppercase;
+  text-decoration: none;
+
+  display: inline-block;
+  //justify-content: center;
+  border-radius: 20rem;
+  transition: all 0.2s ease;
+  position: relative;
+
+  background-color: rgba($color-black, 0.2);
+  color: $giggle-yellow2;
+  border: 1px solid #504e4b;
+  margin-top: 1rem;
+  backface-visibility: hidden;
+
+  letter-spacing: 1.5px;
+  //width: 40%;
   &:link,
   &:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 10px 2.8rem;
-    display: inline-block;
-    //justify-content: center;
-    border-radius: 20rem;
-    transition: all 0.8s ease;
-    position: relative;
-    font-size: 1.5rem;
-    background-color: rgba($color-black, 0.2);
-    color: $giggle-yellow2;
-    border: 1px solid #504e4b;
-    margin-top: 3rem;
-    backface-visibility: hidden;
-    //width: 40%;
   }
 
+  &-header {
+    padding: 10px 1.6rem;
+    animation: moveInBottom 0.7s ease-out 0.3s;
+    animation-fill-mode: backwards;
+    font-size: 1.1rem;
+  }
+
+  &-card {
+    margin: 10px 40px 20px 40px;
+    padding: 10px;
+    font-size: 1rem;
+  }
   &:hover {
-    transform: translateY(-0.2rem);
+    transform: translateY(-0.3rem);
     background-color: rgba($giggle-yellow2, 1);
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     color: $color-black;
@@ -157,4 +243,100 @@ body {
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
     color: $color-black;
   }
+}
+
+.section-about {
+  height: 120vh;
+  background-color: rgb(24, 24, 20);
+  margin-top: -20vh;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 90px 90px;
+  &-card {
+    //border: 2px solid purple;
+    width: 350px;
+    //height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(58, 57, 54),
+      rgb(46, 46, 46)
+    ); //rgb(75, 75, 75)
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2.5rem 4rem rgba(17, 17, 17, 0.5);
+    transition: all 0.3s ease;
+    &:hover {
+      transform: translateY(-10px);
+    }
+    &-pic {
+      //border: 2px solid yellow;
+      height: 250px;
+
+      background-position: center;
+      background-size: cover;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      &_c1 {
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(#13120e, 0),
+            rgba(#181714, 0.3)
+          ),
+          url(/Resources/img/casper.jpg);
+      }
+      &_c2 {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(#13120e, 0),
+            rgba(#181714, 0.3)
+          ),
+          url(/Resources/img/error.jpg);
+      }
+      &_c3 {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(#13120e, 0),
+            rgba(#181714, 0.3)
+          ),
+          url(/Resources/img/mixing-glass.jpg);
+      }
+    }
+    &-title {
+      //border: 2px solid blue;
+      position: absolute;
+      right: 5%;
+      top: 55%;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+    &-description {
+      //border: 2px solid green;
+      padding: 10px 17px;
+      font-size: 1.2rem;
+      height: 110px;
+    }
+  }
+}
+
+.section-extra {
+  height: 100vh;
+  //background-color: $giggle-yellow;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(#13120e, 0.99),
+      rgba(#181714, 0.8)
+    ),
+    url(/Resources/img/Gallery/gallery13.jpg);
 }
