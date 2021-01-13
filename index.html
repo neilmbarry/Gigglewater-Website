@@ -70,45 +70,39 @@
     <header class="header">
       <nav class="nav">
         <div class="nav-logo-container">
-          <a href="./" class="nav-btn">
-            <img
-              class="logo"
-              src="Resources/img/logo-big.png"
-              alt="Project Gigglewater"
-            />
+          <a href="#" class="nav-btn">
+            <img class="logo" src="/logo-big.png" alt="Project Gigglewater" />
           </a>
         </div>
         <ul class="nav-items">
           <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
-          <li><a href="delivery" class="nav-item">Cocktail Kits</a></li>
-          <li><a href="bottles" class="nav-item">Bottle Shop</a></li>
-          <li><a href="merch" class="nav-item">Merchandise</a></li>
-          <li><a href="gallery" class="nav-item">Gallery</a></li>
-          <li><a href="reviews" class="nav-item">Reviews</a></li>
-          <li><a href="map" class="nav-item">Find Us</a></li>
-          <li><a href="form" class="nav-item">Contact</a></li>
+          <li><a href="#" class="nav-item">Cocktail Kits</a></li>
+          <li><a href="#" class="nav-item">Bottle Shop</a></li>
+          <li><a href="#" class="nav-item">Merchandise</a></li>
+          <li><a href="#" class="nav-item">Gallery</a></li>
+          <li><a href="#" class="nav-item">Reviews</a></li>
+          <li><a href="#" class="nav-item">Find Us</a></li>
+          <li><a href="#" class="nav-item">Contact</a></li>
         </ul>
         <div class="hidden">X</div>
       </nav>
       <div class="header-box">
         <div class="header-box-title">
-          <img
-            src="Resources/img/title.png"
-            alt="Project Gigglewater"
-            class="title"
-          />
+          <img src="/title.png" alt="Project Gigglewater" class="title" />
         </div>
         <div class="header-box-banner">
-          <img src="Resources/img/drinks.png" alt="drinks" class="banner" />
+          <img src="/drinks.png" alt="drinks" class="banner" />
         </div>
-        <a href="#" class="btn btn-cta btn-header">Order cocktails</a>
+        <a href="#" class="btn btn-cta btn-header"
+          >Order cocktails <span class="btn-arrow">&#8594;</span></a
+        >
       </div>
     </header>
     <section class="section-about">
-      <h2 class="section-about-title">
+      <h2 class="section-about-title title-hidden">
         Interesting cocktails for interesting people
       </h2>
-      <div class="cards-container">
+      <div class="cards-container card-blur">
         <div class="cards-container-card">
           <div
             class="cards-container-card-pic cards-container-card-pic_c1"
@@ -146,8 +140,73 @@
           <a href="#" class="btn btn-cta btn-card">Order merch</a>
         </div>
       </div>
+      <a href="#" class="btn btn-cta btn-about"
+        >Full Quarantine Factory <span class="btn-arrow">&#8594;</span></a
+      >
     </section>
     <section class="section-extra"></section>
+    <section class="section-map">
+      <div class="form-box">
+        <h2 class="form-title">We would love to hear from you</h2>
+        <form method="post" action="mailer2.php" class="form">
+          <div class="row">
+            <div class="col span-1-of-3 order-label x">
+              <label for="name">Name*</label>
+            </div>
+            <div class="col span-2-of-3 x">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your name!"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3 order-label x">
+              <label for="email">Email*</label>
+            </div>
+            <div class="col span-2-of-3 x">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Please double check the address!"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3 order-label x">
+              <label for="phone">Contact number*</label>
+            </div>
+            <div class="col span-2-of-3 x">
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Your contact number!"
+                required
+              />
+            </div>
+          </div>
+          <div class="row" id="test">
+            <div class="col span-1-of-3 order-label x">
+              <label>Drop us a line*</label>
+            </div>
+            <div class="col span-2-of-3 x">
+              <textarea
+                name="message"
+                placeholder="What would you like?"
+                id="output"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
     <section class="section-hours">
       <div class="hours">
         <p class="bottom-email spacing">

@@ -105,7 +105,7 @@ body {
     }
   }
   &-item {
-    padding-left: 2.5rem;
+    margin-left: 2.5rem;
   }
 }
 
@@ -125,8 +125,9 @@ body {
       rgba(#13120e, 0.99),
       rgba(#181714, 0.8)
     ),
-    url(../img/Gallery/gallery4.jpg);
+    url(/gallery4.jpg);
   background-position: center;
+  background-attachment: fixed;
   //background-repeat: no-repeat;
   background-size: cover;
   //filter: blur(2px);
@@ -212,7 +213,7 @@ body {
   border: 1px solid #504e4b;
   margin-top: 1rem;
   backface-visibility: hidden;
-
+  font-weight: 400;
   letter-spacing: 1.5px;
   //width: 40%;
   &:link,
@@ -223,7 +224,7 @@ body {
     padding: 10px 1.6rem;
     animation: moveInBottom 0.7s ease-out 0.3s;
     animation-fill-mode: backwards;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   &-card {
@@ -231,11 +232,28 @@ body {
     padding: 10px;
     font-size: 1rem;
   }
+  &-about {
+    margin: 10px 40px 20px 40px;
+    padding: 10px 30px;
+    font-size: 1rem;
+  }
+  &-arrow {
+    &:hover {
+      transform: translateX(130px);
+      //color: red;
+    }
+  }
   &:hover {
     transform: translateY(-0.3rem);
     background-color: rgba($giggle-yellow2, 1);
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     color: $color-black;
+    &-arrow {
+    }
+    .btn-arrow {
+      color: red;
+      transform: translateX(130px);
+    }
   }
   &:active {
     transform: translateY(-0.1rem);
@@ -246,18 +264,22 @@ body {
 }
 
 .section-about {
-  height: 120vh;
+  min-height: 120vh;
   background-color: rgb(24, 24, 20);
   margin-top: -20vh;
   padding-top: 30vh;
   text-align: center;
+  &-title {
+    transition: all 1s ease;
+  }
 }
 
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 90px 90px;
+  margin: 90px 90px 45px 90px;
+  transition: all 1s ease;
   &-card {
     //border: 2px solid purple;
     width: 350px;
@@ -275,6 +297,8 @@ body {
     overflow: hidden;
     box-shadow: 0 2.5rem 4rem rgba(17, 17, 17, 0.5);
     transition: all 0.3s ease;
+    backface-visibility: hidden;
+
     &:hover {
       transform: translateY(-10px);
     }
@@ -292,7 +316,12 @@ body {
             rgba(#13120e, 0),
             rgba(#181714, 0.3)
           ),
-          url(/Resources/img/casper.jpg);
+          url(/casper.jpg);
+
+        transition: all 0.5s ease;
+        &:hover {
+          filter: blur(0);
+        }
       }
       &_c2 {
         background-image: linear-gradient(
@@ -300,7 +329,7 @@ body {
             rgba(#13120e, 0),
             rgba(#181714, 0.3)
           ),
-          url(/Resources/img/error.jpg);
+          url(/error.jpg);
       }
       &_c3 {
         background-image: linear-gradient(
@@ -308,7 +337,7 @@ body {
             rgba(#13120e, 0),
             rgba(#181714, 0.3)
           ),
-          url(/Resources/img/mixing-glass.jpg);
+          url(/mixing-glass.jpg);
       }
     }
     &-title {
@@ -329,14 +358,77 @@ body {
 }
 
 .section-extra {
-  height: 100vh;
+  height: 40vh;
   //background-color: $giggle-yellow;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
   background-image: linear-gradient(
       to bottom,
       rgba(#13120e, 0.99),
       rgba(#181714, 0.8)
     ),
-    url(/Resources/img/Gallery/gallery13.jpg);
+    url(/gallery13.jpg);
+}
+
+.card-blur {
+  filter: blur(4px);
+  opacity: 0;
+}
+
+.title-hidden {
+  opacity: 0;
+  transform: translateY(-70px);
+}
+
+.section-map {
+  height: 100vh;
+  margin: 80px;
+  //background-color: $giggle-yellow;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(#13120e, 0.2),
+      rgba(#181714, 0.2)
+    ),
+    url(/this.png);
+}
+
+.form {
+  font-size: 1.7rem;
+  padding: 3rem;
+  &-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #101010d7;
+  }
+  &-title {
+    text-align: center;
+    margin: 30px;
+    line-height: 50px;
+  }
+}
+
+input {
+  padding: 9px 1rem;
+  margin: 17px 0;
+  background-color: $giggle-yellow;
+  font-size: 1.5rem;
+  width: 500px;
+  font-family: "Josefin Sans";
+}
+
+textarea {
+  height: 150px;
+  margin-top: 17px;
+  padding: 9px 1rem;
+  width: 500px;
+  background-color: $giggle-yellow;
+  font-size: 1.5rem;
+  font-family: "Josefin Sans";
 }

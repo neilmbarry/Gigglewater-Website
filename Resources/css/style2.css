@@ -70,7 +70,7 @@ body {
       text-decoration: none;
       color: #faf6cb; }
   .nav-item {
-    padding-left: 2.5rem; }
+    margin-left: 2.5rem; }
 
 .logo {
   width: 100%; }
@@ -80,8 +80,9 @@ body {
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-  background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0.99), rgba(24, 23, 20, 0.8)), url(../img/Gallery/gallery4.jpg);
+  background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0.99), rgba(24, 23, 20, 0.8)), url(/gallery4.jpg);
   background-position: center;
+  background-attachment: fixed;
   background-size: cover; }
   .header-box {
     margin: auto;
@@ -121,21 +122,31 @@ body {
   border: 1px solid #504e4b;
   margin-top: 1rem;
   backface-visibility: hidden;
+  font-weight: 400;
   letter-spacing: 1.5px; }
   .btn-header {
     padding: 10px 1.6rem;
     animation: moveInBottom 0.7s ease-out 0.3s;
     animation-fill-mode: backwards;
-    font-size: 1.1rem; }
+    font-size: 1rem; }
   .btn-card {
     margin: 10px 40px 20px 40px;
     padding: 10px;
     font-size: 1rem; }
+  .btn-about {
+    margin: 10px 40px 20px 40px;
+    padding: 10px 30px;
+    font-size: 1rem; }
+  .btn-arrow:hover {
+    transform: translateX(130px); }
   .btn:hover {
     transform: translateY(-0.3rem);
     background-color: #fffcd5;
     box-shadow: 0 1rem 2rem rgba(16, 16, 16, 0.2);
     color: #101010; }
+    .btn:hover .btn-arrow {
+      color: red;
+      transform: translateX(130px); }
   .btn:active {
     transform: translateY(-0.1rem);
     background-color: #fffcd5;
@@ -143,17 +154,20 @@ body {
     color: #101010; }
 
 .section-about {
-  height: 120vh;
+  min-height: 120vh;
   background-color: #181814;
   margin-top: -20vh;
   padding-top: 30vh;
   text-align: center; }
+  .section-about-title {
+    transition: all 1s ease; }
 
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 90px 90px; }
+  margin: 90px 90px 45px 90px;
+  transition: all 1s ease; }
   .cards-container-card {
     width: 350px;
     display: flex;
@@ -164,7 +178,8 @@ body {
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2.5rem 4rem rgba(17, 17, 17, 0.5);
-    transition: all 0.3s ease; }
+    transition: all 0.3s ease;
+    backface-visibility: hidden; }
     .cards-container-card:hover {
       transform: translateY(-10px); }
     .cards-container-card-pic {
@@ -174,11 +189,14 @@ body {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
       .cards-container-card-pic_c1 {
-        background-image: linear-gradient(to bottom right, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/Resources/img/casper.jpg); }
+        background-image: linear-gradient(to bottom right, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/casper.jpg);
+        transition: all 0.5s ease; }
+        .cards-container-card-pic_c1:hover {
+          filter: blur(0); }
       .cards-container-card-pic_c2 {
-        background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/Resources/img/error.jpg); }
+        background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/error.jpg); }
       .cards-container-card-pic_c3 {
-        background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/Resources/img/mixing-glass.jpg); }
+        background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/mixing-glass.jpg); }
     .cards-container-card-title {
       position: absolute;
       right: 5%;
@@ -191,7 +209,56 @@ body {
       height: 110px; }
 
 .section-extra {
-  height: 100vh;
+  height: 40vh;
   background-position: center;
   background-size: cover;
-  background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0.99), rgba(24, 23, 20, 0.8)), url(/Resources/img/Gallery/gallery13.jpg); }
+  background-attachment: fixed;
+  background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0.99), rgba(24, 23, 20, 0.8)), url(/gallery13.jpg); }
+
+.card-blur {
+  filter: blur(4px);
+  opacity: 0; }
+
+.title-hidden {
+  opacity: 0;
+  transform: translateY(-70px); }
+
+.section-map {
+  height: 100vh;
+  margin: 80px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0.2), rgba(24, 23, 20, 0.2)), url(/this.png); }
+
+.form {
+  font-size: 1.7rem;
+  padding: 3rem; }
+  .form-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #101010d7; }
+  .form-title {
+    text-align: center;
+    margin: 30px;
+    line-height: 50px; }
+
+input {
+  padding: 9px 1rem;
+  margin: 17px 0;
+  background-color: #faf6cb;
+  font-size: 1.5rem;
+  width: 500px;
+  font-family: "Josefin Sans"; }
+
+textarea {
+  height: 150px;
+  margin-top: 17px;
+  padding: 9px 1rem;
+  width: 500px;
+  background-color: #faf6cb;
+  font-size: 1.5rem;
+  font-family: "Josefin Sans"; }
