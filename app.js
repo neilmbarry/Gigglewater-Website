@@ -183,6 +183,7 @@ const shoppingItems = document.querySelector(".shopping");
 const cartEl = document.querySelector(".cart");
 const cartContents = document.querySelector(".cart-contents");
 const cartTotals = document.querySelector(".cart-totals");
+const cartIcon = document.querySelector(".cart-icon");
 //const cartItem;
 
 const persistCart = function () {
@@ -272,6 +273,12 @@ cartContents.addEventListener("click", (e) => {
   if (!e.target.classList.contains("cart-btn")) return;
   const delID = e.target.closest(".cart-item").id;
   removeCartItem(delID);
+});
+
+cartIcon.addEventListener("click", (e) => {
+  e.preventDefault();
+  createCart();
+  cartToggle();
 });
 
 init2();
