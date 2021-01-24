@@ -1,15 +1,30 @@
-document
-  .querySelector(".cards-container-card")
-  .addEventListener("click", () => console.log("hey"));
+const sectionAbout = document.querySelector(".section-about");
+const sectionAboutTitle = document.querySelector(".section-about-title");
+const sectionAboutCards = document.querySelector(".cards-container");
+const sectionReviews = document.querySelector(".section-reviews");
+const sectionReviewsTitle = document.querySelector(".section-reviews-title");
+const sectionReviewsCards = document.querySelector(".slider");
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
   //console.log(entry);
   if (!entry.isIntersecting) return;
-  entry.target.classList.remove("title-hidden");
+  sectionAboutTitle.classList.remove("title-hidden");
   setTimeout(() => {
-    document.querySelector(".cards-container").classList.remove("card-blur");
-  }, 400);
+    sectionAboutCards.classList.remove("card-blur");
+  }, 200);
+
+  //observer.unobserve(entry.target);
+};
+
+const revealSection2 = function (entries, observer) {
+  const [entry] = entries;
+  //console.log(entry);
+  if (!entry.isIntersecting) return;
+  sectionReviewsTitle.classList.remove("title-hidden");
+  setTimeout(() => {
+    sectionReviewsCards.classList.remove("slider-blur");
+  }, 300);
 
   //observer.unobserve(entry.target);
 };
@@ -20,7 +35,14 @@ const sectionObserver = new IntersectionObserver(revealSection, {
   rootMargin: "-300px",
 });
 
-sectionObserver.observe(document.querySelector(".section-about-title"));
+const sectionObserver2 = new IntersectionObserver(revealSection2, {
+  root: null,
+  threshold: 0,
+  rootMargin: "-300px",
+});
+
+sectionObserver.observe(sectionAbout);
+sectionObserver2.observe(sectionReviews);
 //---delete me---//section.classList.add('section--hidden');
 
 const slides = document.querySelectorAll(".slide");
@@ -105,3 +127,151 @@ dotContainer.addEventListener("click", function (e) {
     activateDot(curSlide);
   }
 });
+
+//Shopping Cart
+const menuItemRef = {
+  pine: {
+    name: "Pine Of No Return",
+    price: 67.5,
+    description: ["Tequila", "Lime", "Pineapple", "Bitters"],
+    servings: "7+",
+  },
+  mango: {
+    name: "The Mongolorian",
+    price: 70,
+    description: ["Rum", "Lemon", "Mango", "Bitters"],
+    servings: "7+",
+  },
+  popit: {
+    name: "Pop It Like It's Hot",
+    price: 65,
+    description: ["Vodka", "Lemon", "Vanilla", "Bitters"],
+    servings: "7+",
+  },
+  deep: {
+    name: "Deep Dive",
+    price: 67.5,
+    description: [
+      "Ketel One Vodka",
+      "Blueberry",
+      "Ginger",
+      "Pink Peppercorn",
+      "Lemon",
+      "Soda",
+    ],
+    servings: "7+",
+  },
+  laffy: {
+    name: "The Laffy Taffy",
+    price: 67.5,
+    description: [
+      "Bombay Sapphire Gin",
+      "Strawberry",
+      "Apricot Peach Tea",
+      "Lemon",
+      "Chocolate Bitters",
+      "Banana Essence",
+    ],
+    servings: "7+",
+  },
+};
+
+const cart = {
+  shoppingItems: [],
+};
+const shoppingItems = document.querySelector(".shopping");
+const cartEl = document.querySelector(".cart");
+const cartContents = document.querySelector(".cart-contents");
+const cartTotals = document.querySelector(".cart-totals");
+//const cartItem;
+
+const persistCart = function () {
+  localStorage.setItem("cart", JSON.stringify(cart.shoppingItems));
+};
+
+const cartToggle = () => {
+  cartEl.classList.toggle("cart-hide");
+};
+
+const removeCartItem = (index) => {
+  cart.shoppingItems.splice(index, 1);
+  createCart();
+  persistCart();
+  createTotals();
+};
+
+const createCart = () => {
+  cartContents.innerHTML = "";
+  if (cart.shoppingItems.length === 0) return;
+  const text = cart.shoppingItems
+    .map((item, i) => {
+      return `<div class="cart-item" id=${i}>
+    <div class="cart-item-pic">
+      <img src="/logo-big.png" alt="item-pic" />
+    </div>
+    <div class="cart-item-title">${menuItemRef[item].name}</div>
+    <div class="cart-item-quantity">Quantity</div>
+    <div class="cart-item-price">$${menuItemRef[item].price.toFixed(2)}</div>
+    <button class="cart-btn">X</button>
+  </div>`;
+    })
+    .join("");
+  //console.log(text);
+
+  cartContents.insertAdjacentHTML("afterbegin", text);
+};
+
+const createTotals = () => {
+  cartTotals.innerHTML = "";
+  if (cart.shoppingItems.length === 0) return;
+  const totalPrice = cart.shoppingItems.reduce((acc, item) => {
+    return +menuItemRef[item].price + acc;
+  }, 0);
+  const tax = totalPrice * 0.13;
+  const grandTotal = totalPrice + tax;
+  const html = `
+  <div class="cart-totals-sub">Sub-Total: $${totalPrice.toFixed(2)}</div>
+        <div class="cart-totals-tax">Taxes: $${tax.toFixed(2)}</div>
+        <div class="cart-totals-grand">Grand Total: $${grandTotal.toFixed(
+          2
+        )}</div>
+  
+  `;
+  cartTotals.insertAdjacentHTML("afterbegin", html);
+};
+
+shoppingItems.addEventListener("click", (e) => {
+  if (e.target.id === "clear") {
+    localStorage.clear("cart");
+    cart.shoppingItems = [];
+    createCart();
+    createTotals();
+    return;
+  }
+  if (e.target.id === "checkout") {
+    createCart();
+    cartToggle();
+  }
+  const item = e.target.closest(".shopping-item")?.id;
+  if (!item) return;
+  cart.shoppingItems.push(item);
+  createCart();
+  persistCart();
+  createTotals();
+});
+
+const init2 = function () {
+  //clearBookmarks();
+  const storage = localStorage.getItem("cart");
+  if (storage) cart.shoppingItems = JSON.parse(storage);
+  createCart();
+  createTotals();
+};
+
+cartContents.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("cart-btn")) return;
+  const delID = e.target.closest(".cart-item").id;
+  removeCartItem(delID);
+});
+
+init2();

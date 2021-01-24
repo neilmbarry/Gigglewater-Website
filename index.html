@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"
+    ></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -73,6 +81,36 @@
         <div class="cover"></div>
       </div>
     </section> -->
+    <section class="shopping">
+      <div class="shopping-item shopping-item-1" id="pine">Pineapple</div>
+      <div class="shopping-item shopping-item-2" id="mango">Mango</div>
+      <div class="shopping-item shopping-item-3" id="popit">Pop</div>
+      <div class="shopping-item shopping-item-4" id="deep">Deep Dive</div>
+      <div class="shopping-item-checkout" id="checkout">Check-Out</div>
+      <div class="shopping-item-clear" id="clear">Clear</div>
+    </section>
+    <div class="cart cart-hide">
+      <h2>Your Cart</h2>
+      <div class="cart-contents">
+        <div class="cart-item" id="${i}">
+          <div class="cart-item-pic">
+            <img src="/logo-big.png" alt="item-pic" />
+          </div>
+          <div class="cart-item-title">${menuItemRef[item].name}</div>
+          <div class="cart-item-quantity">Quantity</div>
+          <div class="cart-item-price">
+            $${menuItemRef[item].price.toFixed(2)}
+          </div>
+          <button class="cart-btn">X</button>
+        </div>
+      </div>
+      <div class="cart-totals">
+        <div class="cart-totals-sub">Sub-Total: $120</div>
+        <div class="cart-totals-tax">Taxes: $13</div>
+        <div class="cart-totals-grand">Grand Total: $133</div>
+      </div>
+    </div>
+    <div class="overlay"></div>
     <header class="header">
       <nav class="nav">
         <div class="nav-logo-container">
@@ -89,6 +127,11 @@
           <!-- <li><a href="#" class="nav-item">Reviews</a></li> -->
           <li><a href="#" class="nav-item">Find Us</a></li>
           <li><a href="#" class="nav-item">Contact</a></li>
+          <li>
+            <a href="#" class="nav-item"
+              ><ion-icon name="cart-outline"></ion-icon
+            ></a>
+          </li>
         </ul>
         <div class="hidden">X</div>
       </nav>
@@ -174,9 +217,11 @@
     </section>
     <section class="section-extra"></section>
     <section class="section-reviews">
-      <h2 class="section-reviews-title">Hear what our guests had to say</h2>
+      <h2 class="section-reviews-title title-hidden">
+        Hear what our guests had to say
+      </h2>
 
-      <div class="slider">
+      <div class="slider slider-blur">
         <div class="slide slide--1">
           <div class="testimonial">
             <h5 class="testimonial__header">
@@ -208,7 +253,7 @@
             </blockquote>
             <address class="testimonial__author">
               <img src="/gallery13.jpg" alt="" class="testimonial__photo" />
-              <h6 class="testimonial__name">CHELSEA IHEME-HALL</h6>
+              <h6 class="testimonial__name">Chelsea Iheme-Hall</h6>
               <p class="testimonial__location">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
             </address>
           </div>
@@ -229,7 +274,7 @@
             </blockquote>
             <address class="testimonial__author">
               <img src="/mixing-glass.jpg" alt="" class="testimonial__photo" />
-              <h6 class="testimonial__name">TOM SOLECKI</h6>
+              <h6 class="testimonial__name">Tom Solecki</h6>
               <p class="testimonial__location">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
             </address>
           </div>
@@ -310,17 +355,21 @@
       <a href="#" class="footer-logo">
         <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
       </a>
-      <div class="footer-hours">1396 Dundas Street West, Toronto M6J 1Y3</div>
+      <div class="footer-hours">
+        <a href="#" class="footer-address"
+          >1396 Dundas Street West, Toronto M6J 1Y3</a
+        >
+      </div>
       <div class="footer-contact">
         <a href="#" class="footer-email">cocktails@projectgigglewater.com</a>
       </div>
       <div class="footer-socials">
-        <div class="facebook"><ion-icon name="logo-facebook"></ion-icon></div>
+        <div><ion-icon name="logo-facebook" class="facebook"></ion-icon></div>
         <div class="instagram"><ion-icon name="logo-instagram"></ion-icon></div>
       </div>
     </footer>
 
-    <section class="hidden">
+    <!-- <section class="hidden">
       <div class="hours">
         <p class="bottom-email spacing">
           cocktail kits available for pick up only<br />indoor dining
@@ -341,7 +390,7 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         
         <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
@@ -366,6 +415,5 @@
           gtag('config', 'G-Q40M9KKNX5');
         </script>-->
     <script src="app.js"></script>
-    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   </body>
 </html>

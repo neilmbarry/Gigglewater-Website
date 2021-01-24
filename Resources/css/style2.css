@@ -60,6 +60,7 @@ body {
   padding: 1rem 2rem;
   align-items: center;
   margin: auto;
+  align-items: center;
   animation: moveInTop 0.4s ease-out 0.6s;
   animation-fill-mode: backwards;
   letter-spacing: 2px;
@@ -71,6 +72,7 @@ body {
   .nav-items {
     display: flex;
     flex: 1;
+    align-items: center;
     font-size: 1rem;
     list-style: none;
     justify-content: flex-end; }
@@ -78,7 +80,11 @@ body {
       text-decoration: none;
       color: #faf6cb; }
   .nav-item {
-    margin-left: 2.5rem; }
+    margin-left: 1.5rem;
+    padding: 1rem;
+    transition: all 0.3s ease; }
+    .nav-item:hover {
+      color: #885620; }
 
 .logo {
   width: 100%; }
@@ -123,7 +129,7 @@ body {
   text-decoration: none;
   display: inline-block;
   border-radius: 20rem;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
   background-color: rgba(16, 16, 16, 0.2);
   color: #fffcd5;
@@ -141,6 +147,8 @@ body {
     margin: 0px 40px 20px 40px;
     padding: 10px;
     font-size: 1rem; }
+    .btn-card:hover {
+      transform: translateY(0); }
   .btn-about {
     margin: 10px 40px 40px 40px;
     padding: 10px 30px;
@@ -153,7 +161,7 @@ body {
     box-shadow: 0 1rem 2rem rgba(16, 16, 16, 0.2);
     color: #101010; }
     .btn:hover .btn-arrow {
-      color: red;
+      color: #885620;
       transform: translateX(130px); }
   .btn:active {
     transform: translateY(-0.1rem);
@@ -186,6 +194,7 @@ body {
     position: relative;
     background-image: linear-gradient(to bottom left, rgba(28, 28, 28, 0.961), rgba(63, 63, 63, 0.913));
     border-radius: 5px;
+    border: solid 2px #6f6f6f;
     overflow: hidden;
     box-shadow: 0 2.5rem 4rem rgba(17, 17, 17, 0.5);
     transition: all 0.3s ease;
@@ -204,7 +213,7 @@ body {
         .cards-container-card-pic_c1:hover {
           filter: blur(0); }
       .cards-container-card-pic_c2 {
-        background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/error.jpg); }
+        background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/error-2.jpg); }
       .cards-container-card-pic_c3 {
         background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0), rgba(24, 23, 20, 0.3)), url(/mixing-glass.jpg); }
     .cards-container-card-title {
@@ -239,15 +248,11 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-image: linear-gradient(to bottom, rgba(19, 18, 14, 0.99), rgba(24, 23, 20, 0.8)), url(/gallery13.jpg); }
+  background-image: linear-gradient(to top, rgba(19, 18, 14, 0.99), rgba(24, 23, 20, 0.8)), url(/gallery13.jpg); }
 
 .card-blur {
   filter: blur(4px);
   opacity: 0; }
-
-.title-hidden {
-  opacity: 0;
-  transform: translateY(-70px); }
 
 .section-map {
   height: 100vh;
@@ -260,7 +265,11 @@ body {
 
 .form {
   font-size: 1.4rem;
-  padding: 1rem 2rem; }
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
   .form-box {
     position: absolute;
     right: 0;
@@ -300,7 +309,6 @@ textarea {
 
 ion-icon {
   font-size: 2rem;
-  color: #fffcd5;
   cursor: pointer; }
 
 .footer {
@@ -318,7 +326,16 @@ ion-icon {
       padding: 0.5rem; }
   .footer-email {
     color: #fffcd5;
+    text-decoration: none;
+    transition: all 0.3s ease; }
+    .footer-email:hover {
+      color: #885620; }
+  .footer-address {
+    color: #fffcd5;
+    transition: all 0.3s ease;
     text-decoration: none; }
+    .footer-address:hover {
+      color: #885620; }
 
 /* SLIDER */
 .slider {
@@ -327,7 +344,8 @@ ion-icon {
   position: relative;
   /* IN THE END */
   overflow: hidden;
-  max-width: 1000px; }
+  max-width: 1000px;
+  transition: opacity 0.6s ease; }
 
 .slide {
   position: absolute;
@@ -454,7 +472,12 @@ ion-icon {
 .section-reviews {
   margin: auto;
   background-image: linear-gradient(to bottom right, #151515, #2b291e);
-  height: 100vh; }
+  height: 100vh;
+  transition: all 0.4s ease; }
+  .section-reviews-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease-out; }
 
 .test {
   height: 90vh;
@@ -584,4 +607,86 @@ ion-icon {
 
 .title-highlight {
   background-image: linear-gradient(to bottom left, rgba(28, 28, 28, 0.961), rgba(63, 63, 63, 0.913));
-  padding: 0.8rem 1rem 0.5rem 1rem; }
+  padding: 0.8rem 1rem 0.5rem 1rem;
+  border: 1px solid grey; }
+
+.slider-blur {
+  opacity: 0; }
+
+.title-hidden {
+  opacity: 0;
+  transform: translateY(-70px); }
+
+.facebook {
+  color: #fffcd5;
+  cursor: pointer;
+  transition: all 0.3s ease; }
+  .facebook:hover {
+    color: #4267b2; }
+
+.instagram {
+  color: #fffcd5;
+  transition: all 0.3s ease;
+  cursor: pointer; }
+  .instagram:hover {
+    color: #e1306c; }
+
+.shopping {
+  display: flex;
+  justify-content: space-around; }
+  .shopping-item {
+    margin: 20px;
+    font-size: 1.6rem;
+    padding: 5px;
+    border: 2px solid white; }
+    .shopping-item-clear {
+      margin: 20px;
+      font-size: 1.6rem;
+      padding: 5px;
+      border: 2px solid white; }
+    .shopping-item-checkout {
+      margin: 20px;
+      font-size: 1.6rem;
+      padding: 5px;
+      border: 2px solid white; }
+
+.cart {
+  position: fixed;
+  margin: auto;
+  top: 10%;
+  left: 10%;
+  border-radius: 7px;
+  z-index: 999;
+  font-size: 1.5rem;
+  background-image: linear-gradient(to bottom right, rgba(95, 111, 60, 0.95), rgba(43, 109, 89, 0.95));
+  width: 80%;
+  transition: all 0.5s ease; }
+  .cart-hide {
+    transform: translateY(-100vh);
+    opacity: 0; }
+  .cart-contents {
+    display: flex;
+    flex-direction: column; }
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 4rem; }
+    .cart-item-pic {
+      width: 4rem; }
+      .cart-item-pic img {
+        width: 100%; }
+    .cart-item-title {
+      width: 50%; }
+  .cart-btn {
+    padding: 0.5rem;
+    background-color: #333;
+    color: red;
+    outline: none; }
+  .cart-totals {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0rem 10.3rem; }
+    .cart-totals div {
+      margin: 1rem 0; }

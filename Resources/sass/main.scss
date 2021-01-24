@@ -1,6 +1,7 @@
 $giggle-yellow: #faf6cb;
 $giggle-yellow2: #fffcd5;
 $color-black: #101010;
+$giggle-secondary: rgb(136, 86, 32);
 
 @keyframes moveInLeft {
   0% {
@@ -93,6 +94,7 @@ body {
   align-items: center;
   //max-width: 1500px;
   margin: auto;
+  align-items: center;
   animation: moveInTop 0.4s ease-out 0.6s;
   animation-fill-mode: backwards;
   letter-spacing: 2px;
@@ -107,6 +109,7 @@ body {
   &-items {
     display: flex;
     flex: 1;
+    align-items: center;
     font-size: 1rem;
     list-style: none;
     justify-content: flex-end;
@@ -116,7 +119,12 @@ body {
     }
   }
   &-item {
-    margin-left: 2.5rem;
+    margin-left: 1.5rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    &:hover {
+      color: rgb(136, 86, 32);
+    }
   }
 }
 
@@ -216,7 +224,7 @@ body {
   display: inline-block;
   //justify-content: center;
   border-radius: 20rem;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
 
   background-color: rgba($color-black, 0.2);
@@ -242,6 +250,9 @@ body {
     margin: 0px 40px 20px 40px;
     padding: 10px;
     font-size: 1rem;
+    &:hover {
+      transform: translateY(0);
+    }
   }
   &-about {
     margin: 10px 40px 40px 40px;
@@ -251,7 +262,7 @@ body {
   &-arrow {
     &:hover {
       transform: translateX(130px);
-      //color: red;
+      //color: rgb(136, 86, 32);
     }
   }
   &:hover {
@@ -262,7 +273,7 @@ body {
     &-arrow {
     }
     .btn-arrow {
-      color: red;
+      color: rgb(136, 86, 32);
       transform: translateX(130px);
     }
   }
@@ -280,7 +291,6 @@ body {
   margin-top: -20vh;
   padding-top: 20vh;
   text-align: center;
-  //transform: skewY(0deg);
   &-title {
     transition: all 1s ease;
   }
@@ -307,6 +317,7 @@ body {
       rgba(63, 63, 63, 0.913)
     );
     border-radius: 5px;
+    border: solid 2px rgb(111, 111, 111);
     overflow: hidden;
     box-shadow: 0 2.5rem 4rem rgba(17, 17, 17, 0.5);
     transition: all 0.3s ease;
@@ -342,7 +353,7 @@ body {
             rgba(#13120e, 0),
             rgba(#181714, 0.3)
           ),
-          url(/error.jpg);
+          url(/error-2.jpg);
       }
       &_c3 {
         background-image: linear-gradient(
@@ -397,8 +408,9 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  //transform: skewY(-6deg);
   background-image: linear-gradient(
-      to bottom,
+      to top,
       rgba(#13120e, 0.99),
       rgba(#181714, 0.8)
     ),
@@ -408,11 +420,6 @@ body {
 .card-blur {
   filter: blur(4px);
   opacity: 0;
-}
-
-.title-hidden {
-  opacity: 0;
-  transform: translateY(-70px);
 }
 
 .section-map {
@@ -433,6 +440,10 @@ body {
 .form {
   font-size: 1.4rem;
   padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   &-box {
     position: absolute;
     right: 0;
@@ -477,7 +488,7 @@ textarea {
 
 ion-icon {
   font-size: 2rem;
-  color: $giggle-yellow2;
+  //color: $giggle-yellow2;
   cursor: pointer;
 }
 
@@ -500,6 +511,18 @@ ion-icon {
   &-email {
     color: $giggle-yellow2;
     text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+      color: $giggle-secondary;
+    }
+  }
+  &-address {
+    color: $giggle-yellow2;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    &:hover {
+      color: $giggle-secondary;
+    }
   }
 }
 
@@ -512,6 +535,7 @@ ion-icon {
   /* IN THE END */
   overflow: hidden;
   max-width: 1000px;
+  transition: opacity 0.6s ease;
 }
 
 .slide {
@@ -667,6 +691,12 @@ ion-icon {
     rgb(43, 41, 30)
   );
   height: 100vh;
+  transition: all 0.4s ease;
+  &-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease-out;
+  }
 }
 
 .test {
@@ -856,4 +886,113 @@ ion-icon {
     rgba(63, 63, 63, 0.913)
   );
   padding: 0.8rem 1rem 0.5rem 1rem;
+  border: 1px solid grey;
+}
+
+.slider-blur {
+  opacity: 0;
+}
+
+.title-hidden {
+  opacity: 0;
+  transform: translateY(-70px);
+}
+
+.facebook {
+  color: $giggle-yellow2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    color: #4267b2;
+  }
+}
+.instagram {
+  color: $giggle-yellow2;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    color: #e1306c;
+  }
+}
+
+//Shopping cart
+
+.shopping {
+  display: flex;
+  justify-content: space-around;
+  &-item {
+    margin: 20px;
+    font-size: 1.6rem;
+    padding: 5px;
+    border: 2px solid white;
+    &-clear {
+      margin: 20px;
+      font-size: 1.6rem;
+      padding: 5px;
+      border: 2px solid white;
+    }
+    &-checkout {
+      margin: 20px;
+      font-size: 1.6rem;
+      padding: 5px;
+      border: 2px solid white;
+    }
+  }
+}
+
+.cart {
+  position: fixed;
+  margin: auto;
+  top: 10%;
+  left: 10%;
+  border-radius: 7px;
+  z-index: 999;
+  //color: #333;
+  font-size: 1.5rem;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(95, 111, 60, 0.95),
+    rgba(43, 109, 89, 0.95)
+  );
+  width: 80%;
+  transition: all 0.5s ease;
+  &-hide {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  &-contents {
+    display: flex;
+    flex-direction: column;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0rem 4rem;
+    &-pic {
+      width: 4rem;
+      img {
+        width: 100%;
+      }
+    }
+    &-title {
+      width: 50%;
+    }
+  }
+  &-btn {
+    padding: 0.5rem;
+    background-color: #333;
+    color: red;
+    outline: none;
+  }
+  &-totals {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0rem 10.3rem;
+    div {
+      margin: 1rem 0;
+    }
+  }
 }
