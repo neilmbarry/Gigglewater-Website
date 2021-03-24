@@ -162,6 +162,20 @@ dotContainer.addEventListener("click", function (e) {
 //Shopping Cart
 //Shopping Cart
 
+const cartCheck = () => {
+  const quantity = Object.keys(state.cart).length;
+  const cartNotification = document.querySelector(".cart-notification");
+
+  if (!quantity) {
+    cartNotification.classList.remove("cart-notification-hide");
+    cartNotification.classList.add("cart-notification-hide");
+    return;
+  }
+
+  cartNotification.classList.remove("cart-notification-hide");
+  cartNotification.textContent = quantity >= 10 ? "9+" : quantity;
+};
+
 const deliveryPrices = {
   7: [
     "M7A",
@@ -216,19 +230,19 @@ const menuItemRef = {
   cocktails: {
     pine: {
       name: "Pine Of No Return",
-      price: 67.5,
+      price: 70,
       description: ["Tequila", "Lime", "Pineapple", "Bitters"],
       servings: "7+",
     },
     mango: {
       name: "The Mangolorian",
-      price: 70,
+      price: 67.5,
       description: ["Rum", "Lemon", "Mango", "Bitters"],
       servings: "7+",
     },
     popit: {
       name: "Pop It Like It's Hot",
-      price: 65,
+      price: 67.5,
       description: ["Vodka", "Lemon", "Vanilla", "Bitters"],
       servings: "7+",
     },
@@ -469,6 +483,7 @@ let state = {
     message: "",
   },
   price: {
+    cartTotal: 0,
     subtotal: 0,
     delivery: 0,
     tax: 0,
@@ -533,6 +548,7 @@ const clearState = () => {
       message: "",
     },
     price: {
+      cartTotal: 0,
       subtotal: 0,
       delivery: 0,
       tax: 0,
@@ -567,6 +583,7 @@ const removeCartItem = (index) => {
   createTotals();
   storeState();
   updateCartUI();
+  cartCheck();
 };
 
 const addCartItem = (id) => {
@@ -597,6 +614,7 @@ const addCartItem = (id) => {
     createTotals();
     storeState();
     updateCartUI();
+    cartCheck();
   }
 };
 
@@ -715,13 +733,16 @@ const updateCartUI = () => {
                   : ``
               }
               </div>
-              <div class="cart-item-quantity">
+
+              ${
+                1 > 2
+                  ? `<div class="cart-item-quantity">
                 <button class="cart-item-decrease"><ion-icon class='quantity-icon' name="remove-circle-outline"></ion-icon></button>
-                <div class="cart-item-quantity-number">${
-                  state.cart[elem].quantity
-                }</div>
+                <div class="cart-item-quantity-number">${state.cart[elem].quantity}</div>
                 <button class="cart-item-increase"><ion-icon class='quantity-icon' name="add-circle-outline"></ion-icon></button>
-              </div>
+              </div>`
+                  : null
+              }
 
               ${
                 Object.keys(menuItemRef.cocktails).includes(elem)
@@ -748,7 +769,7 @@ const updateCartUI = () => {
     })
     .join("");
   const totals = `
-      <div class="cart-totals-sub">Sub-Total: $${state.price.subtotal.toFixed(
+      <div class="cart-totals-sub">Cart-Total: $${state.price.cartTotal.toFixed(
         2
       )}</div>
           
@@ -901,6 +922,7 @@ const init2 = function () {
   createTotals();
   updateCartUI();
   updateContactUI();
+  cartCheck();
 };
 
 cartContents.addEventListener("click", (e) => {
@@ -1262,16 +1284,26 @@ const updateSummaryUI = () => {
             <div class="summary-item-type">Your Totals:</div>
             <div class="summary-item-info">
             <div class="summary-totals">
-            ${deliveryFee}
+            
             <div class="summary-totals-item">
-              <div class="summary-totals-type">Sub-Total:</div>
+              <div class="summary-totals-type">Cart Total:</div>
               
             
             
-                  <div class="summary-totals-amount">$${state.price.subtotal.toFixed(
+                  <div class="summary-totals-amount">$${state.price.cartTotal.toFixed(
                     2
                   )}</div>
                   </div>
+                  ${deliveryFee}
+            <div class="summary-totals-item">
+            <div class="summary-totals-type">Sub-Total:</div>
+            
+          
+          
+                <div class="summary-totals-amount">$${state.price.subtotal.toFixed(
+                  2
+                )}</div>
+                </div>
 
                       
             
@@ -1376,23 +1408,20 @@ const populateOrderForm = () => {
     .join("");
   console.log(formatCart);
   orderFormCart.value = `${formatCart}`;
-  orderFormPrice.value = `Subtotal: ${state.price.subtotal.toFixed(2)}
-                            \nDelivery: ${
-                              state.price.delivery
-                                ? state.price.delivery.toFixed(2)
-                                : "TBA"
-                            }
-                            \nTax: ${state.price.tax.toFixed(2)}
-                            \n Grand Total: ${state.price.grandTotal.toFixed(
-                              2
-                            )}`;
-  orderFormTip.value = state.price.tip.toFixed(2);
+  orderFormPrice.value = `Cart total: ${state.price.cartTotal.toFixed(2)}
+               \nDelivery: ${
+                 state.price.delivery ? state.price.delivery.toFixed(2) : "TBA"
+               }
+               Subtotal: ${state.price.subtotal.toFixed(2)}
+                \nTax: ${state.price.tax.toFixed(2)}
+               \nTip: ${state.price.tip ? state.price.tip.toFixed(2) : 0}
+               \n Grand Total: ${state.price.grandTotal.toFixed(2)}`;
+  // orderFormTip.value = state.price.tip.toFixed(2);
 };
 
 const calcTip = (percentage) => {
   state.price.tip =
-    (state.price.subtotal + state.price.tax + state.price.delivery) *
-    (percentage / 100);
+    (state.price.subtotal + state.price.tax) * (percentage / 100);
   createTotals();
 };
 
@@ -1466,4 +1495,65 @@ const successSend = document.querySelector(".success-send");
 if (successSend) {
   console.log("YAAAAY!");
   clearState();
+  cartCheck();
 }
+
+const isNumericInput = (event) => {
+  const key = event.keyCode;
+  return (
+    (key >= 48 && key <= 57) || // Allow number line
+    (key >= 96 && key <= 105) // Allow number pad
+  );
+};
+
+const isModifierKey = (event) => {
+  const key = event.keyCode;
+  return (
+    event.shiftKey === true ||
+    key === 35 ||
+    key === 36 || // Allow Shift, Home, End
+    key === 8 ||
+    key === 9 ||
+    key === 13 ||
+    key === 46 || // Allow Backspace, Tab, Enter, Delete
+    (key > 36 && key < 41) || // Allow left, up, right, down
+    // Allow Ctrl/Command + A,C,V,X,Z
+    ((event.ctrlKey === true || event.metaKey === true) &&
+      (key === 65 || key === 67 || key === 86 || key === 88 || key === 90))
+  );
+};
+
+const enforceFormat = (event) => {
+  // Input must be of a valid number format or a modifier key, and not longer than ten digits
+  if (!isNumericInput(event) && !isModifierKey(event)) {
+    event.preventDefault();
+  }
+};
+
+//------Phone Number Formater-----//
+
+const formatToPhone = (event) => {
+  if (isModifierKey(event)) {
+    return;
+  }
+
+  // I am lazy and don't like to type things more than once
+  const target = event.target;
+  const input = event.target.value.replace(/\D/g, "").substring(0, 10); // First ten digits of input only
+  const zip = input.substring(0, 3);
+  const middle = input.substring(3, 6);
+  const last = input.substring(6, 10);
+
+  if (input.length > 6) {
+    target.value = `(${zip}) ${middle} - ${last}`;
+  } else if (input.length > 3) {
+    target.value = `(${zip}) ${middle}`;
+  } else if (input.length > 0) {
+    target.value = `(${zip}`;
+  }
+};
+
+const inputElement = document.getElementById("contact-phone");
+
+inputElement.addEventListener("keydown", enforceFormat);
+inputElement.addEventListener("keyup", formatToPhone);

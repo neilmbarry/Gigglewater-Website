@@ -101,7 +101,7 @@
       <ion-icon name="close-outline" class="cart-close"></ion-icon>
       
       <h2 class="cart-title">Your Cart</h2>
-      <h4>If you are purchasing alcohol, one food item is also required</h4>
+      <h4>Food item required with all alcohol orders per government regulations</h4>
       <div class="cart-contents">
         <div class="cart-item" id="${i}">
           <div class="cart-item-pic">
@@ -186,7 +186,7 @@
                   class="contact-input"
                   type="text"
                   id="contact-pref-pickup"
-                  placeholder="Day / Time (12pm to 6pm)"
+                  placeholder="Day / Time (12pm to 6pm), order by 11am for same day!"
                 ></input>
               </div>
             </div>
@@ -252,7 +252,7 @@
                   class="contact-input"
                   type="text"
                   id="contact-pref-delivery"
-                  placeholder="Day / Time (12pm to 6pm)"
+                  placeholder="Mon - Sun"
                 ></input>
               </div>
               <div class="contact-item">
@@ -374,6 +374,11 @@
         </div>
       </div>
     </div>
+    <div class="welcome-message">
+      <strong>Welcome to our brand spanking new website!</strong><br/>
+      We are continually improving our site but if you run in to any issues feel free to contact us directly:</br>
+      <a href="mailto:cocktails@projectgigglewater.com" class="welcome-email"><strong>cocktails@projectgigglewater.com</strong></a>
+    </div>
     <nav class="nav">
       <div class="nav-logo-container">
         <a href="/" class="nav-btn">
@@ -407,7 +412,11 @@
       
       <a href="#" class="cart-icon"
           ><ion-icon name="cart-outline"></ion-icon
-        ></a>
+        >
+        <div class="cart-notification cart-notification-hide">
+        3
+      </div>
+      </a>
       <div class="burger">
           <div class="burger-container">
             <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>

@@ -137,13 +137,13 @@ body {
     position: fixed;
     background-image: linear-gradient(
       to bottom right,
-      rgba(40, 40, 40, 0.982),
-      rgba(28, 28, 28, 0.961)
+      rgb(40, 40, 40),
+      rgb(28, 28, 28)
     );
     padding-top: 5px;
     padding-bottom: 5px;
-    animation: moveInTop 0.4s ease-out 0.2s;
-    animation-fill-mode: backwards;
+
+    box-shadow: 0px 0px 4px $giggle-yellow2;
   }
   &-logo-container {
     width: 5rem;
@@ -518,14 +518,18 @@ body {
   width: 80%;
   &-messages {
     text-align: center;
-    padding: 10px;
+    padding: 15px 30px;
     border-radius: 5px;
     font-size: 2rem;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
     &-success {
-      background-color: rgba(0, 128, 0, 0.379);
+      background-color: rgba(0, 128, 0, 0.721);
     }
     &-error {
-      background-color: rgba(128, 45, 0, 0.379);
+      background-color: rgba(128, 45, 0, 0.714);
     }
     p {
     }
@@ -1101,6 +1105,27 @@ ion-icon {
 
   &-icon {
     color: $giggle-yellow2;
+    position: relative;
+  }
+  &-notification {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 30%);
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgb(140, 82, 20);
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-align: center;
+    padding-right: 3px;
+    &-hide {
+      display: none;
+    }
   }
 
   &-close {
@@ -1132,7 +1157,9 @@ ion-icon {
     flex-direction: column;
   }
   &-item {
-    display: flex;
+    // display: flex;
+    display: grid;
+    grid-template-columns: 0% 45% 28% 22% 5%;
     align-items: center;
     justify-content: space-between;
     //border: oldlace 1px solid;
@@ -1151,7 +1178,7 @@ ion-icon {
       }
     }
     &-title {
-      flex: 9;
+      flex: 7;
       display: flex;
       align-items: center;
     }
@@ -1199,6 +1226,7 @@ ion-icon {
     &-price {
       flex: 2;
       text-align: center;
+      padding: 1rem;
     }
   }
   &-btn {
@@ -1649,6 +1677,46 @@ select:-webkit-autofill:focus {
   display: none;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.welcome {
+  &-message {
+    position: absolute;
+    bottom: 5%;
+    width: 40%;
+    text-align: center;
+    background-image: linear-gradient(
+      to left,
+      rgb(50, 39, 29),
+      rgb(70, 61, 40)
+    );
+    z-index: 9;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    line-height: 3rem;
+    border-radius: 5px;
+    animation: fadeIn 0.5s ease 0.8s backwards;
+  }
+  &-email {
+    text-decoration: none;
+    color: $giggle-yellow;
+    transition: all 0.3s ease;
+    &:hover {
+      color: rgb(167, 89, 47);
+    }
+  }
+}
+
 .menu {
   &-container {
     display: flex;
@@ -1825,6 +1893,10 @@ select:-webkit-autofill:focus {
 }
 
 @media only screen and (max-width: 767px) {
+  .welcome-message {
+    width: 60%;
+  }
+
   html {
     font-size: 50%;
   }
@@ -2009,7 +2081,7 @@ select:-webkit-autofill:focus {
         font-family: inherit;
         transition: all ease 0.2s;
         margin-left: 0rem;
-        width: 80%;
+        //width: 80%;
         &:hover {
           cursor: pointer;
           // background-color: rgb(96, 124, 145);
@@ -2393,7 +2465,7 @@ select:-webkit-autofill:focus {
           width: 2rem;
         }
         div {
-          margin-right: 0px;
+          //margin-right: 0px;
         }
         &-food {
           font-size: 1.6rem;
@@ -2422,6 +2494,11 @@ select:-webkit-autofill:focus {
   }
 }
 @media only screen and (max-width: 480px) {
+  .welcome-message {
+    width: 90%;
+    padding: 1rem;
+  }
+
   html {
     font-size: 50%;
   }
@@ -2610,7 +2687,7 @@ select:-webkit-autofill:focus {
         font-family: inherit;
         transition: all ease 0.2s;
         margin-left: 0rem;
-        width: 80%;
+        //width: 80%;
         &:hover {
           cursor: pointer;
           // background-color: rgb(96, 124, 145);
@@ -3000,7 +3077,7 @@ select:-webkit-autofill:focus {
           width: 2rem;
         }
         div {
-          margin-right: 0px;
+          //margin-right: 0px;
         }
         &-food {
           font-size: 1.6rem;

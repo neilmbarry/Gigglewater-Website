@@ -26,20 +26,20 @@
     
 
     // Set the recipient email address. Update this to YOUR desired email address.
-    // $recipient = "cocktails@projectgigglewater.com";
-    $recipient = "neilbarry3@gmail.com";
+    $recipient = "cocktails@projectgigglewater.com";
+    // $recipient = "neilbarry3@gmail.com";
 
     // Set the email subject.
-    $subject = "New contact from $name for $type";
+    $subject = "Project Gigglewater $type order for $name";
 
     // Build the email content.
-    $email_content = "Name:\n $name\n";
+    $email_content = "Name:\n $name\n\n";
     $email_content .= "Email:\n $email\n\n";
     $email_content .= "Phone:\n $phone\n\n";
     $email_content .= "Address:\n $address\n\n";
     $email_content .= "Cart:\n $cart\n\n";
     $email_content .= "Price:\n $price\n\n";
-    $email_content .= "Tip:\n $tip\n\n";
+    // $email_content .= "Tip:\n $tip\n\n";
     $email_content .= "Type:\n $type\n\n";
     $email_content .= "Preference:\n $preference\n\n";
     $email_content .= "Recipient:\n $recipName\n\n";

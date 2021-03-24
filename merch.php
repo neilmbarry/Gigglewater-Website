@@ -26,7 +26,7 @@
       rel="stylesheet"
     />
 
-    <title>Project Gigglewater - Cocktails</title>
+    <title>Project Gigglewater - Merchandise</title>
 
     <link
       rel="apple-touch-icon"
@@ -101,7 +101,7 @@
       <ion-icon name="close-outline" class="cart-close"></ion-icon>
       
       <h2 class="cart-title">Your Cart</h2>
-      <h4>If you are purchasing alcohol, one food item is also required</h4>
+      <h4>Food item required with all alcohol orders per government regulations</h4>
       <div class="cart-contents">
         <div class="cart-item" id="${i}">
           <div class="cart-item-pic">
@@ -186,7 +186,7 @@
                   class="contact-input"
                   type="text"
                   id="contact-pref-pickup"
-                  placeholder="Day / Time (12pm to 6pm)"
+                  placeholder="Day / Time (12pm to 6pm), order by 11am for same day!"
                 ></input>
               </div>
             </div>
@@ -252,7 +252,7 @@
                   class="contact-input"
                   type="text"
                   id="contact-pref-delivery"
-                  placeholder="Day / Time (12pm to 6pm)"
+                  placeholder="Mon - Sun"
                 ></input>
               </div>
               <div class="contact-item">
@@ -409,7 +409,11 @@
         
         <a href="#" class="cart-icon"
             ><ion-icon name="cart-outline"></ion-icon
-          ></a>
+          >
+          <div class="cart-notification cart-notification-hide">
+        3
+      </div>
+        </a>
         <div class="burger">
             <div class="burger-container">
               <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>
@@ -747,7 +751,7 @@ SHORT
                     Add to cart!
                 </div>
             </div>
-            <div class="menu-item item-hide">
+            <div class="menu-item">
                 <div class="menu-item_pic">
                     <img src="/Resources/Merch/coupe.jpg" alt="cocktail-pic">
                 </div>
@@ -806,22 +810,22 @@ SHORT
     </main>
 
     <footer class="footer">
-        <a href="#" class="footer-logo">
-          <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
-        </a>
-        <div class="footer-hours">
-          <a href="#" class="footer-address"
-            >1369 Dundas Street West, Toronto M6J 1Y3</a
-          >
-        </div>
-        <div class="footer-contact">
-          <a href="#" class="footer-email">cocktails@projectgigglewater.com</a>
-        </div>
-        <div class="footer-socials">
-          <div><a href="https://www.facebook.com/ProjectGigglewater/" target="_blank"><ion-icon name="logo-facebook" class="facebook"></ion-icon></a></div>
-          <div ><a href="https://www.instagram.com/projectgigglewater/?hl=en" target="_blacnk"><ion-icon name="logo-instagram" class="instagram"></ion-icon></a></div>
-        </div>
-      </footer>
+      <a href="#" class="footer-logo">
+        <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
+      </a>
+      <div class="footer-hours">
+        <a href="#" class="footer-address"
+          >1369 Dundas Street West, Toronto M6J 1Y3</a
+        >
+      </div>
+      <div class="footer-contact">
+        <a href="mailto:cocktails@projectgigglewater.com" class="footer-email">cocktails@projectgigglewater.com</a>
+      </div>
+      <div class="footer-socials">
+        <div><a href="https://www.facebook.com/ProjectGigglewater/" target="_blank"><ion-icon name="logo-facebook" class="facebook"></ion-icon></a></div>
+        <div ><a href="https://www.instagram.com/projectgigglewater/?hl=en" target="_blacnk"><ion-icon name="logo-instagram" class="instagram"></ion-icon></a></div>
+      </div>
+    </footer>
       <form method="post" action="orderForm.php" class="order-form" >
         <input type="text" name='name' id="order-form-name">
         <input type="text" name='email' id="order-form-email">

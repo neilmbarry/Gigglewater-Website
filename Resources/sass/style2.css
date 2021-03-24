@@ -89,11 +89,10 @@ body {
   z-index: 2343; }
   .nav-sticky {
     position: fixed;
-    background-image: linear-gradient(to bottom right, rgba(40, 40, 40, 0.982), rgba(28, 28, 28, 0.961));
+    background-image: linear-gradient(to bottom right, #282828, #1c1c1c);
     padding-top: 5px;
     padding-bottom: 5px;
-    animation: moveInTop 0.4s ease-out 0.2s;
-    animation-fill-mode: backwards; }
+    box-shadow: 0px 0px 4px #fffcd5; }
   .nav-logo-container {
     width: 5rem; }
   .nav-items {
@@ -326,13 +325,17 @@ body {
   width: 80%; }
   .form-messages {
     text-align: center;
-    padding: 10px;
+    padding: 15px 30px;
     border-radius: 5px;
-    font-size: 2rem; }
+    font-size: 2rem;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%); }
     .form-messages-success {
-      background-color: rgba(0, 128, 0, 0.379); }
+      background-color: rgba(0, 128, 0, 0.721); }
     .form-messages-error {
-      background-color: rgba(128, 45, 0, 0.379); }
+      background-color: rgba(128, 45, 0, 0.714); }
   .form-box {
     position: absolute;
     right: 0;
@@ -770,7 +773,26 @@ ion-icon {
   background-image: linear-gradient(to bottom right, rgba(95, 111, 60, 0.98), rgba(43, 109, 89, 0.98));
   width: 80%; }
   .cart-icon {
-    color: #fffcd5; }
+    color: #fffcd5;
+    position: relative; }
+  .cart-notification {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 30%);
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #8c5214;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-align: center;
+    padding-right: 3px; }
+    .cart-notification-hide {
+      display: none; }
   .cart-close {
     position: absolute;
     top: 2%;
@@ -794,7 +816,8 @@ ion-icon {
     display: flex;
     flex-direction: column; }
   .cart-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0% 45% 28% 22% 5%;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.249);
@@ -808,7 +831,7 @@ ion-icon {
       .cart-item-pic img {
         width: 100%; }
     .cart-item-title {
-      flex: 9;
+      flex: 7;
       display: flex;
       align-items: center; }
     .cart-item-food {
@@ -846,7 +869,8 @@ ion-icon {
       margin: 20px; }
     .cart-item-price {
       flex: 2;
-      text-align: center; }
+      text-align: center;
+      padding: 1rem; }
   .cart-btn {
     padding: 0.8rem 1.2rem;
     background-color: #2a6d23;
@@ -1175,6 +1199,35 @@ select:-webkit-autofill:focus {
 .order-form {
   display: none; }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.welcome-message {
+  position: absolute;
+  bottom: 5%;
+  width: 40%;
+  text-align: center;
+  background-image: linear-gradient(to left, #32271d, #463d28);
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  line-height: 3rem;
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease 0.8s backwards; }
+
+.welcome-email {
+  text-decoration: none;
+  color: #faf6cb;
+  transition: all 0.3s ease; }
+  .welcome-email:hover {
+    color: #a7592f; }
+
 .menu-container {
   display: flex;
   justify-content: center;
@@ -1303,6 +1356,8 @@ select:-webkit-autofill:focus {
     background-attachment: scroll; } }
 
 @media only screen and (max-width: 767px) {
+  .welcome-message {
+    width: 60%; }
   html {
     font-size: 50%; }
   .burger {
@@ -1441,8 +1496,7 @@ select:-webkit-autofill:focus {
         border: none;
         font-family: inherit;
         transition: all ease 0.2s;
-        margin-left: 0rem;
-        width: 80%; }
+        margin-left: 0rem; }
         .cart-item-food:hover {
           cursor: pointer; }
       .cart-item-increase, .cart-item-decrease {
@@ -1733,8 +1787,6 @@ select:-webkit-autofill:focus {
         width: 25rem; }
       .summary-cart-item-quantity {
         width: 2rem; }
-      .summary-cart-item div {
-        margin-right: 0px; }
       .summary-cart-item-food {
         font-size: 1.6rem;
         padding-left: 20px; }
@@ -1750,6 +1802,9 @@ select:-webkit-autofill:focus {
     padding: 0; } }
 
 @media only screen and (max-width: 480px) {
+  .welcome-message {
+    width: 90%;
+    padding: 1rem; }
   html {
     font-size: 50%; }
   .menu-container {
@@ -1889,8 +1944,7 @@ select:-webkit-autofill:focus {
         border: none;
         font-family: inherit;
         transition: all ease 0.2s;
-        margin-left: 0rem;
-        width: 80%; }
+        margin-left: 0rem; }
         .cart-item-food:hover {
           cursor: pointer; }
       .cart-item-increase, .cart-item-decrease {
@@ -2184,8 +2238,6 @@ select:-webkit-autofill:focus {
         width: 20rem; }
       .summary-cart-item-quantity {
         width: 2rem; }
-      .summary-cart-item div {
-        margin-right: 0px; }
       .summary-cart-item-food {
         font-size: 1.6rem;
         padding-left: 20px; }

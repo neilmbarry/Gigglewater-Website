@@ -1,4 +1,17 @@
 //Shopping Cart
+const cartCheck = () => {
+  const quantity = state.cart2.length;
+  const cartNotification = document.querySelector(".cart-notification");
+
+  if (!quantity) {
+    cartNotification.classList.remove("cart-notification-hide");
+    cartNotification.classList.add("cart-notification-hide");
+    return;
+  }
+
+  cartNotification.classList.remove("cart-notification-hide");
+  cartNotification.textContent = quantity >= 10 ? "9+" : quantity;
+};
 
 const deliveryPrices = {
   7: [
@@ -54,19 +67,19 @@ const menuItemRef = {
   cocktails: {
     pine: {
       name: "Pine Of No Return",
-      price: 67.5,
+      price: 70,
       description: ["Tequila", "Lime", "Pineapple", "Bitters"],
       servings: "7+",
     },
     mango: {
       name: "The Mangolorian",
-      price: 70,
+      price: 67.5,
       description: ["Rum", "Lemon", "Mango", "Bitters"],
       servings: "7+",
     },
     popit: {
       name: "Pop It Like It's Hot",
-      price: 65,
+      price: 67.5,
       description: ["Vodka", "Lemon", "Vanilla", "Bitters"],
       servings: "7+",
     },
@@ -289,7 +302,7 @@ const menuItemRef = {
 // const cart = [];
 
 let state = {
-  cart: {},
+  cart2: [],
   contactDetails: {
     name: "",
     email: "",
@@ -307,6 +320,7 @@ let state = {
     message: "",
   },
   price: {
+    cartTotal: 0,
     subtotal: 0,
     delivery: 0,
     tax: 0,
@@ -353,7 +367,7 @@ const storeState = function () {
 const clearState = () => {
   localStorage.clear("state");
   state = {
-    cart: {},
+    cart2: [],
     contactDetails: {
       name: "",
       email: "",
@@ -371,6 +385,7 @@ const clearState = () => {
       message: "",
     },
     price: {
+      cartTotal: 0,
       subtotal: 0,
       delivery: 0,
       tax: 0,
@@ -393,107 +408,81 @@ const cartToggle = () => {
 };
 
 const removeCartItem = (index) => {
-  const updatedCart = {};
-  Object.keys(state.cart).forEach((elem) => {
-    if (Object.keys(state.cart).indexOf(elem) !== +index) {
-      updatedCart[elem] = { ...state.cart[elem] };
-    }
-  });
-  state.cart = updatedCart;
+  state.cart2.splice(index, 1);
 
   //state.cart[Object.keys(state.cart)[index]].quantity = 0;
   createTotals();
   storeState();
   updateCartUI();
+  cartCheck();
 };
 
 const addCartItem = (id) => {
-  if (state.cart[id]) {
-    const index = Object.keys(state.cart).indexOf(id);
-    quantityUp(index);
+  if (Object.keys(menuItemRef.cocktails).includes(id)) {
+    state.cart2.push({
+      name: id,
+      food: "chips",
+    });
   } else {
-    let updatedCart = {};
-    if (Object.keys(menuItemRef.cocktails).includes(id)) {
-      updatedCart = {
-        ...state.cart,
-        [id]: {
-          quantity: 1,
-          food: "none",
-        },
-      };
-    } else {
-      updatedCart = {
-        ...state.cart,
-        [id]: {
-          quantity: 1,
-        },
-      };
-    }
-
-    state.cart = updatedCart;
-
-    createTotals();
-    storeState();
-    updateCartUI();
+    state.cart2.push({
+      name: id,
+    });
   }
-};
-
-const quantityUp = (index) => {
-  const elem = Object.keys(state.cart)[index];
-
-  const updatedCart = {
-    ...state.cart,
-    [elem]: {
-      ...state.cart[elem],
-      //food: state.cart[elem].food,
-      quantity: state.cart[elem].quantity + 1,
-    },
-  };
-
-  state.cart = updatedCart;
   createTotals();
   storeState();
   updateCartUI();
+
+  cartCheck();
 };
 
-const quantityDown = (index) => {
-  const elem = Object.keys(state.cart)[index];
-  if (elem.quantity === 1) {
-    removeCartItem(index);
-  }
+// const quantityUp = (index) => {
+//   const elem = Object.keys(state.cart)[index];
 
-  const updatedCart = {
-    ...state.cart,
-    [elem]: {
-      quantity: state.cart[elem].quantity - 1,
-      food: state.cart[elem].food,
-    },
-  };
+//   const updatedCart = {
+//     ...state.cart,
+//     [elem]: {
+//       ...state.cart[elem],
+//       food: state.cart[elem].food.concat(["none"]),
+//       quantity: state.cart[elem].quantity + 1,
+//     },
+//   };
 
-  const updatedCart2 = {};
-  Object.keys(updatedCart).forEach((elem) => {
-    if (updatedCart[elem].quantity !== 0) {
-      updatedCart2[elem] = { ...updatedCart[elem] };
-    }
-  });
-  state.cart = updatedCart2;
+//   state.cart = updatedCart;
+//   createTotals();
+//   storeState();
+//   updateCartUI();
+// };
 
-  createTotals();
-  storeState();
-  updateCartUI();
-};
+// const quantityDown = (index) => {
+//   const elem = Object.keys(state.cart)[index];
+//   if (elem.quantity === 1) {
+//     removeCartItem(index);
+//   }
 
-const updateFood = (id, newValue) => {
-  const elem = Object.keys(state.cart)[id];
+//   const updatedCart = {
+//     ...state.cart,
+//     [elem]: {
+//       quantity: state.cart[elem].quantity - 1,
+//       food: state.cart[elem].food,
+//     },
+//   };
 
-  const updatedCart = {
-    ...state.cart,
-    [elem]: {
-      quantity: state.cart[elem].quantity,
-      food: newValue,
-    },
-  };
-  state.cart = updatedCart;
+//   const updatedCart2 = {};
+//   Object.keys(updatedCart).forEach((elem) => {
+//     if (updatedCart[elem].quantity !== 0) {
+//       updatedCart2[elem] = { ...updatedCart[elem] };
+//     }
+//   });
+//   state.cart = updatedCart2;
+
+//   createTotals();
+//   storeState();
+//   updateCartUI();
+// };
+
+const updateFood = (index, newValue, menuRef) => {
+  state.cart2[index].food = newValue;
+
   createTotals();
   storeState();
   updateCartUI();
@@ -523,70 +512,181 @@ const updateFood = (id, newValue) => {
 const updateCartUI = () => {
   // cartContents.innerHTML = "";
   // if (cart.shoppingItems.length === 0) return;
-  console.log(state.cart);
-  if (!state.cart) return;
-  const cart = Object.keys(state.cart)
-    .map((elem, i) => {
-      return state.cart[elem].quantity
-        ? `<div class="cart-item" id=${i}>
-              <div class="cart-item-pic">
-                
-              </div>
-              
-              <div class="cart-item-title"><div class="cart-item-title-text">${
-                Object.keys(menuItemRef.cocktails).includes(elem)
-                  ? menuItemRef.cocktails[elem].name
-                  : menuItemRef.merch[elem].name
-              }</div>
-              
-              ${
-                Object.keys(menuItemRef.cocktails).includes(elem)
-                  ? `<select class="cart-item-food">${Object.keys(
-                      menuItemRef.food
-                    ).map((el) => {
-                      return `<option value='${el}' ${
-                        el === state.cart[elem].food ? "selected" : null
-                      }>${menuItemRef.food[el].name} - $${
-                        menuItemRef.food[el].price
-                      }</option>`;
-                    })}</select>`
-                  : ``
-              }
-              </div>
-              <div class="cart-item-quantity">
-                <button class="cart-item-decrease"><ion-icon class='quantity-icon' name="remove-circle-outline"></ion-icon></button>
-                <div class="cart-item-quantity-number">${
-                  state.cart[elem].quantity
-                }</div>
-                <button class="cart-item-increase"><ion-icon class='quantity-icon' name="add-circle-outline"></ion-icon></button>
-              </div>
 
-              ${
-                Object.keys(menuItemRef.cocktails).includes(elem)
-                  ? `
-                <div class="cart-item-price">$${(
-                  menuItemRef.cocktails[elem].price * state.cart[elem].quantity
-                ).toFixed(2)}<br><div class='cart-item-food_price'>+$${(
-                      menuItemRef.food[state.cart[elem].food].price *
-                      state.cart[elem].quantity
-                    ).toFixed(2)}</div></div>
-                `
-                  : `
-              <div class="cart-item-price">$${(
-                menuItemRef.merch[elem].price * state.cart[elem].quantity
-              ).toFixed(2)}</div>
-              `
-              }      
-              
+  if (!state.cart2) return;
 
+  const cartHtml = state.cart2.map((item, i) => {
+    //console.log(item.name);
+    const isCocktail = Object.keys(menuItemRef.cocktails).includes(item.name);
+    //console.log(isCocktail);
+    const itemName = isCocktail
+      ? menuItemRef.cocktails[item.name].name
+      : menuItemRef.merch[item.name].name;
+    const foodOptions = isCocktail
+      ? `<select class="cart-item-food" id=''>
+       ${Object.keys(menuItemRef.food)
+         .map((el) => {
+           //console.log(el);
+           const answer = `<option value='${el}' ${
+             el === item.food ? "selected" : null
+           }>${menuItemRef.food[el].name} - $${
+             menuItemRef.food[el].price
+           }</option>`;
 
-              <button class="cart-btn">X</button>
-            </div>`
-        : null;
-    })
-    .join("");
+           return answer;
+         })
+         .join("")}</select>
+         `
+      : `<div class="cart-item-food"></div>`;
+
+    const itemPrice = isCocktail
+      ? `
+       <div class="cart-item-price">$${menuItemRef.cocktails[
+         item.name
+       ].price.toFixed(
+         2
+       )}<br><div class='cart-item-food_price'>+$${menuItemRef.food[
+          item.food
+        ].price.toFixed(2)}</div></div>
+       `
+      : `<div class="cart-item-price">$${menuItemRef.merch[
+          item.name
+        ].price.toFixed(2)}</div>`;
+
+    return `<div class="cart-item" id=${i}>
+             <div class="cart-item-pic"></div>
+             <div class="cart-item-title">
+               <div class="cart-item-title-text">
+                 ${itemName}
+               </div>
+            </div>
+      ${foodOptions}
+      ${itemPrice}
+      <button class="cart-btn">X</button>
+      </div>`;
+  });
+
+  // let indexCount = 0;
+
+  // let cart3 = ``;
+  // Object.keys(state.cart).map((elem) => {
+  //   let foodIndex = 0;
+  //   for (let i = 0; i < state.cart[elem].quantity; i++) {
+  //     cart3 += `<div class="cart-item" id=${indexCount}>
+  //     <div class="cart-item-pic">
+
+  //     </div>
+
+  //     <div class="cart-item-title"><div class="cart-item-title-text">${
+  //       Object.keys(menuItemRef.cocktails).includes(elem)
+  //         ? menuItemRef.cocktails[elem].name
+  //         : menuItemRef.merch[elem].name
+  //     }</div>
+
+  //     ${
+  //       Object.keys(menuItemRef.cocktails).includes(elem)
+  //         ? `<select class="cart-item-food" id='${elem}'>${Object.keys(
+  //             menuItemRef.food
+  //           ).map((el) => {
+  //             const answer = `<option value='${el}' ${
+  //               el === state.cart[elem].food[foodIndex] ? "selected" : null
+  //             }>${menuItemRef.food[el].name} - $${
+  //               menuItemRef.food[el].price
+  //             }</option>`;
+
+  //             return answer;
+  //           })}</select>`
+  //         : ``
+  //     }
+  //     </div>
+
+  //     ${
+  //       Object.keys(menuItemRef.cocktails).includes(elem)
+  //         ? `
+  //       <div class="cart-item-price">$${menuItemRef.cocktails[
+  //         elem
+  //       ].price.toFixed(
+  //         2
+  //       )}<br><div class='cart-item-food_price'>+$${menuItemRef.food[
+  //             state.cart[elem].food[foodIndex]
+  //           ].price.toFixed(2)}</div></div>
+  //       `
+  //         : `
+  //     <div class="cart-item-price">$${menuItemRef.merch[elem].price.toFixed(
+  //       2
+  //     )}</div>
+  //     `
+  //     }
+
+  //     <button class="cart-btn">X</button>
+  //   </div>`;
+  //     indexCount++;
+  //     foodIndex = foodIndex + 1;
+  //   }
+  // });
+
+  // const cart = Object.keys(state.cart)
+  //   .map((elem, i) => {
+  //     return state.cart[elem].quantity
+  //       ? `<div class="cart-item" id=${i}>
+  //             <div class="cart-item-pic">
+
+  //             </div>
+
+  //             <div class="cart-item-title"><div class="cart-item-title-text">${
+  //               Object.keys(menuItemRef.cocktails).includes(elem)
+  //                 ? menuItemRef.cocktails[elem].name
+  //                 : menuItemRef.merch[elem].name
+  //             }</div>
+
+  //             ${
+  //               Object.keys(menuItemRef.cocktails).includes(elem)
+  //                 ? `<select class="cart-item-food">${Object.keys(
+  //                     menuItemRef.food
+  //                   ).map((el) => {
+  //                     return `<option value='${el}' ${
+  //                       el === state.cart[elem].food ? "selected" : null
+  //                     }>${menuItemRef.food[el].name} - $${
+  //                       menuItemRef.food[el].price
+  //                     }</option>`;
+  //                   })}</select>`
+  //                 : ``
+  //             }
+  //             </div>
+  //             ${
+  //               1 > 2
+  //                 ? `<div class="cart-item-quantity">
+  //               <button class="cart-item-decrease"><ion-icon class='quantity-icon' name="remove-circle-outline"></ion-icon></button>
+  //               <div class="cart-item-quantity-number">${state.cart[elem].quantity}</div>
+  //               <button class="cart-item-increase"><ion-icon class='quantity-icon' name="add-circle-outline"></ion-icon></button>
+  //             </div>`
+  //                 : ""
+  //             }
+
+  //             ${
+  //               Object.keys(menuItemRef.cocktails).includes(elem)
+  //                 ? `
+  //               <div class="cart-item-price">$${(
+  //                 menuItemRef.cocktails[elem].price * state.cart[elem].quantity
+  //               ).toFixed(2)}<br><div class='cart-item-food_price'>+$${(
+  //                     menuItemRef.food[state.cart[elem].food].price *
+  //                     state.cart[elem].quantity
+  //                   ).toFixed(2)}</div></div>
+  //               `
+  //                 : `
+  //             <div class="cart-item-price">$${(
+  //               menuItemRef.merch[elem].price * state.cart[elem].quantity
+  //             ).toFixed(2)}</div>
+  //             `
+  //             }
+
+  //             <button class="cart-btn">X</button>
+  //           </div>`
+  //       : null;
+  //   })
+  //   .join("");
   const totals = `
-      <div class="cart-totals-sub">Sub-Total: $${state.price.subtotal.toFixed(
+      <div class="cart-totals-sub">Cart-Total: $${state.price.cartTotal.toFixed(
         2
       )}</div>
           
@@ -595,9 +695,10 @@ const updateCartUI = () => {
   //console.log(text);
 
   // cartContents.insertAdjacentHTML("afterbegin", html);
-  cartContents.innerHTML = cart;
+  // cartContents.innerHTML = cart3;
+  cartContents.innerHTML = cartHtml.join("");
   cartTotals.innerHTML = totals;
-  console.log(state.cart);
+
   //calculateSubTotal();
 };
 
@@ -658,25 +759,28 @@ const updateContactUI = () => {
 const createTotals = () => {
   // if (cart.shoppingItems.length === 0) return;
 
-  if (!state.cart) return;
-  const subTotal = Object.keys(state.cart).reduce((acc, item) => {
+  if (!state.cart2) return;
+  const cartTotal = state.cart2.reduce((acc, item) => {
+    const isCocktail = Object.keys(menuItemRef.cocktails).includes(item.name);
     //console.log(menuItemRef.food[state.cart[item].food].price);
-    if (Object.keys(menuItemRef.cocktails).includes(item)) {
+    if (isCocktail) {
       return (
-        (+menuItemRef.cocktails[item].price +
-          menuItemRef.food[state.cart[item].food].price) *
-          state.cart[item].quantity +
+        +menuItemRef.cocktails[item.name].price +
+        +menuItemRef.food[item.food].price +
         acc
       );
     } else {
-      return +menuItemRef.merch[item].price * state.cart[item].quantity + acc;
+      console.log(item);
+      return +menuItemRef.merch[item.name].price + acc;
     }
   }, 0);
   //console.log(subTotal);
-  const tax = (subTotal + state.price.delivery) * 0.13;
-  const grandTotal =
-    +subTotal + +tax + +state.price.delivery + +state.price.tip;
-  state.price.subtotal = +subTotal;
+  const subTotal = +cartTotal + +state.price.delivery;
+  const tax = subTotal * 0.13;
+  const grandTotal = +subTotal + +tax + +state.price.tip;
+
+  state.price.cartTotal = +cartTotal;
+  state.price.subtotal = subTotal;
   state.price.tax = +tax;
   state.price.grandTotal = +grandTotal;
 };
@@ -715,7 +819,7 @@ document.querySelectorAll(".menu-item_btn").forEach((el) => {
     setTimeout(() => {
       el.textContent = "Add to cart!";
     }, 1000);
-    console.log(el);
+    //console.log(el);
   });
 });
 
@@ -739,6 +843,7 @@ const init2 = function () {
   createTotals();
   updateCartUI();
   updateContactUI();
+  cartCheck();
 };
 
 cartContents.addEventListener("click", (e) => {
@@ -762,8 +867,10 @@ cartContents.addEventListener("change", (e) => {
   if (e.target.classList.contains("cart-item-food")) {
     const foodChangeID = e.target.closest(".cart-item").id;
     const foodType = e.target.value;
+    const menuRef = e.target.closest(".cart-item-food").id;
+    console.log(foodChangeID, foodType);
     //console.log(foodChangeID, foodType);
-    updateFood(foodChangeID, foodType);
+    updateFood(foodChangeID, foodType, menuRef);
   }
 });
 
@@ -912,21 +1019,37 @@ const updateSummaryUI = () => {
   postSearch(formPostcode);
 
   summaryInfo.innerHTML = "";
-  const cartItemsHTML = Object.keys(state.cart)
+  const cartItemsHTML = state.cart2
     .map((item) => {
+      const isCocktail = Object.keys(menuItemRef.cocktails).includes(item.name);
       return `<div class="summary-cart-item">
         <div class="summary-cart-item-title">${
-          Object.keys(menuItemRef.cocktails).includes(item)
-            ? menuItemRef.cocktails[item].name
-            : menuItemRef.merch[item].name
+          isCocktail
+            ? menuItemRef.cocktails[item.name].name
+            : menuItemRef.merch[item.name].name
         }</div>
-        <div class="summary-cart-item-quantity">(x${
-          state.cart[item].quantity
-        })</div></div>
+        
+
+        <div class="cart-item-price">
+          $${
+            isCocktail
+              ? (
+                  menuItemRef.cocktails[item.name].price +
+                  menuItemRef.food[item.food].price
+                ).toFixed(2)
+              : menuItemRef.merch[item.name].price.toFixed(2)
+          }
+        <br/>
+          
+        
+        </div>
+        
+
+        </div>
         ${
-          Object.keys(menuItemRef.cocktails).includes(item)
+          isCocktail
             ? `<div class="summary-cart-item-food">+ ${
-                menuItemRef.food[state.cart[item].food].name
+                menuItemRef.food[item.food].name
               }</div>`
             : ""
         }
@@ -1100,16 +1223,26 @@ const updateSummaryUI = () => {
             <div class="summary-item-type">Your Totals:</div>
             <div class="summary-item-info">
             <div class="summary-totals">
-            ${deliveryFee}
+            
             <div class="summary-totals-item">
-              <div class="summary-totals-type">Sub-Total:</div>
+              <div class="summary-totals-type">Cart Total:</div>
               
             
             
-                  <div class="summary-totals-amount">$${state.price.subtotal.toFixed(
+                  <div class="summary-totals-amount">$${state.price.cartTotal.toFixed(
                     2
                   )}</div>
                   </div>
+                  ${deliveryFee}
+            <div class="summary-totals-item">
+            <div class="summary-totals-type">Sub-Total:</div>
+            
+          
+          
+                <div class="summary-totals-amount">$${state.price.subtotal.toFixed(
+                  2
+                )}</div>
+                </div>
 
                       
             
@@ -1201,36 +1334,34 @@ const populateOrderForm = () => {
   orderFormPreference.value =
     state.preference.delivery + state.preference.pickup || "n/a";
   orderFormType.value = `${state.delivered ? "DELIVERY" : "PICK-UP"}`;
-  const formatCart = Object.keys(state.cart)
+  const formatCart = state.cart2
     .map((el) => {
+      const isCocktail = Object.keys(menuItemRef.cocktails).includes(el.name);
+
       return `${
-        menuItemRef.cocktails[el]
-          ? menuItemRef.cocktails[el].name
-          : menuItemRef.merch[el].name
-      } x${state.cart[el].quantity} with ${
-        state.cart[el].food
-      }                          `;
+        isCocktail
+          ? menuItemRef.cocktails[el.name].name +
+            ` with ${menuItemRef.food[el.food].name}`
+          : menuItemRef.merch[el.name].name
+      }                        `;
     })
     .join("");
   console.log(formatCart);
   orderFormCart.value = `${formatCart}`;
-  orderFormPrice.value = `Subtotal: ${state.price.subtotal.toFixed(2)}
-                            \nDelivery: ${
-                              state.price.delivery
-                                ? state.price.delivery.toFixed(2)
-                                : "TBA"
-                            }
-                            \nTax: ${state.price.tax.toFixed(2)}
-                            \n Grand Total: ${state.price.grandTotal.toFixed(
-                              2
-                            )}`;
-  orderFormTip.value = state.price.tip.toFixed(2);
+  orderFormPrice.value = `Cart total: ${state.price.cartTotal.toFixed(2)}
+               \nDelivery: ${
+                 state.price.delivery ? state.price.delivery.toFixed(2) : "TBA"
+               }
+               Subtotal: ${state.price.subtotal.toFixed(2)}
+                \nTax: ${state.price.tax.toFixed(2)}
+               \nTip: ${state.price.tip ? state.price.tip.toFixed(2) : 0}
+               \n Grand Total: ${state.price.grandTotal.toFixed(2)}`;
+  // orderFormTip.value = state.price.tip.toFixed(2);
 };
 
 const calcTip = (percentage) => {
   state.price.tip =
-    (state.price.subtotal + state.price.tax + state.price.delivery) *
-    (percentage / 100);
+    (state.price.subtotal + state.price.tax) * (percentage / 100);
   createTotals();
 };
 
@@ -1294,4 +1425,75 @@ const successSend = document.querySelector(".success-send");
 if (successSend) {
   console.log("YAAAAY!");
   clearState();
+  cartCheck();
 }
+
+const isNumericInput = (event) => {
+  const key = event.keyCode;
+  return (
+    (key >= 48 && key <= 57) || // Allow number line
+    (key >= 96 && key <= 105) // Allow number pad
+  );
+};
+
+const isModifierKey = (event) => {
+  const key = event.keyCode;
+  return (
+    event.shiftKey === true ||
+    key === 35 ||
+    key === 36 || // Allow Shift, Home, End
+    key === 8 ||
+    key === 9 ||
+    key === 13 ||
+    key === 46 || // Allow Backspace, Tab, Enter, Delete
+    (key > 36 && key < 41) || // Allow left, up, right, down
+    // Allow Ctrl/Command + A,C,V,X,Z
+    ((event.ctrlKey === true || event.metaKey === true) &&
+      (key === 65 || key === 67 || key === 86 || key === 88 || key === 90))
+  );
+};
+
+const enforceFormat = (event) => {
+  // Input must be of a valid number format or a modifier key, and not longer than ten digits
+  if (!isNumericInput(event) && !isModifierKey(event)) {
+    event.preventDefault();
+  }
+};
+
+//------Phone Number Formater-----//
+
+const formatToPhone = (event) => {
+  if (isModifierKey(event)) {
+    return;
+  }
+
+  // I am lazy and don't like to type things more than once
+  const target = event.target;
+  const input = event.target.value.replace(/\D/g, "").substring(0, 10); // First ten digits of input only
+  const zip = input.substring(0, 3);
+  const middle = input.substring(3, 6);
+  const last = input.substring(6, 10);
+
+  if (input.length > 6) {
+    target.value = `(${zip}) ${middle} - ${last}`;
+  } else if (input.length > 3) {
+    target.value = `(${zip}) ${middle}`;
+  } else if (input.length > 0) {
+    target.value = `(${zip}`;
+  }
+};
+
+const inputElement = document.getElementById("contact-phone");
+
+inputElement.addEventListener("keydown", enforceFormat);
+inputElement.addEventListener("keyup", formatToPhone);
+
+const carty = [
+  {
+    name: "mango",
+    food: "chips",
+    id: 1,
+  },
+  {},
+  {},
+];
