@@ -444,14 +444,12 @@
     
 
    
-
-   
     <main>
-      <!-- <h2 class="title-push">Month of cinco de mayo Feature!<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
+      <h2 class="title-push">Month of cinco de mayo Feature!<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
       <div class="feature">
         <div class="feature-box">
           <div class="feature-image">
-            
+            <!-- <img src="./Resources/new/Cinco.jpg" alt=""> -->
           </div>
           <div class="feature-info">
             <h2 class="feature-title">Margarita month</h2>
@@ -469,10 +467,10 @@
             <div class="menu-item_btn feature-btn" id="cinco">
               Add to cart!
             </div>
-            
+            <!-- <h4 class="feature-servings">First 15 orders will receive a complimentary<strong> Tequila tasting kit.</strong> <br><span class='italic'>*Includes four samples of our favourite tequila and mezcal, with an accompanying virtual class.</span> </h4> -->
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- <div class="feature mt-3">
         <div class="feature-box feature-box2">
           
@@ -504,81 +502,88 @@
       <h4 class="cocktail-description">
       Easy Drinking, Citrus Forward - Includes 375ml bottle base spirit - Makes 7+ Servings
       </h4>
-      <div id="snow"></div>
       <div class="menu-container">
           <div class="menu-item">
             <div class="menu-item_pic">
-                <img src="/Resources/Christmas2021/Jingle Juice.jpg" alt="cocktail-pic">
+                <img src="/Resources/May 2021/May2021-5.jpg" alt="cocktail-pic">
                 <!-- <img src="/Resources/new/golden.jpg" alt="cocktail-pic" class="hover-pic"> -->
 
             </div>
             <div class="menu-item_title">
-              Jingle Juice<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+              Five Eyed Samurai<br><img src="/Icons_wave.svg" alt="" class="wavy3">
             </div>
             <div class="menu-item_description">
-              1800 silver tequila, Passionfruit, agave syrup, lime, & cardamom
+              Ketel One Vodka, Five Spice, Lapsang Smoky Tea, Pineapple, Lemon, &amp; Soda
             </div>
             <div class="menu-item_price">
                 $70.00
             </div>
-            <div class="menu-item_btn" id="jingle">
+            <div class="menu-item_btn" id="samuri">
                 Add to cart!
             </div>
           </div>
           <div class="menu-item">
               <div class="menu-item_pic">
-                  <img src="/Resources/Christmas2021/Mrs Claus Cosmo.jpg" alt="cocktail-pic">
+                  <img src="/Resources/May 2021/May2021-3.jpg" alt="cocktail-pic">
                   <!-- <img src="/Resources/new/pine-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
 
               </div>
               <div class="menu-item_title">
-                Mrs. Claus Cosmo<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+                Hot Lips Margarita<br><img src="/Icons_wave.svg" alt="" class="wavy3">
               </div>
               <div class="menu-item_description">
-                Bombay Sapphire Gin, Cranberry, Pomegranate, Brown Sugar, Winter Spices, Lime, &amp; Orange Bitters
+                1800 Silver Tequila, Habanero, Watermelon, Lemon, Lime, &amp; Chili Salt
               </div>
               <div class="menu-item_price">
                   $70.00
               </div>
-              <div class="menu-item_btn" id="claus">
+              <div class="menu-item_btn" id="lips">
                   Add to cart!
               </div>
           </div>
           
-          <div class="menu-item">
+          <div class="menu-item item-hide">
               <div class="menu-item_pic">
-                  <img src="/Resources/Christmas2021/Soapberry Splash.jpg" alt="cocktail-pic">
+                  <img src="/Resources/May 2021/May2021-4.jpg" alt="cocktail-pic">
                   <!-- <img src="/Resources/new/deep-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
               </div>
               <div class="menu-item_title">
-                Soapberry Splash<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+                Losing my Rind<br><img src="/Icons_wave.svg" alt="" class="wavy3">
               </div>
               <div class="menu-item_description">
-                Tito's Vodka, Lychee, Strawberry, Lemon, Citrus Stock, & rosewater 
+                Bombay Sapphire Gin, Honeydew, Citrus Stock, Saline, &amp; Chrysanthemum Bitters
               </div>
               <div class="menu-item_price">
-                    $70.00  
+                    $67.50  
               </div>
-              <div class="menu-item_btn" id="soap">
+              <div class="menu-item_btn" id="rind">
                   Add to cart!
               </div>
-              
+              <div class="menu-item_price">
+            
+                $77.50 (+200ml bottle of cava!)
+            </div>
+              <!-- <div class="space"></div> -->
+              <div class="menu-item_btn" id="rindCava">
+                Add to cart!
+                <!-- Temporarily sold out! -->
+            </div>
           </div>
           <div class="menu-item">
               <div class="menu-item_pic">
-                  <img src="/Resources/Christmas2021/Gettin Blitzen.jpg" alt="cocktail-pic">
+                  <img src="/Resources/May 2021/May2021-1.jpg" alt="cocktail-pic">
                   <!-- <img src="/Resources/new/mango-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
               </div>
               <div class="menu-item_title">
-                gettin' blitzen<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+                Tangerine Dream<br><img src="/Icons_wave.svg" alt="" class="wavy3">
               </div>
               <div class="menu-item_description">
-                Maker's Mark Bourbon, Peach, Lemon, Apricot, & Cream of Earl Grey
+                Canadian Club 12yr Whisky, Tangerine, Lemon, &amp; Peppermint Tea
               </div>
               <div class="menu-item_price">
-                  $70.00
+                  $67.50
               </div>
-              <div class="menu-item_btn" id="blitzen">
+              <div class="menu-item_btn" id="dream">
                   Add to cart!
               </div>
           </div>
@@ -600,22 +605,22 @@
               </div>
               
           </div> -->
-          <div class="menu-item">
+          <div class="menu-item item-hide">
             <div class="menu-item_pic">
-                <img src="/Resources/Christmas2021/Naughty or Spice.jpg" alt="cocktail-pic">
+                <img src="/Resources/new/golden.jpg" alt="cocktail-pic">
                 <!-- <img src="/Resources/new/golden.jpg" alt="cocktail-pic" class="hover-pic"> -->
 
             </div>
             <div class="menu-item_title">
-                Naughty or spice<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+                Golden Smoke<br><img src="/Icons_wave.svg" alt="" class="wavy3">
             </div>
             <div class="menu-item_description">
-              Appleton's VX Rum, allspice, pear, lime, angostura & orange bitters
+              Dewar's Blended Scotch, Peach Apricot Tea, Rich Simple &amp; Lemon
             </div>
             <div class="menu-item_price">
-                $70.00
+                $67.50
             </div>
-            <div class="menu-item_btn" id="naughty">
+            <div class="menu-item_btn" id="golden">
                 Add to cart!
             </div>
           </div>
@@ -682,29 +687,20 @@
         </div>           -->
         <div class="menu-item">
           <div class="menu-item_pic">
-              <img src="/Resources/Christmas2021/Gingerbread Negroni.jpg" alt="cocktail-pic">
+              <img src="/Resources/May 2021/May2021-2.jpg" alt="cocktail-pic">
           </div>
           <div class="menu-item_title">
-            gingerbread negroni<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+            Take Me Somewhere Nice<br><img src="/Icons_wave.svg" alt="" class="wavy3">
           </div>
           <div class="menu-item_description">
-            gingerbread spiced citadelle gin, sweet vermouth, amaro montenegro, campari, & maple syrup 
+            Citadelle Gin, Aromatized Wine, Campari, &amp; Bergamot 
           </div>
-                    <div class="menu-item_price">
-                     16oz / $67.50  
-                </div>
-                <div class="menu-item_btn" id="gingNegroniSml">
-                    Add to cart!
-                </div>
-                <div class="menu-item_price">
-              
-                  32oz / $115.00 
-                </div>
-                <!-- <div class="space"></div> -->
-                <div class="menu-item_btn" id="gingNegroniLrg">
-                  Add to cart!
-                  <!-- Temporarily sold out! -->
-                </div>
+          <div class="menu-item_price">
+              $67.50
+          </div>
+          <div class="menu-item_btn" id="take">
+              Add to cart!
+          </div>
         </div>
           <div class="menu-item">
               <div class="menu-item_pic">
@@ -725,23 +721,18 @@
           </div>
           <div class="menu-item item-hide">
               <div class="menu-item_pic">
-                  <img src="/Resources/new/SummerSpirit.jpg" alt="cocktail-pic">
+                  <img src="/Resources/new/titan2.jpg" alt="cocktail-pic">
               </div>
               <div class="menu-item_title">
-                Summer Spirit Forward<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+                  I'M A TITAN<br><img src="/Icons_wave.svg" alt="" class="wavy3">
               </div>
               <div class="menu-item_description">
-                1x 8oz Pina Colada Old Fashioned<br>
-                1x 8oz Jamaican Manhattan<br>
-                1x 8oz Raspberry tequila negroni<br>
-                <strong>10+ servings</strong><br>
-                *SALE UNTIL SOLD OUT*
-
+                Herradura Reposado Tequila, Akvavit, Fino Sherry, Cynar, Smoked Agave, Grapefruit, &amp; Angostura Bitters
               </div>
               <div class="menu-item_price">
-                $90.00
+                  $70.00
               </div>
-              <div class="menu-item_btn" id="summer">
+              <div class="menu-item_btn" id="titan">
                   Add to cart!
                   
               </div>
@@ -818,7 +809,7 @@
               </div>
           </div>
       </div>
-      <!-- <div class="feature mt-3">
+      <div class="feature mt-3">
         <div class="feature-box feature-box2">
           <div class="feature-image feature-image2 small-screen">
             
@@ -849,12 +840,12 @@
             
           </div>
         </div>
-      </div> -->
+      </div>
       
       <h2>Food<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
       
       <div class="menu-container">
-          <div class="menu-item item-hide">
+          <div class="menu-item">
             <div class="menu-item_pic">
                 <img src="/Resources/May 2021/nuts.jpg" alt="cocktail-pic">
             </div>
@@ -869,23 +860,6 @@
                 $15.00
             </div>
             <div class="menu-item_btn" id="nuts">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item_pic">
-                <img src="/Resources/Christmas2021/popcorn.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Old Fashioned Kettle Corn<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-            Toronto Popcorn Company<br>80g
-            </div>
-            <div class="menu-item_price">
-                $5.00
-            </div>
-            <div class="menu-item_btn" id="popcorn">
                 Add to cart!
             </div>
           </div>
@@ -1074,7 +1048,7 @@
         
       </div>  
     </main>
-  
+
     <footer class="footer">
       <a href="#" class="footer-logo">
         <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />

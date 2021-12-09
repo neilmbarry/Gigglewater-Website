@@ -1,6 +1,169 @@
+const sectionAbout = document.querySelector(".section-about");
+const sectionAboutTitle = document.querySelector(".section-about-title");
+const sectionAboutCards = document.querySelector(".cards-container");
+const sectionReviews = document.querySelector(".section-reviews");
+const sectionReviewsTitle = document.querySelector(".section-reviews-title");
+const sectionReviewsCards = document.querySelector(".slider");
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  //console.log(entry);
+  if (!entry.isIntersecting) return;
+  sectionAboutTitle.classList.remove("title-hidden");
+  console.log(1);
+  setTimeout(() => {
+    sectionAboutCards.classList.remove("card-blur");
+  }, 1000);
+
+  //observer.unobserve(entry.target);
+};
+
+const revealSection2 = function (entries, observer) {
+  const [entry] = entries;
+  //console.log(entry);
+  if (!entry.isIntersecting) return;
+  sectionReviewsTitle.classList.remove("title-hidden");
+  console.log(2);
+  setTimeout(() => {
+    sectionReviewsCards.classList.remove("slider-blur");
+  }, 300);
+
+  //observer.unobserve(entry.target);
+};
+
+const header = document.querySelector(".header");
+const navigation = document.querySelector(".nav");
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0,
+  // rootMargin: "-300px",
+});
+
+const navigationObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      console.log(entry.intersectionRatio);
+      if (entry.intersectionRatio <= 0.2) {
+        navigation.classList.add("nav-sticky");
+      } else {
+        navigation.classList.remove("nav-sticky");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+navigationObserver.observe(header);
+
+const sectionObserver2 = new IntersectionObserver(revealSection2, {
+  root: null,
+  threshold: 0,
+  // rootMargin: "-300px",
+});
+
+sectionObserver.observe(sectionAbout);
+sectionObserver2.observe(sectionReviews);
+//---delete me---//section.classList.add('section--hidden');
+
+const slides = document.querySelectorAll(".slide");
+const btnLeft = document.querySelector(".slider__btn--left");
+const btnRight = document.querySelector(".slider__btn--right");
+const dotContainer = document.querySelector(".dots");
+
+let curSlide = 0;
+const maxSlide = slides.length;
+
+const slider = document.querySelector(".slider");
+// slider.style.transform = 'scale(0.3) translateX(-1200px)';
+// slider.style.overflow = 'visible';
+
+//--------------------------------------Functions
+
+const createDots = function () {
+  slides.forEach(function (_, i) {
+    dotContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+    <button class="dots__dot" data-slide="${i}"></button>
+    `
+    );
+  });
+};
+
+const activateDot = function (slide) {
+  document
+    .querySelectorAll(".dots__dot")
+    .forEach((dot) => dot.classList.remove("dots__dot--active"));
+  document
+    .querySelector(`.dots__dot[data-slide="${slide}"]`)
+    .classList.add("dots__dot--active");
+};
+
+const goToSlide = (slide) => {
+  slides.forEach((s, i) => {
+    s.style.transform = `translateX(${(i - slide) * 100}%)`;
+  });
+};
+
+//Next slide
+const nextSlide = function () {
+  if (curSlide === maxSlide - 1) curSlide = 0;
+  else curSlide++;
+  goToSlide(curSlide);
+  activateDot(curSlide);
+};
+
+const prevSlide = function () {
+  if (curSlide === 0) curSlide = maxSlide - 1;
+  else curSlide--;
+  goToSlide(curSlide);
+  activateDot(curSlide);
+};
+
+const init = function () {
+  goToSlide(0);
+  createDots();
+  activateDot(0);
+};
+
+init();
+
+//------------------------------------Event Handlers
+
+btnRight.addEventListener("click", nextSlide);
+btnLeft.addEventListener("click", prevSlide);
+
+document.addEventListener("keydown", function (e) {
+  //console.log(e);
+  if (e.key === "ArrowLeft") prevSlide();
+  if (e.key === "ArrowRight") nextSlide();
+});
+
+dotContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("dots__dot")) {
+    const { slide } = e.target.dataset;
+    curSlide = +slide;
+    goToSlide(curSlide);
+    activateDot(curSlide);
+  }
+});
+
 //Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+//Shopping Cart
+
 const cartCheck = () => {
-  const quantity = state.cart2.length;
+  const quantity = Object.keys(state.cart).length;
   const cartNotification = document.querySelector(".cart-notification");
 
   if (!quantity) {
@@ -13,70 +176,8 @@ const cartCheck = () => {
   cartNotification.textContent = quantity >= 10 ? "9+" : quantity;
 };
 
-const foodCheck = () => {
-  //Find out if food is necessary
-  let requiresFood = false;
-  let foodOnCocktail = false;
-  let foodSeparate = false;
-  state.cart2.forEach((el, i) => {
-    //console.log("item ", i, " checked");
-    if (el.food) {
-      requiresFood = true;
-      if (el.food !== "none") {
-        foodOnCocktail = true;
-      }
-    }
-    if (Object.keys(menuItemRef.food).includes(el.name)) {
-      foodSeparate = true;
-    }
-  });
-  // console.log("Requires food? ", requiresFood ? "YES" : "NO");
-  // console.log("Food on cocktail? ", foodOnCocktail ? "YES" : "NO");
-  // console.log("Food as item? ", foodSeparate ? "YES" : "NO");
-
-  const foodValid =
-    !requiresFood || ((foodOnCocktail || foodSeparate) && requiresFood);
-  if (foodValid) {
-    //console.log("FOOD IS VALID! 🙌");
-    return true;
-  } else {
-    //console.warn("FOOD IS INVALID! 🚨");
-    return false;
-  }
-  //Find out if food is added to cocktail
-
-  //Find out if food is added as separate item
-};
-
 const deliveryPrices = {
   7: [
-    // "M7A",
-    // "M5B",
-    // "M5G",
-    // "M6G",
-    // "M5H",
-    // "M6H",
-    // "M5J",
-    // "M6J",
-    // "M5K",
-    // "M6K",
-    // "M5L",
-    // "M6P",
-    // "M5R",
-    // "M6R",
-    // "M5S",
-    // "M5T",
-    // "M5V",
-    // "M5X",
-  ],
-  8: [
-    "M5C",
-    "M5E",
-    "M6N",
-    "M4T",
-    "M5W",
-    "M4V",
-    "M4Y",
     "M7A",
     "M5B",
     "M5G",
@@ -92,19 +193,32 @@ const deliveryPrices = {
     "M5R",
     "M6R",
     "M5S",
-
+    "M6S",
     "M5T",
-
+    "M4V",
     "M5V",
     "M5X",
   ],
-  9: ["M5A", "M4W", "M4X", "M6S"],
+  8: ["M5C", "M5E", "M6N", "M4T", "M5W", "M4Y"],
+  9: ["M5A", "M4W", "M4X"],
   10: ["M6C", "M6E", "M5P", "M4S", "M8X"],
   11: ["M6B"],
-  12: ["M6A", "M9A", "M4J", "M4K", "M4M", "M6M", "M4P", "M4R", "M8V", "M8Y"],
+  12: [
+    "M6A",
+    "M9A",
+    "M4J",
+    "M4K",
+    "M4M",
+    "M6M",
+    "M5N",
+    "M4P",
+    "M4R",
+    "M8V",
+    "M8Y",
+  ],
   13: ["M7Y"],
   14: ["M3K", "M8Z"],
-  15: ["M9B", "M6L", "M4N", "M9N", "M9P", "M5N"],
+  15: ["M9B", "M6L", "M4N", "M9N", "M9P"],
   16: ["M9C", "M4G", "M4L", "M9R"],
   18: ["M4E", "M3H", "M3M", "M5M", "M9M", "M8W", "M4C"],
 
@@ -114,78 +228,6 @@ const deliveryPrices = {
 
 const menuItemRef = {
   cocktails: {
-    jingle: {
-      name: "Jingle Juice",
-      price: 70,
-    },
-    claus: {
-      name: "Mrs. Claus Cosmo",
-      price: 70,
-    },
-    soap: {
-      name: "Soapberry Splash",
-      price: 70,
-    },
-    blitzen: {
-      name: "Gettin' Blitzen",
-      price: 70,
-    },
-    naughty: {
-      name: "Naughty or Spice",
-      price: 70,
-    },
-    gingNegroniSml: {
-      name: "Gingerbread Negroni (16oz)",
-      price: 67.5,
-    },
-    gingNegroniLrg: {
-      name: "Gingerbread Negroni (32oz)",
-      price: 115,
-    },
-    samuri: {
-      name: "Five Eyed Samurai",
-      price: 70,
-    },
-    lips: {
-      name: "Hot Lips Margarita",
-      price: 70,
-    },
-    rind: {
-      name: "Losing My Rind",
-      price: 67.5,
-    },
-    rindCava: {
-      name: "Losing My Rind (+ Cava!)",
-      price: 77.5,
-    },
-    dream: {
-      name: "Tangerine Dream",
-      price: 67.5,
-    },
-    take: {
-      name: "Take Me Somewhere Nice",
-      price: 67.5,
-    },
-    summer: {
-      name: "Summer Spirit Forward",
-      price: 90,
-    },
-    cinco: {
-      name: "Margarita Month",
-      price: 130,
-    },
-    perfect: {
-      name: "Peach Perfect (Can)",
-      price: 10,
-    },
-    perfect6: {
-      name: "Peach Perfect (6-Pack)",
-      price: 55,
-    },
-    golden: {
-      name: "Golden Smoke",
-      price: 67.5,
-    },
     pine: {
       name: "Pine Of No Return",
       price: 70,
@@ -301,50 +343,18 @@ const menuItemRef = {
       name: "No food selected",
       price: 0,
     },
-    // nuts: {
-    //   name: "Naughty Squirrel Mix",
-    //   price: 15,
-    // },
     chips: {
       name: "Ruffles Potato Chips",
       price: 0.75,
     },
-    popcorn: {
-      name: "Old Fashioned Kettle Corn",
-      price: 5,
+    olives: {
+      name: "Anchovy-Stuffed Olives",
+      price: 6,
     },
-    // olives: {
-    //   name: "Anchovy-Stuffed Olives",
-    //   price: 6,
-    // },
-    // choc: {
-    //   name: "Onyx Box Bon-bons",
-    //   price: 15,
-    // },
-    // soul_dom: {
-    //   name: "Soul Chocolate - Dominican",
-    //   price: 6.5,
-    // },
-    // soul_guat: {
-    //   name: "Soul Chocolate - Guatemala",
-    //   price: 6.5,
-    // },
-    // soul_matcha: {
-    //   name: "Soul Chocolate - Matcha",
-    //   price: 6.5,
-    // },
-    // soul_mad: {
-    //   name: "Soul Chocolate - Madagascar",
-    //   price: 6.5,
-    // },
-    // soul_papua: {
-    //   name: "Soul Chocolate - Papua New Guinea",
-    //   price: 6.5,
-    // },
-    // soul_ven: {
-    //   name: "Soul Chocolate - Venezuela",
-    //   price: 6.5,
-    // },
+    choc: {
+      name: "Onyx Box Bon-bons",
+      price: 15,
+    },
     // cheese: {
     //   name: "Great Cheese",
     //   price: 9,
@@ -433,62 +443,29 @@ const menuItemRef = {
       name: "Collins",
       price: 11,
     },
-    // olives: {
-    //   name: "Anchovy-Stuffed Olives",
-    //   price: 6,
-    // },
-    chips: {
+    olives: {
+      name: "Anchovy-Stuffed Olives",
+      price: 6,
+    },
+    potChips: {
       name: "Ruffle's Potato Chips",
       price: 0.75,
-    },
-    nuts: {
-      name: "Naughty Squirrel Mix",
-      price: 15,
     },
     falernum: {
       name: "House-made Falernum",
       price: 10,
     },
-    popcorn: {
-      name: "Old Fashioned Kettle Corn",
-      price: 5,
+    choc: {
+      name: "Onyx Box Bon-bons",
+      price: 15,
     },
-    // choc: {
-    //   name: "Onyx Box Bon-bons",
-    //   price: 15,
-    // },
-    // soul_dom: {
-    //   name: "Soul Chocolate - Dominican",
-    //   price: 6.5,
-    // },
-    // soul_guat: {
-    //   name: "Soul Chocolate - Guatemala",
-    //   price: 6.5,
-    // },
-    // soul_matcha: {
-    //   name: "Soul Chocolate - Matcha",
-    //   price: 6.5,
-    // },
-    // soul_mad: {
-    //   name: "Soul Chocolate - Madagascar",
-    //   price: 6.5,
-    // },
-    // soul_papua: {
-    //   name: "Soul Chocolate - Papua New Guinea",
-    //   price: 6.5,
-    // },
-    // soul_ven: {
-    //   name: "Soul Chocolate - Venezuela",
-    //   price: 6.5,
-    // },
   },
-  sizes: ["Small", "Medium", "Large"],
 };
 
 // const cart = [];
 
 let state = {
-  cart2: [],
+  cart: {},
   contactDetails: {
     name: "",
     email: "",
@@ -518,7 +495,6 @@ let state = {
   preference: {
     pickup: "",
     delivery: "",
-    cart: "",
   },
 };
 
@@ -554,7 +530,7 @@ const storeState = function () {
 const clearState = () => {
   localStorage.clear("state");
   state = {
-    cart2: [],
+    cart: {},
     contactDetails: {
       name: "",
       email: "",
@@ -584,7 +560,6 @@ const clearState = () => {
     preference: {
       pickup: "",
       delivery: "",
-      cart: "",
     },
   };
 };
@@ -596,7 +571,13 @@ const cartToggle = () => {
 };
 
 const removeCartItem = (index) => {
-  state.cart2.splice(index, 1);
+  const updatedCart = {};
+  Object.keys(state.cart).forEach((elem) => {
+    if (Object.keys(state.cart).indexOf(elem) !== +index) {
+      updatedCart[elem] = { ...state.cart[elem] };
+    }
+  });
+  state.cart = updatedCart;
 
   //state.cart[Object.keys(state.cart)[index]].quantity = 0;
   createTotals();
@@ -606,90 +587,93 @@ const removeCartItem = (index) => {
 };
 
 const addCartItem = (id) => {
-  if (Object.keys(menuItemRef.cocktails).includes(id)) {
-    state.cart2.push({
-      name: id,
-      food: `${foodCheck() && state.cart2.length > 0 ? "none" : "chips"}`,
-      festive: false,
-    });
-  } else if (id === "hoody" || id === "shirt") {
-    state.cart2.push({
-      name: id,
-      size: "Medium",
-    });
+  if (state.cart[id]) {
+    const index = Object.keys(state.cart).indexOf(id);
+    quantityUp(index);
   } else {
-    state.cart2.push({
-      name: id,
-    });
-  }
-  createTotals();
-  storeState();
-  updateCartUI();
+    let updatedCart = {};
+    if (Object.keys(menuItemRef.cocktails).includes(id)) {
+      updatedCart = {
+        ...state.cart,
+        [id]: {
+          quantity: 1,
+          food: "none",
+        },
+      };
+    } else {
+      updatedCart = {
+        ...state.cart,
+        [id]: {
+          quantity: 1,
+        },
+      };
+    }
 
-  cartCheck();
+    state.cart = updatedCart;
+
+    createTotals();
+    storeState();
+    updateCartUI();
+    cartCheck();
+  }
 };
 
-// const quantityUp = (index) => {
-//   const elem = Object.keys(state.cart)[index];
+const quantityUp = (index) => {
+  const elem = Object.keys(state.cart)[index];
 
-//   const updatedCart = {
-//     ...state.cart,
-//     [elem]: {
-//       ...state.cart[elem],
-//       food: state.cart[elem].food.concat(["none"]),
-//       quantity: state.cart[elem].quantity + 1,
-//     },
-//   };
+  const updatedCart = {
+    ...state.cart,
+    [elem]: {
+      ...state.cart[elem],
+      //food: state.cart[elem].food,
+      quantity: state.cart[elem].quantity + 1,
+    },
+  };
 
-//   state.cart = updatedCart;
-//   createTotals();
-//   storeState();
-//   updateCartUI();
-// };
-
-// const quantityDown = (index) => {
-//   const elem = Object.keys(state.cart)[index];
-//   if (elem.quantity === 1) {
-//     removeCartItem(index);
-//   }
-
-//   const updatedCart = {
-//     ...state.cart,
-//     [elem]: {
-//       quantity: state.cart[elem].quantity - 1,
-//       food: state.cart[elem].food,
-//     },
-//   };
-
-//   const updatedCart2 = {};
-//   Object.keys(updatedCart).forEach((elem) => {
-//     if (updatedCart[elem].quantity !== 0) {
-//       updatedCart2[elem] = { ...updatedCart[elem] };
-//     }
-//   });
-//   state.cart = updatedCart2;
-
-//   createTotals();
-//   storeState();
-//   updateCartUI();
-// };
-
-const festiveUpdate = (index, newValue) => {
-  state.cart2[index].festive = newValue;
+  state.cart = updatedCart;
   createTotals();
   storeState();
   updateCartUI();
 };
 
-const updateFood = (index, newValue, menuRef) => {
-  if (
-    state.cart2[index].name === "hoody" ||
-    state.cart2[index].name === "shirt"
-  ) {
-    state.cart2[index].size = newValue;
-  } else {
-    state.cart2[index].food = newValue;
+const quantityDown = (index) => {
+  const elem = Object.keys(state.cart)[index];
+  if (elem.quantity === 1) {
+    removeCartItem(index);
   }
+
+  const updatedCart = {
+    ...state.cart,
+    [elem]: {
+      quantity: state.cart[elem].quantity - 1,
+      food: state.cart[elem].food,
+    },
+  };
+
+  const updatedCart2 = {};
+  Object.keys(updatedCart).forEach((elem) => {
+    if (updatedCart[elem].quantity !== 0) {
+      updatedCart2[elem] = { ...updatedCart[elem] };
+    }
+  });
+  state.cart = updatedCart2;
+
+  createTotals();
+  storeState();
+  updateCartUI();
+};
+
+const updateFood = (id, newValue) => {
+  const elem = Object.keys(state.cart)[id];
+
+  const updatedCart = {
+    ...state.cart,
+    [elem]: {
+      quantity: state.cart[elem].quantity,
+      food: newValue,
+    },
+  };
+  state.cart = updatedCart;
   createTotals();
   storeState();
   updateCartUI();
@@ -717,99 +701,73 @@ const updateFood = (index, newValue, menuRef) => {
 // };
 
 const updateCartUI = () => {
-  if (!state.cart2.length) {
-    const addItemsBtn = `
-    <a class="link-color" href="/cocktails"><div class="cart-box2">Add some stuff! →</div></a>
-  `;
-    //console.log("empty");
-    cartTotals.innerHTML = addItemsBtn;
-    document.querySelector(".cart-text").textContent =
-      "There's nothing in your cart!";
-    document.querySelector(".cart-box").classList.remove("item-hide");
-    document.querySelector(".cart-box").classList.add("item-hide");
-    document.querySelector(".cart-textbox").style.display = "none";
+  // cartContents.innerHTML = "";
+  // if (cart.shoppingItems.length === 0) return;
+  console.log(state.cart);
+  if (!state.cart) return;
+  const cart = Object.keys(state.cart)
+    .map((elem, i) => {
+      return state.cart[elem].quantity
+        ? `<div class="cart-item" id=${i}>
+              <div class="cart-item-pic">
+                
+              </div>
+              
+              <div class="cart-item-title"><div class="cart-item-title-text">${
+                Object.keys(menuItemRef.cocktails).includes(elem)
+                  ? menuItemRef.cocktails[elem].name
+                  : menuItemRef.merch[elem].name
+              }</div>
+              
+              ${
+                Object.keys(menuItemRef.cocktails).includes(elem)
+                  ? `<select class="cart-item-food">${Object.keys(
+                      menuItemRef.food
+                    ).map((el) => {
+                      return `<option value='${el}' ${
+                        el === state.cart[elem].food ? "selected" : null
+                      }>${menuItemRef.food[el].name} - $${
+                        menuItemRef.food[el].price
+                      }</option>`;
+                    })}</select>`
+                  : ``
+              }
+              </div>
 
-    // document.querySelector(".cart-box").textContent = state.cart2.length
-    //   ? "Next →"
-    //   : "";
+              ${
+                1 > 2
+                  ? `<div class="cart-item-quantity">
+                <button class="cart-item-decrease"><ion-icon class='quantity-icon' name="remove-circle-outline"></ion-icon></button>
+                <div class="cart-item-quantity-number">${state.cart[elem].quantity}</div>
+                <button class="cart-item-increase"><ion-icon class='quantity-icon' name="add-circle-outline"></ion-icon></button>
+              </div>`
+                  : null
+              }
 
-    //return;
-  }
-  //console.log("full");
-  const cartHtml = state.cart2.map((item, i) => {
-    //console.log(item.name);
-    const isCocktail = Object.keys(menuItemRef.cocktails).includes(item.name);
+              ${
+                Object.keys(menuItemRef.cocktails).includes(elem)
+                  ? `
+                <div class="cart-item-price">$${(
+                  menuItemRef.cocktails[elem].price * state.cart[elem].quantity
+                ).toFixed(2)}<br><div class='cart-item-food_price'>+$${(
+                      menuItemRef.food[state.cart[elem].food].price *
+                      state.cart[elem].quantity
+                    ).toFixed(2)}</div></div>
+                `
+                  : `
+              <div class="cart-item-price">$${(
+                menuItemRef.merch[elem].price * state.cart[elem].quantity
+              ).toFixed(2)}</div>
+              `
+              }      
+              
 
-    //console.log(isCocktail);
-    const itemName = isCocktail
-      ? menuItemRef.cocktails[item.name].name
-      : menuItemRef.merch[item.name].name;
-    let foodOptions = isCocktail
-      ? `<select class="cart-item-food" id=''>
-       ${Object.keys(menuItemRef.food)
-         .map((el) => {
-           //console.log(el);
-           const answer = `<option value='${el}' ${
-             el === item.food ? "selected" : null
-           }>${menuItemRef.food[el].name} - $${menuItemRef.food[
-             el
-           ].price.toFixed(2)}</option>`;
 
-           return answer;
-         })
-         .join("")}</select>
-         `
-      : `<div class="cart-item-food"></div>`;
-    if (
-      itemName === "Gigglewater T-Shirt" ||
-      itemName === "Gigglewater Hoody"
-    ) {
-      foodOptions = `<select class="cart-item-food" id=''>
-      ${menuItemRef.sizes
-        .map((el) => {
-          //console.log(el);
-          const answer = `<option value='${el}' ${
-            el === item.size ? "selected" : null
-          }>${el}</option>`;
-
-          return answer;
-        })
-        .join("")}</select>
-        `;
-    }
-    const festivePrice = item.festive ? 2.5 : 0;
-    const itemPrice = isCocktail
-      ? `
-       <div class="cart-item-price">$${menuItemRef.cocktails[
-         item.name
-       ].price.toFixed(2)}<br><div class='cart-item-food_price'>+$${(
-          menuItemRef.food[item.food].price + festivePrice
-        ).toFixed(2)}</div></div>
-       `
-      : `<div class="cart-item-price">$${menuItemRef.merch[
-          item.name
-        ].price.toFixed(2)}</div>`;
-
-    return `<div class="cart-item" id=${i}>
-             <div class="cart-item-pic"></div>
-             <div class="cart-item-title">
-               <div class="cart-item-title-text">
-                 ${itemName}
-               </div>
-            </div>
-            ${
-              isCocktail
-                ? `<div class="stupid"><input type="checkbox" ${
-                    item.festive ? "checked" : ""
-                  } class="stupid-checkbox"><div>Festive Crinkle Filler ($2.50)</div></div>`
-                : ""
-            }
-      ${foodOptions}
-      ${itemPrice}
-      <button class="cart-btn">X</button>
-      </div>`;
-  });
-
+              <button class="cart-btn">X</button>
+            </div>`
+        : null;
+    })
+    .join("");
   const totals = `
       <div class="cart-totals-sub">Cart-Total: $${state.price.cartTotal.toFixed(
         2
@@ -820,32 +778,10 @@ const updateCartUI = () => {
   //console.log(text);
 
   // cartContents.insertAdjacentHTML("afterbegin", html);
-  // cartContents.innerHTML = cart3;
-  cartContents.innerHTML = cartHtml.join("");
-  if (state.cart2.length) {
-    document.querySelector(".cart-textbox").style.display = "flex";
-    cartTotals.innerHTML = totals;
-    document.querySelector(".cart-text").textContent =
-      "Food item required with all alcohol orders per government regulations";
-    document.querySelector(".cart-box").classList.remove("item-hide");
-    if (!foodCheck()) {
-      document.querySelector(".cart-box").textContent =
-        "Please add food item ↑";
-      document.querySelector(".block-box").style.display = "block";
-    } else {
-      document.querySelector(".cart-box").textContent = "Next →";
-      document.querySelector(".block-box").style.display = "none";
-    }
-  }
-  if (!state.cart2.length)
-    document.querySelector(".block-box").style.display = "none";
-
-  // document.querySelector(".cart-box").textContent = state.cart2.length
-  //   ? "Next →"
-  //   : "";
-
+  cartContents.innerHTML = cart;
+  cartTotals.innerHTML = totals;
+  console.log(state.cart);
   //calculateSubTotal();
-  foodCheck();
 };
 
 const optionSwitch = () => {
@@ -905,30 +841,25 @@ const updateContactUI = () => {
 const createTotals = () => {
   // if (cart.shoppingItems.length === 0) return;
 
-  if (!state.cart2) return;
-  const cartTotal = state.cart2.reduce((acc, item) => {
-    const isCocktail = Object.keys(menuItemRef.cocktails).includes(item.name);
+  if (!state.cart) return;
+  const subTotal = Object.keys(state.cart).reduce((acc, item) => {
     //console.log(menuItemRef.food[state.cart[item].food].price);
-    if (isCocktail) {
-      const festivePrice = item.festive ? 2.5 : 0;
+    if (Object.keys(menuItemRef.cocktails).includes(item)) {
       return (
-        +menuItemRef.cocktails[item.name].price +
-        +menuItemRef.food[item.food].price +
-        +festivePrice +
+        (+menuItemRef.cocktails[item].price +
+          menuItemRef.food[state.cart[item].food].price) *
+          state.cart[item].quantity +
         acc
       );
     } else {
-      //console.log(item);
-      return +menuItemRef.merch[item.name].price + acc;
+      return +menuItemRef.merch[item].price * state.cart[item].quantity + acc;
     }
   }, 0);
-  //console.log(subTotal);
-  const subTotal = +cartTotal + +state.price.delivery;
-  const tax = subTotal * 0.13;
-  const grandTotal = +subTotal + +tax + +state.price.tip;
-
-  state.price.cartTotal = +cartTotal;
-  state.price.subtotal = subTotal;
+  console.log(subTotal);
+  const tax = (subTotal + state.price.delivery) * 0.13;
+  const grandTotal =
+    +subTotal + +tax + +state.price.delivery + +state.price.tip;
+  state.price.subtotal = +subTotal;
   state.price.tax = +tax;
   state.price.grandTotal = +grandTotal;
 };
@@ -967,7 +898,7 @@ document.querySelectorAll(".menu-item_btn").forEach((el) => {
     setTimeout(() => {
       el.textContent = "Add to cart!";
     }, 1000);
-    //console.log(el);
+    console.log(el);
   });
 });
 
@@ -1020,7 +951,6 @@ const init2 = function () {
       preference: {
         pickup: "",
         delivery: "",
-        cart: "",
       },
     };
   }
@@ -1050,19 +980,9 @@ cartContents.addEventListener("click", (e) => {
 cartContents.addEventListener("change", (e) => {
   if (e.target.classList.contains("cart-item-food")) {
     const foodChangeID = e.target.closest(".cart-item").id;
-    //console.log(foodChangeID);
     const foodType = e.target.value;
-    const menuRef = e.target.closest(".cart-item-food").id;
     //console.log(foodChangeID, foodType);
-    //console.log(foodChangeID, foodType);
-    updateFood(foodChangeID, foodType, menuRef);
-  }
-  if (e.target.classList.contains("stupid-checkbox")) {
-    const festiveChangeID = e.target.closest(".cart-item").id;
-    const festiveType = e.target.checked;
-    console.log(festiveChangeID, festiveType);
-    festiveUpdate(festiveChangeID, festiveType);
-    updateCartUI();
+    updateFood(foodChangeID, foodType);
   }
 });
 
@@ -1091,9 +1011,6 @@ document.querySelector(".summary-contents").addEventListener("click", (e) => {
   if (e.target.classList.contains("summary-box")) {
     summaryToggle();
     populateOrderForm();
-    if (state.contactDetails.email.endsWith(".ru")) {
-      return;
-    }
     orderForm.submit();
     //cartToggle();
   }
@@ -1101,7 +1018,7 @@ document.querySelector(".summary-contents").addEventListener("click", (e) => {
     state.price.tipOption
       ? (state.price.tipOption = 0)
       : (state.price.tipOption = 1);
-    state.price.tipOption ? calcTip(10) : calcTip(0);
+    state.price.tipOption ? calcTip(15) : calcTip(0);
     updateSummaryUI();
     e.target.classList.toggle("summary-tip-option_active");
   }
@@ -1109,7 +1026,7 @@ document.querySelector(".summary-contents").addEventListener("click", (e) => {
     state.price.tipOption
       ? (state.price.tipOption = 0)
       : (state.price.tipOption = 2);
-    state.price.tipOption ? calcTip(15) : calcTip(0);
+    state.price.tipOption ? calcTip(20) : calcTip(0);
     updateSummaryUI();
     e.target.classList.toggle("summary-tip-option_active");
   }
@@ -1117,7 +1034,7 @@ document.querySelector(".summary-contents").addEventListener("click", (e) => {
     state.price.tipOption
       ? (state.price.tipOption = 0)
       : (state.price.tipOption = 3);
-    state.price.tipOption ? calcTip(20) : calcTip(0);
+    state.price.tipOption ? calcTip(25) : calcTip(0);
 
     updateSummaryUI();
   }
@@ -1132,8 +1049,6 @@ nextBtn.addEventListener("click", () => {
   contactToggle();
   cartToggle();
   storeState();
-  const cartPref = document.querySelector(".cart-textarea").value;
-  state.preference.cart = cartPref;
 });
 
 summaryBtn.addEventListener("click", () => {
@@ -1159,7 +1074,7 @@ postBtn.addEventListener("click", (e) => {
             `
     : `
       <div class="contact-item postage-price">
-      <label class='contact-label' for="price"></label><p>We couldn't calculate your postage, please inquire!</p>
+      <label class='contact-label' for="price"></label><p>We couldn't locate your address, please inquire!</p>
       </div>`;
   document
     .querySelector(".postage-container")
@@ -1185,9 +1100,8 @@ const updateContactState = () => {
   const formCity = document.querySelector("#contact-city").value;
   const formPhone = document.querySelector("#contact-phone").value;
   const formPostcode = document.querySelector("#contact-postcode").value;
-  const formPrefDelivery = document.querySelector(
-    "#contact-pref-delivery"
-  ).value;
+  const formPrefDelivery = document.querySelector("#contact-pref-delivery")
+    .value;
   const formPrefPickup = document.querySelector("#contact-pref-pickup").value;
   const formRecipName = document.querySelector("#recip-name").value;
   const formRecipPhone = document.querySelector("#recip-phone").value;
@@ -1217,53 +1131,24 @@ const updateSummaryUI = () => {
   postSearch(formPostcode);
 
   summaryInfo.innerHTML = "";
-  const cartItemsHTML = state.cart2
+  const cartItemsHTML = Object.keys(state.cart)
     .map((item) => {
-      let size = "";
-      if (item.size) {
-        size = `<div class="summary-cart-item-food">+ ${item.size}</div>`;
-      }
-      const isCocktail = Object.keys(menuItemRef.cocktails).includes(item.name);
-      const festivePrice = item.festive ? 2.5 : 0;
       return `<div class="summary-cart-item">
         <div class="summary-cart-item-title">${
-          isCocktail
-            ? menuItemRef.cocktails[item.name].name
-            : menuItemRef.merch[item.name].name
+          Object.keys(menuItemRef.cocktails).includes(item)
+            ? menuItemRef.cocktails[item].name
+            : menuItemRef.merch[item].name
         }</div>
-        
-
-        <div class="cart-item-price">
-          $${
-            isCocktail
-              ? (
-                  menuItemRef.cocktails[item.name].price +
-                  menuItemRef.food[item.food].price +
-                  +festivePrice
-                ).toFixed(2)
-              : menuItemRef.merch[item.name].price.toFixed(2)
-          }
-        <br/>
-          
-        
-        </div>
-        
-
-        </div>
+        <div class="summary-cart-item-quantity">(x${
+          state.cart[item].quantity
+        })</div></div>
         ${
-          isCocktail
+          Object.keys(menuItemRef.cocktails).includes(item)
             ? `<div class="summary-cart-item-food">+ ${
-                menuItemRef.food[item.food].name
+                menuItemRef.food[state.cart[item].food].name
               }</div>`
             : ""
         }
-        ${
-          item.festive
-            ? `<div class="summary-cart-item-food">+ Festive Crinkle Filler</div>`
-            : ""
-        }
-
-        ${size}
         
       `;
     })
@@ -1408,7 +1293,6 @@ const updateSummaryUI = () => {
                   ? "DELIVERY " + state.preference.delivery
                   : "PICK-UP " + state.preference.pickup
               }
-              ${state.preference.cart ? "<br>" + state.preference.cart : ""}
             </div>
           </div>
           <div class="summary-item">
@@ -1476,7 +1360,7 @@ const updateSummaryUI = () => {
           </div>
           <div class="summary-box">Submit</div>
           <div class="submit-text">
-          All prices quoted are estimates. Once submitted, we will respond to confirm your order and specify payment details! 
+          All prices quoted are estimates. Once submitted, we will respond to confirm your order and specify payment details!
         </div>
         `;
   summaryInfo.insertAdjacentHTML("afterbegin", html);
@@ -1544,22 +1428,17 @@ const populateOrderForm = () => {
   orderFormMessage.value = state.contactDetails.message || "n/a";
   orderFormAddress.value = `${state.contactDetails.address.address1} - ${state.contactDetails.address.address2} - ${state.contactDetails.address.city} - ${state.contactDetails.address.postcode}`;
   orderFormPreference.value =
-    state.preference.delivery +
-      state.preference.pickup +
-      state.preference.cart || "n/a";
+    state.preference.delivery + state.preference.pickup || "n/a";
   orderFormType.value = `${state.delivered ? "DELIVERY" : "PICK-UP"}`;
-  const formatCart = state.cart2
+  const formatCart = Object.keys(state.cart)
     .map((el) => {
-      const isCocktail = Object.keys(menuItemRef.cocktails).includes(el.name);
-
       return `${
-        isCocktail
-          ? menuItemRef.cocktails[el.name].name +
-            ` with ${menuItemRef.food[el.food].name}` +
-            `${el.festive ? " WITH FESTIVE PAPER!" : ""}`
-          : menuItemRef.merch[el.name].name +
-            `${el.size ? " size " + el.size : ""}`
-      }                        `;
+        menuItemRef.cocktails[el]
+          ? menuItemRef.cocktails[el].name
+          : menuItemRef.merch[el].name
+      } x${state.cart[el].quantity} with ${
+        state.cart[el].food
+      }                          `;
     })
     .join("");
   console.log(formatCart);
@@ -1629,6 +1508,16 @@ const burgerIcon = document.querySelector(".burger-container");
 const menuItems = document.querySelector(".nav-items");
 const burgerOpen = document.querySelector(".burger-open");
 const burgerClose = document.querySelector(".burger-close");
+
+const navItems = document.querySelectorAll(".nav-item");
+
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    menuItems.classList.toggle("nav-items_hide");
+    burgerOpen.classList.toggle("burger-hide");
+    burgerClose.classList.toggle("burger-hide");
+  });
+});
 
 burgerIcon.addEventListener("click", () => {
   menuItems.classList.toggle("nav-items_hide");
@@ -1700,160 +1589,6 @@ const formatToPhone = (event) => {
 };
 
 const inputElement = document.getElementById("contact-phone");
-const inputRecipElement = document.getElementById("recip-phone");
 
 inputElement.addEventListener("keydown", enforceFormat);
 inputElement.addEventListener("keyup", formatToPhone);
-inputRecipElement.addEventListener("keydown", enforceFormat);
-inputRecipElement.addEventListener("keyup", formatToPhone);
-
-const validityCheckPickUp = () => {
-  const nameValid = document.querySelector("#contact-name").value.length > 0;
-
-  const emailValid = document.querySelector("#contact-email").value.length > 0;
-
-  const phoneValid =
-    document.querySelector("#contact-phone").value.length >= 16;
-
-  if (nameValid && emailValid && phoneValid) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const validityCheckDelivery = () => {
-  const nameValid = document.querySelector("#contact-name").value.length > 0;
-
-  const emailValid = document.querySelector("#contact-email").value.length > 0;
-
-  const phoneValid =
-    document.querySelector("#contact-phone").value.length >= 16;
-
-  const addressValid =
-    document.querySelector("#contact-address1").value.length > 0;
-
-  const postalValid =
-    document.querySelector("#contact-postcode").value.length >= 6;
-
-  if (nameValid && emailValid && phoneValid && addressValid && postalValid) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const validityCheck = () => {
-  if (state.delivered)
-    console.log(
-      validityCheckDelivery() ? "Form is valid!" : "Form is invalid!"
-    );
-
-  if (state.delivered) {
-    if (validityCheckDelivery()) {
-      document.querySelector(".contact-box").style.display = "block";
-      document.querySelector(".contact-box").style.opacity = "1";
-      document.querySelector(".required-box").style.display = "none";
-      document.querySelector(".required-box").style.opacity = "0";
-    } else {
-      document.querySelector(".contact-box").style.display = "none";
-      document.querySelector(".contact-box").style.opacity = "0";
-      document.querySelector(".required-box").style.display = "block";
-      document.querySelector(".required-box").style.opacity = "1";
-    }
-  } else {
-    if (validityCheckPickUp()) {
-      document.querySelector(".contact-box").style.display = "block";
-      document.querySelector(".contact-box").style.opacity = "1";
-      document.querySelector(".required-box").style.display = "none";
-      document.querySelector(".required-box").style.opacity = "0";
-    } else {
-      document.querySelector(".contact-box").style.display = "none";
-      document.querySelector(".contact-box").style.opacity = "0";
-      document.querySelector(".required-box").style.display = "block";
-      document.querySelector(".required-box").style.opacity = "1";
-    }
-  }
-};
-
-document.querySelectorAll(".valid").forEach((el) => {
-  el.addEventListener("input", validityCheck);
-});
-
-document.querySelector(".open-textarea").addEventListener("click", () => {
-  setTimeout(() => {
-    document.querySelector(".cart-textarea").value = "";
-  }, 600);
-
-  document
-    .querySelector(".cart-textarea")
-    .classList.toggle("cart-textarea-show");
-  document
-    .querySelector(".cart-textbox-icon")
-    .classList.toggle("cart-textbox-icon-open");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  var script = document.createElement("script");
-  script.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
-  script.onload = function () {
-    particlesJS("snow", {
-      particles: {
-        number: {
-          value: 200,
-          density: {
-            enable: true,
-            value_area: 800,
-          },
-        },
-        color: {
-          value: "#ffffff",
-        },
-        opacity: {
-          value: 0.7,
-          random: false,
-          anim: {
-            enable: false,
-          },
-        },
-        size: {
-          value: 5,
-          random: true,
-          anim: {
-            enable: false,
-          },
-        },
-        line_linked: {
-          enable: false,
-        },
-        move: {
-          enable: true,
-          speed: 3,
-          direction: "bottom",
-          random: true,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: {
-            enable: true,
-            rotateX: 300,
-            rotateY: 1200,
-          },
-        },
-      },
-      interactivity: {
-        events: {
-          onhover: {
-            enable: false,
-          },
-          onclick: {
-            enable: false,
-          },
-          resize: false,
-        },
-      },
-      retina_detect: true,
-    });
-  };
-  document.head.append(script);
-});

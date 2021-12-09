@@ -10,8 +10,7 @@
       src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"
     ></script>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
-     user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Craft cocktails and tasty shareable plates in a friendly intimate atmosphere. Corporate and consumer cocktail kits available for delivery and takeout."
@@ -26,7 +25,7 @@
       rel="stylesheet"
     />
 
-    <title>Project Gigglewater - Gallery</title>
+    <title>Project Gigglewater - Cocktails</title>
 
     <link
       rel="apple-touch-icon"
@@ -192,7 +191,7 @@
                   class="contact-input"
                   type="text"
                   id="contact-pref-pickup"
-                  placeholder="Day / Time (12pm to 2am), order by 11am for same day!"
+                  placeholder="Day / Time (12pm to 6pm), order by 11am for same day!"
                   
                 ></input>
               </div>
@@ -381,18 +380,16 @@
         </div>
       </div>
     </div>
-
-    <header class="">
-      <nav class="nav nav-sticky">
-        <div class="nav-logo-container">
-          <a href="/" class="nav-btn">
-            <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
-          </a>
-        </div>
-        <ul class="nav-items nav-items_hide">
-          <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
-          <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-          <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
+    <nav class="nav nav-sticky">
+      <div class="nav-logo-container">
+        <a href="/" class="nav-btn">
+          <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
+        </a>
+      </div>
+      <ul class="nav-items nav-items_hide">
+        <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
+        <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
+        <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
         <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
         <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
         <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>
@@ -400,293 +397,57 @@
         <!-- <li><a href="#" class="nav-item">Reviews</a></li> -->
         <!-- <li class="nav-list-item"><a href="#contact-us" class="nav-item">Find Us</a></li> -->
         <li class="nav-list-item"><a href="/#contact-us" class="nav-item">Contact</a></li>
-          <li>
-            
-          </li>
-          <li class="development">
-            <a href="#" class="nav-item contact-icon"
-              ><ion-icon name="card-outline"></ion-icon
-            ></a>
-          </li>
-          <li class="development">
-            <a href="#" class="nav-item summary-icon"
-              ><ion-icon name="paper-plane-outline"></ion-icon
-            ></a>
-          </li>
-        </ul>
-        <div class="hidden">X</div>
-        
-        <a href="#" class="cart-icon"
-            ><ion-icon name="cart-outline"></ion-icon
-          >
-          <div class="cart-notification cart-notification-hide">
+        <li>
+          
+        </li>
+        <li class="development">
+          <a href="#" class="nav-item contact-icon"
+            ><ion-icon name="card-outline"></ion-icon
+          ></a>
+        </li>
+        <li class="development">
+          <a href="#" class="nav-item summary-icon"
+            ><ion-icon name="paper-plane-outline"></ion-icon
+          ></a>
+        </li>
+      </ul>
+      <div class="hidden">X</div>
+      
+      <a href="#" class="cart-icon item-hide"
+          ><ion-icon name="cart-outline"></ion-icon
+        >
+      <div class="cart-notification cart-notification-hide">
         3
       </div>
-        </a>
-        <div class="burger">
-            <div class="burger-container">
-              <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>
-              <ion-icon name="close-outline" class="burger-icon burger-close burger-hide"></ion-icon>
-  
-            </div>
-        </div>
-      </nav>
-      <div class="row">
-        <!-- <?php
-        if($_GET['success'] == 1){
-            echo "<div class=\"form-messages success\">
-            <p>Thank you, your message has been sent!<br> We will email back shortly!<br>(Please check your spam folder if you don't hear from us!)</p>
-        </div>";}
-        if($_GET['success'] == -1){
-            echo "<div class=\"form-messages error\">
-            <p>Oops! Please try again.</p>
-        </div>";}
-        ?> -->
+      </a>
+      <div class="burger">
+          <div class="burger-container">
+            <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>
+            <ion-icon name="close-outline" class="burger-icon burger-close burger-hide"></ion-icon>
+
+          </div>
+      </div>
+    </nav>
+    <div class="row">
+      <?php
+      if($_GET['success'] == 1){
+          echo "<div class=\"form-messages success\">
+          <p>Thank you, your message has been sent!<br> We will email back shortly!<br>(Please check your spam folder if you don't hear from us!)</p>
+      </div>";}
+      if($_GET['success'] == -1){
+          echo "<div class=\"form-messages error\">
+          <p>Oops! Something went wrong, please try again.</p>
+      </div>";}
+      ?>
     </div>
-    
+<section>
+  <div class="mobile-menu-container">
 
-    </header>
-    <main>
-        <h2 class="title-push">Gallery</h2>
-        <div class="gallery-row">
-            <div class="gallery-column">
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery2.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Bar snacks
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery1.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Valentines day
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery3.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Cocktail kits
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery4.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery5.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The quarantine factory
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery6.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Welcome
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery7.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Crispy fries
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-column">
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery8.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            This tree
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery9.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery10.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Dundas West Fest
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery11.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Negroni
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery12.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Mony '19
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery13.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Welcome
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery28.PNG">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Support local business
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-column">
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery19.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Local art
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery20.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Welcome
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery16.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery17.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery18.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Food and drinks
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery14.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Sippin' Santa
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery15.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Sippin' Santa
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-column">
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery21.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Sugo Arancini
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery22.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Gigglewater Pina Colada
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery23.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery24.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Negroni Frappe
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery25.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Smash Burgers
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery26.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Grilled Octopus
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery27.PNG">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            BlogTO
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-    </main>
-
-    <footer class="footer">
+    <img src="/menu1.jpeg" alt="">
+    <img src="/menu2.jpeg" alt="">
+  </div>
+</section>
+<footer class="footer">
       <a href="#" class="footer-logo">
         <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
       </a>
@@ -704,66 +465,24 @@
       </div>
     </footer>
       <form method="post" action="orderForm.php" class="order-form" >
-        <input type="text" name='name' id="order-form-name">
-        <input type="text" name='email' id="order-form-email">
-        <input type="text" name='phone' id="order-form-phone">
-        <input type="text" name='address' id="order-form-address">
-        <input type="text" name='type' id="order-form-type">
-        <input type="text" name='price' id="order-form-price">
-        <input type="text" name='tip' id="order-form-tip">
-        <input type="text" name='preference' id="order-form-preference">
-        <input type="text" name='cart' id="order-form-cart">
-        <input type="text" name='recip-name' id="order-form-recip-name">
-        <input type="text" name='recip-phone' id="order-form-recip-phone">
-        <input type="text" name='message' id="order-form-message">
-        <input id='submit1' class="submit" type="submit" value="Send it!">
+        <input type="text" name='name' id="order-form-name"/>
+        <input type="text" name='email' id="order-form-email"/>
+        <input type="text" name='phone' id="order-form-phone"/>
+        <input type="text" name='address' id="order-form-address"/>
+        <input type="text" name='type' id="order-form-type"/>
+        <input type="text" name='price' id="order-form-price"/>
+        <input type="text" name='tip' id="order-form-tip"/>
+        <input type="text" name='preference' id="order-form-preference"/>
+        
+
+          <input name='cart' id="order-form-cart">
+        
+        <input type="text" name='recip-name' id="order-form-recip-name"/>
+        <input type="text" name='recip-phone' id="order-form-recip-phone"/>
+        <input type="text" name='message' id="order-form-message"/>
+        <input id='submit1' class="submit" type="submit" value="Send it!"/>
+        
       </form>
-  
-      <!-- <section class="hidden">
-        <div class="hours">
-          <p class="bottom-email spacing">
-            cocktail kits available for pick up only<br />indoor dining
-            unavailable<br />inquire for details<br />CLOSED MONDAYS
-          </p>
-  
-          <div>
-            <p class="bottom-email slight-fix">
-              <a
-                href="mailto:cocktails@projectgigglewater.com"
-                class="email-link c"
-                >cocktails@projectgigglewater.com</a
-              ><br /><a href="map" class="c"
-                >1369 Dundas Street West, Toronto, M6J 1Y3</a
-              ><br />
-              • Catering an event?
-              <a href="form" class="a">Let's work together </a>•
-            </p>
-          </div>
-        </div>
-      </section> -->
-      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-          
-          <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/selectivizr2@1.0.9/selectivizr2.min.js"></script>
-          <script src="Vendors/js/jquery.waypoints.min.js"></script>
-          <script src="Resources/js/script.js"></script>-->
-      <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180744876-1"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-  
-            gtag('config', 'UA-180744876-1');
-          </script>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q40M9KKNX5"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-  
-            gtag('config', 'G-Q40M9KKNX5');
-          </script>-->
-      <script src="cart.js"></script>
-    </body>
-  </html>
+<script src="cart.js"></script>
+</body>
+</html>

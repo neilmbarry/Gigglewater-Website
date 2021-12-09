@@ -10,8 +10,8 @@
       src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"
     ></script>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
-     user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+     
     <meta
       name="description"
       content="Craft cocktails and tasty shareable plates in a friendly intimate atmosphere. Corporate and consumer cocktail kits available for delivery and takeout."
@@ -26,7 +26,7 @@
       rel="stylesheet"
     />
 
-    <title>Project Gigglewater - Gallery</title>
+    <title>Project Gigglewater</title>
 
     <link
       rel="apple-touch-icon"
@@ -381,25 +381,74 @@
         </div>
       </div>
     </div>
-
-    <header class="">
-      <nav class="nav nav-sticky">
-        <div class="nav-logo-container">
-          <a href="/" class="nav-btn">
-            <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
-          </a>
-        </div>
-        <ul class="nav-items nav-items_hide">
-          <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
-          <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-          <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
+    <div class="welcome-message item-hide">
+      <strong>Welcome to our brand spanking new website!</strong><br/>
+      We are continually improving our site but if you run in to any issues feel free to contact us directly:</br>
+      <a href="mailto:cocktails@projectgigglewater.com" class="welcome-email"><strong>cocktails@projectgigglewater.com</strong></a>
+    </div>
+    <nav class="nav">
+      <div class="nav-logo-container">
+        <a href="/" class="nav-btn">
+          <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
+        </a>
+      </div>
+      <ul class="nav-items nav-items_hide">
+        <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
+        <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
+        <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
         <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
         <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
         <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>
         <li class="nav-list-item"><a href="/gallery" class="nav-item">Gallery</a></li>
         <!-- <li><a href="#" class="nav-item">Reviews</a></li> -->
         <!-- <li class="nav-list-item"><a href="#contact-us" class="nav-item">Find Us</a></li> -->
-        <li class="nav-list-item"><a href="/#contact-us" class="nav-item">Contact</a></li>
+        <li class="nav-list-item"><a href="#contact-us" class="nav-item">Contact</a></li>
+        
+        <li class="development">
+          <a href="#" class="nav-item contact-icon"
+            ><ion-icon name="card-outline"></ion-icon
+          ></a>
+        </li>
+        <li class="development">
+          <a href="#" class="nav-item summary-icon"
+            ><ion-icon name="paper-plane-outline"></ion-icon
+          ></a>
+        </li>
+      </ul>
+      <div class="hidden">X</div>
+      
+      <a href="#" class="cart-icon"
+          ><ion-icon name="cart-outline"></ion-icon
+        >
+        <div class="cart-notification cart-notification-hide">
+        3
+      </div>
+      </a>
+      <div class="burger">
+          <div class="burger-container">
+            <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>
+            <ion-icon name="close-outline" class="burger-icon burger-close burger-hide"></ion-icon>
+
+          </div>
+      </div>
+    </nav>
+<!-- class is "nav-sticky" -->
+    <header class="header">
+      <!-- <nav class="nav">
+        <div class="nav-logo-container">
+          <a href="/" class="nav-btn">
+            <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
+          </a>
+        </div>
+        <ul class="nav-items nav-items_hide">
+        
+          <li class="nav-list-item"><a href="/cocktails.php" class="nav-item">Cocktail Kits</a></li>
+      
+          <li class="nav-list-item"><a href="/merch.php" class="nav-item">Merchandise</a></li>
+          <li class="nav-list-item"><a href="#" class="nav-item">Gallery</a></li>
+       
+          <li class="nav-list-item"><a href="#contact-us" class="nav-item">Find Us</a></li>
+          <li class="nav-list-item"><a href="#contact-us" class="nav-item">Contact</a></li>
           <li>
             
           </li>
@@ -418,11 +467,7 @@
         
         <a href="#" class="cart-icon"
             ><ion-icon name="cart-outline"></ion-icon
-          >
-          <div class="cart-notification cart-notification-hide">
-        3
-      </div>
-        </a>
+          ></a>
         <div class="burger">
             <div class="burger-container">
               <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>
@@ -430,261 +475,237 @@
   
             </div>
         </div>
-      </nav>
+      </nav> -->
       <div class="row">
-        <!-- <?php
+        <?php
         if($_GET['success'] == 1){
-            echo "<div class=\"form-messages success\">
+            echo "<div class=\"form-messages form-messages-success success-send \">
             <p>Thank you, your message has been sent!<br> We will email back shortly!<br>(Please check your spam folder if you don't hear from us!)</p>
         </div>";}
         if($_GET['success'] == -1){
-            echo "<div class=\"form-messages error\">
-            <p>Oops! Please try again.</p>
+            echo "<div class=\"form-messages form-messages-error\">
+            <p>Oops! Please check you email address and try again.</p> 
         </div>";}
-        ?> -->
-    </div>
-    
-
+        ?>
+      </div>
+      <div class="header-box">
+        <div class="header-box-title">
+          <img src="./title.png" alt="Project Gigglewater" class="title" />
+        </div>
+        <div class="header-box-banner">
+          <img src="./drinks.png" alt="drinks" class="banner" />
+        </div>
+        <div class="landing-btns">
+          <a href="/menu" class="btn btn-cta btn-header">Dine-In Menu</a>
+          <a href="/cocktails" class="btn btn-cta btn-header">Order cocktail kits </a>
+        </div>
+        <div class="order-by">
+          Hours of operation:
+          
+        </div>
+        <div class="order-by">Mon - Sat (5pm - 2am), Sun (3pm - 2am)</div>
+        <div class="order-by">
+       
+          <strong>No reservations, walk-in only :)</strong>
+        </div>
+        <div class="order-by">
+       
+          Same day local cocktail kit delivery cutoff is 11am
+        </div>
+      </div>
     </header>
-    <main>
-        <h2 class="title-push">Gallery</h2>
-        <div class="gallery-row">
-            <div class="gallery-column">
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery2.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Bar snacks
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery1.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Valentines day
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery3.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Cocktail kits
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery4.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery5.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The quarantine factory
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery6.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Welcome
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery7.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Crispy fries
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-column">
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery8.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            This tree
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery9.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery10.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Dundas West Fest
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery11.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Negroni
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery12.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Mony '19
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery13.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Welcome
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery28.PNG">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Support local business
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-column">
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery19.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Local art
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery20.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Welcome
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery16.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery17.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery18.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Food and drinks
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery14.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Sippin' Santa
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery15.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Sippin' Santa
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-column">
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery21.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Sugo Arancini
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery22.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Gigglewater Pina Colada
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery23.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            The bar
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery24.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Negroni Frappe
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery25.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Smash Burgers
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery26.jpg">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            Grilled Octopus
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-pic">
-                    <img src="Resources/Gallery/gallery27.PNG">
-                    <div class="overlay">
-                        <div class="overlay-text">
-                            BlogTO
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+    <section class="section-about">
+      <h2 class="section-about-title title-hidden">
+        Explore our libation offerings<br><img src="/Icons_wave.svg" alt="" class="wavy2">
+      </h2>
+      <div class="cards-container card-blur">
+        <div class="cards-container-card">
+          <div
+            class="cards-container-card-pic cards-container-card-pic_c1"
+          ></div>
+          <div class="cards-container-card-title">
+            <span class="title-highlight">Cocktail Kits</span>
+          </div>
+
+          <ul class="card-descriptions">
+            <li class="card-descriptions-item">
+              Easy Drinking, Citrus Forward
+            </li>
+            <li class="card-descriptions-item">
+              Includes 375ml bottle base spirit
+            </li>
+            <li class="card-descriptions-item">Makes 7+ Servings</li>
+            <li class="card-descriptions-item">Starting from $65</li>
+            <li class="card-descriptions-item">Shake yourselves!</li>
+          </ul>
+
+          <a href="/cocktails" class="btn btn-cta btn-card">Order Kits</a>
+        </div>
+        <div class="cards-container-card">
+          <div
+            class="cards-container-card-pic cards-container-card-pic_c2"
+          ></div>
+          <div class="cards-container-card-title">
+            <span class="title-highlight">Pre-Blended</span>
+          </div>
+          <ul class="card-descriptions">
+            <li class="card-descriptions-item">Boozy, Spirit Forward</li>
+            <li class="card-descriptions-item">
+              Presented as 473ml bottled cocktail
+            </li>
+            <li class="card-descriptions-item">Makes 5+ Servings</li>
+            <li class="card-descriptions-item">Starting from $67.50</li>
+            <li class="card-descriptions-item">Ready to serve!</li>
+          </ul>
+          <a href="/cocktails#blended" class="btn btn-cta btn-card">Order Bottles</a>
+        </div>
+        <div class="cards-container-card">
+          <div
+            class="cards-container-card-pic cards-container-card-pic_c3"
+          ></div>
+          <div class="cards-container-card-title">
+            <span class="title-highlight">Merchandise</span>
+          </div>
+          <ul class="card-descriptions">
+            <li class="card-descriptions-item">Riedel Glassware</li>
+            <li class="card-descriptions-item">Shakers & Strainers</li>
+            <li class="card-descriptions-item">Spoons & Straws</li>
+            <li class="card-descriptions-item">Gigglewater Apparel</li>
+            <li class="card-descriptions-item">
+              Make your cocktails the right way!
+            </li>
+          </ul>
+          <a href="/merch" class="btn btn-cta btn-card">Order merch</a>
+        </div>
+      </div>
+      <a href="/cocktails" class="btn btn-cta btn-about"
+        >Full Quarantine Factory <span class="btn-arrow">&#8594;</span></a
+      >
+    </section>
+    <section class="section-extra"></section>
+    <section class="section-reviews">
+      <h2 class="section-reviews-title title-hidden">
+        Hear what our guests had to say<br><img src="/Icons_wave.svg" alt="" class="wavy2">
+      </h2>
+
+      <div class="slider slider-blur">
+        <div class="slide slide--1">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              An unassuming bar, but drinks were on point and service was
+              prompt!
+            </h5>
+            <blockquote class="testimonial__text">
+              Would've loved to try the food but unfortunately we just came from
+              dinner. Was recommended this place by someone in the industry, and
+              usually it always ends up being a good time. I will definitely be
+              back when I'm in the area . Keep up the great work. Cheers"
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="/gallery4.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">David Ding</h6>
+              <p class="testimonial__location">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
+            </address>
+          </div>
         </div>
 
-    </main>
+        <div class="slide slide--2">
+          <div class="testimonial">
+            <h5 class="testimonial__header">We loved it!!</h5>
+            <blockquote class="testimonial__text">
+              It’s a lot more intimate than Miracle which was nice & the drinks
+              were really well made. The atmosphere was nice & the decor totally
+              set the holiday mood. A fabulous way to meet up with the ones you
+              love over the holidays!"
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="/gallery13.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Chelsea Iheme-Hall</h6>
+              <p class="testimonial__location">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide slide--3">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              Project Gigglewater is an excellent little bar!
+            </h5>
+            <blockquote class="testimonial__text">
+              Perfect place to spend an evening with a few drinks and friends.
+              The staff are friendly and attentive and the drinks are more
+              crafted and thoughtful than standard bar fare. They've recently
+              added a light food menu and everything is tasty, but you are
+              primarily there for the drinks. It's a comfy place that manages to
+              satisfy even in the current pandemic era of challenges for bars."
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="/mixing-glass.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Tom Solecki</h6>
+              <p class="testimonial__location">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
+            </address>
+          </div>
+        </div>
+        <!--<div class="slide"><img src="img/img-1.jpg" alt="Photo 1" /></div>
+          <div class="slide"><img src="img/img-2.jpg" alt="Photo 2" /></div>
+          <div class="slide"><img src="img/img-3.jpg" alt="Photo 3" /></div>
+          <div class="slide"><img src="img/img-4.jpg" alt="Photo 4" /></div>-->
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+
+    </section>
+    <section class="section-map" >
+      <div class="form-box" id="contact-us">
+        <h2 class="form-title">We would love to hear from you<br><img src="/Icons_wave.svg" alt="" class="wavy"></h2>
+        <form method="post" action="general.php" class="form">
+          <div>
+            <label for="name">Name*</label>
+          </div>
+          <div>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name!"
+              class="form-input"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Email*</label>
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-input"
+              placeholder="Please double check the address!"
+              required
+            />
+          </div>
+
+          <div id="test">
+            <div>
+              <label>Drop us a line*</label>
+            </div>
+            <div>
+              <textarea
+                name="message"
+                placeholder="How may we help you?"
+                id="message"
+                class="form-textarea"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <button class="btn btn-form">Send it!</button>
+        </form>
+      </div>
+    </section>
 
     <footer class="footer">
       <a href="#" class="footer-logo">
@@ -703,7 +724,7 @@
         <div ><a href="https://www.instagram.com/projectgigglewater/?hl=en" target="_blacnk"><ion-icon name="logo-instagram" class="instagram"></ion-icon></a></div>
       </div>
     </footer>
-      <form method="post" action="orderForm.php" class="order-form" >
+    <form method="post" action="orderForm.php" class="order-form" >
         <input type="text" name='name' id="order-form-name">
         <input type="text" name='email' id="order-form-email">
         <input type="text" name='phone' id="order-form-phone">
@@ -718,52 +739,53 @@
         <input type="text" name='message' id="order-form-message">
         <input id='submit1' class="submit" type="submit" value="Send it!">
       </form>
-  
-      <!-- <section class="hidden">
-        <div class="hours">
-          <p class="bottom-email spacing">
-            cocktail kits available for pick up only<br />indoor dining
-            unavailable<br />inquire for details<br />CLOSED MONDAYS
+
+    <!-- <section class="hidden">
+      <div class="hours">
+        <p class="bottom-email spacing">
+          cocktail kits available for pick up only<br />indoor dining
+          unavailable<br />inquire for details<br />CLOSED MONDAYS
+        </p>
+
+        <div>
+          <p class="bottom-email slight-fix">
+            <a
+              href="mailto:cocktails@projectgigglewater.com"
+              class="email-link c"
+              >cocktails@projectgigglewater.com</a
+            ><br /><a href="map" class="c"
+              >1369 Dundas Street West, Toronto, M6J 1Y3</a
+            ><br />
+            • Catering an event?
+            <a href="form" class="a">Let's work together </a>•
           </p>
-  
-          <div>
-            <p class="bottom-email slight-fix">
-              <a
-                href="mailto:cocktails@projectgigglewater.com"
-                class="email-link c"
-                >cocktails@projectgigglewater.com</a
-              ><br /><a href="map" class="c"
-                >1369 Dundas Street West, Toronto, M6J 1Y3</a
-              ><br />
-              • Catering an event?
-              <a href="form" class="a">Let's work together </a>•
-            </p>
-          </div>
         </div>
-      </section> -->
-      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-          
-          <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/selectivizr2@1.0.9/selectivizr2.min.js"></script>
-          <script src="Vendors/js/jquery.waypoints.min.js"></script>
-          <script src="Resources/js/script.js"></script>-->
-      <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180744876-1"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-  
-            gtag('config', 'UA-180744876-1');
-          </script>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q40M9KKNX5"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-  
-            gtag('config', 'G-Q40M9KKNX5');
-          </script>-->
-      <script src="cart.js"></script>
-    </body>
-  </html>
+      </div>
+    </section> -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/php5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/selectivizr2@1.0.9/selectivizr2.min.js"></script>
+        <script src="Vendors/js/jquery.waypoints.min.js"></script>
+        <script src="Resources/js/script.js"></script>-->
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180744876-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-180744876-1');
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q40M9KKNX5"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-Q40M9KKNX5');
+        </script>-->
+    <script src="app.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
