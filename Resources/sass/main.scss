@@ -4094,3 +4094,21 @@ select:-webkit-autofill:focus {
 //     box-shadow: 0px 4.6666666667px 24px 3px rgba(220, 242, 51, 0.2);
 //   }
 // }
+
+.christmas-reminder {
+  // background-color: green;
+  display: flex;
+  &-box {
+    // justify-content: center;
+    background-color: $giggle-yellow2;
+    color: $color-black;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    line-height: 300%;
+  }
+}

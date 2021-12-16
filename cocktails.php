@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -499,8 +500,15 @@
           </div>
         </div>
       </div> -->
-      
+     
       <h2 class="title-push">Cocktail Kits<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
+      <div class="christmas-reminder">
+        <div class="christmas-reminder-box">
+          <p>Christmas Cocktail kit order cutoff is Dec 20th.<br>
+          Last Christmas deliveries are Dec 21st.</p>
+        </div>
+        
+      </div>
       <h4 class="cocktail-description">
       Easy Drinking, Citrus Forward - Includes 375ml bottle base spirit - Makes 7+ Servings
       </h4>

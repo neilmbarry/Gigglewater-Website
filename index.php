@@ -544,10 +544,10 @@
           <a href="/menu" class="btn btn-cta btn-header">Dine-In Menu</a>
           <a href="/cocktails" class="btn btn-cta btn-header">Order cocktail kits </a>
         </div>
-        <div class="order-by">
+        <!-- <div class="order-by">
           Hours of operation:
           
-        </div>
+        </div> -->
         <div class="order-by">Mon - Fri (5pm - 2am) Sat - Sun (2pm - 2am)</div>
         <div class="order-by">
        
@@ -555,7 +555,13 @@
         </div>
         <div class="order-by">
        
-          Same day local cocktail kit delivery cutoff is 11am
+          Christmas Cocktail kit order cutoff is <strong>Dec 20th</strong>.
+         
+        </div>
+        <div class="order-by">
+       
+       
+          Last Christmas deliveries are <strong>Dec 21st.</strong>
         </div>
       </div>
     </header>
