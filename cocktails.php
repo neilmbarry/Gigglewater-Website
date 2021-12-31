@@ -504,16 +504,16 @@
       <h2 class="title-push">Cocktail Kits<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
       <div class="christmas-reminder">
         <div class="christmas-reminder-box">
-          <p>Christmas Cocktail kit order cutoff is Dec 20th.<br>
-          Last Christmas deliveries are Dec 21st.</p>
+          <p>Christmas Cocktail Kits are SOLD OUT!<br>
+            Cocktail Kits are reopening in JANUARY!</p>
         </div>
         
       </div>
-      <h4 class="cocktail-description">
+      <h4 class="cocktail-description item-hide">
       Easy Drinking, Citrus Forward - Includes 375ml bottle base spirit - Makes 7+ Servings
       </h4>
       <div id="snow"></div>
-      <div class="menu-container">
+      <div class="menu-container item-hide">
           <div class="menu-item">
             <div class="menu-item_pic">
                 <img src="/Resources/Christmas2021/Jingle Juice.jpg" alt="cocktail-pic">
@@ -629,12 +629,12 @@
           </div>
       </div>
       
-      <h2 id="blended">Pre-blended<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
-      <h4 class="cocktail-description">
+      <h2 id="blended" class="item-hide">Pre-blended<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
+      <h4 class="cocktail-description item-hide">
        Ready to serve - Presented as 473ml bottled cocktail - Makes 5+ Servings
       </h4>
       
-      <div class="menu-container">
+      <div class="menu-container item-hide">
                 
         <div class="menu-item item-hide">
           <div class="menu-item_pic">
@@ -859,9 +859,9 @@
         </div>
       </div> -->
       
-      <h2>Food<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
+      <h2 class='item-hide'>Food<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
       
-      <div class="menu-container">
+      <div class="menu-container item-hide">
           <div class="menu-item item-hide">
             <div class="menu-item_pic">
                 <img src="/Resources/May 2021/nuts.jpg" alt="cocktail-pic">

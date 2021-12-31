@@ -555,13 +555,13 @@
         </div>
         <div class="order-by">
        
-          Christmas Cocktail kit order cutoff is <strong>Dec 20th</strong>.
+          Christmas Cocktail Kits are <strong>SOLD OUT!</strong>
          
         </div>
         <div class="order-by">
        
        
-          Last Christmas deliveries are <strong>Dec 21st.</strong>
+          Cocktail Kits are reopening in <strong>JANUARY!</strong>
         </div>
       </div>
     </header>
