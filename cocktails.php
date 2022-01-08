@@ -391,7 +391,7 @@
       <ul class="nav-items nav-items_hide">
         <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
         <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-        <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
+        <!-- <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li> -->
         <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
         <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
         <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>
@@ -510,7 +510,7 @@
         
       </div>
       <h4 class="cocktail-description">
-     Crafted with love and care - Makes 7+ Servings
+     Crafted with love and care - Makes 8 Servings
       </h4>
       <!-- <div id="snow"></div> -->
       <div class="menu-container">
@@ -615,7 +615,7 @@
                 <img src="/Resources/Jan2022/apple-solutely.jpg" alt="cocktail-pic">
             </div>
             <div class="menu-item_title">
-              Apple-solutely Old Fashioned <span class="fontweight-normal">(16oz)</span><br><img src="/Icons_wave.svg" alt="" class="wavy3">
+              Apple-solutely Old Fashioned <br><span class="fontweight-normal">(16oz Pre-batch)</span><br><img src="/Icons_wave.svg" alt="" class="wavy3">
             </div>
             <div class="menu-item_description">
               Apple Infused Bushmills Black Irish Whiskey, Winter Spiced Apple Syrup, Angostura Bitters, & Kinsip Black Walnut Bitters
@@ -860,9 +860,9 @@
         </div>
       </div> -->
       
-      <h2 class='item-hide'>Food<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
+      <h2 class=''>Food<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
       
-      <div class="menu-container item-hide">
+      <div class="menu-container">
           <div class="menu-item item-hide">
             <div class="menu-item_pic">
                 <img src="/Resources/May 2021/nuts.jpg" alt="cocktail-pic">
