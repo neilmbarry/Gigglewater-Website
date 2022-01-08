@@ -1445,7 +1445,7 @@ ion-icon {
   &-item {
     // display: flex;
     display: grid;
-    grid-template-columns: 0% 30% 20% 32% 13% 5%;
+    grid-template-columns: 1% 42% 34% 18% 5%;
     align-items: center;
     justify-content: space-between;
     //border: oldlace 1px solid;
@@ -4111,4 +4111,9 @@ select:-webkit-autofill:focus {
     font-weight: bold;
     line-height: 300%;
   }
+}
+
+.fontweight-normal {
+  font-weight: 100;
+  text-transform: lowercase;
 }

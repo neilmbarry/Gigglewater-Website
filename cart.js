@@ -114,6 +114,31 @@ const deliveryPrices = {
 
 const menuItemRef = {
   cocktails: {
+    london: {
+      name: "London Mist",
+      price: 75,
+    },
+    imperial: {
+      name: "Imperial Blossom",
+      price: 75,
+    },
+    oj: {
+      name: "OJ Dizzle",
+      price: 75,
+    },
+    bora: {
+      name: "Bora Bora Blues",
+      price: 75,
+    },
+    apple_solutely: {
+      name: "Apple-solutely Old Fashioned",
+      price: 75,
+    },
+    peanut: {
+      name: "Peanut Butter Jelly Time",
+      price: 75,
+    },
+
     jingle: {
       name: "Jingle Juice",
       price: 70,
@@ -610,7 +635,7 @@ const addCartItem = (id) => {
     state.cart2.push({
       name: id,
       food: `${foodCheck() && state.cart2.length > 0 ? "none" : "chips"}`,
-      festive: false,
+      // festive: false,
     });
   } else if (id === "hoody" || id === "shirt") {
     state.cart2.push({
@@ -674,12 +699,12 @@ const addCartItem = (id) => {
 //   updateCartUI();
 // };
 
-const festiveUpdate = (index, newValue) => {
-  state.cart2[index].festive = newValue;
-  createTotals();
-  storeState();
-  updateCartUI();
-};
+// const festiveUpdate = (index, newValue) => {
+//   state.cart2[index].festive = newValue;
+//   createTotals();
+//   storeState();
+//   updateCartUI();
+// };
 
 const updateFood = (index, newValue, menuRef) => {
   if (
@@ -777,14 +802,18 @@ const updateCartUI = () => {
         .join("")}</select>
         `;
     }
-    const festivePrice = item.festive ? 2.5 : 0;
+    // const festivePrice = item.festive ? 2.5 : 0;
     const itemPrice = isCocktail
       ? `
        <div class="cart-item-price">$${menuItemRef.cocktails[
          item.name
-       ].price.toFixed(2)}<br><div class='cart-item-food_price'>+$${(
-          menuItemRef.food[item.food].price + festivePrice
-        ).toFixed(2)}</div></div>
+       ].price.toFixed(
+         2
+       )}<br><div class='cart-item-food_price'>+$${menuItemRef.food[
+          item.food
+        ].price
+          // + festivePrice
+          .toFixed(2)}</div></div>
        `
       : `<div class="cart-item-price">$${menuItemRef.merch[
           item.name
@@ -797,13 +826,8 @@ const updateCartUI = () => {
                  ${itemName}
                </div>
             </div>
-            ${
-              isCocktail
-                ? `<div class="stupid"><input type="checkbox" ${
-                    item.festive ? "checked" : ""
-                  } class="stupid-checkbox"><div>Festive Crinkle Filler ($2.50)</div></div>`
-                : ""
-            }
+            
+            
       ${foodOptions}
       ${itemPrice}
       <button class="cart-btn">X</button>
@@ -951,29 +975,27 @@ const createTotals = () => {
 //   storeState();
 // });
 
-document.querySelectorAll(".menu-item_btn").forEach(
-  (el) => {}
-  //
-  // el.addEventListener("click", (e) => {
-  //   addCartItem(e.target.id);
+document.querySelectorAll(".menu-item_btn").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    addCartItem(e.target.id);
 
-  //   updateCartUI();
-  //   storeState();
-  // })
-);
+    updateCartUI();
+    storeState();
+  });
+});
 
 // UNDO BELOW
 
-// document.querySelectorAll(".menu-item_btn").forEach((el) => {
-//   el.addEventListener("click", () => {
-//     el.classList.add("added");
-//     el.textContent = "Added!";
-//     setTimeout(() => {
-//       el.textContent = "Add to cart!";
-//     }, 1000);
-//     //console.log(el);
-//   });
-// });
+document.querySelectorAll(".menu-item_btn").forEach((el) => {
+  el.addEventListener("click", () => {
+    el.classList.add("added");
+    el.textContent = "Added!";
+    setTimeout(() => {
+      el.textContent = "Add to cart!";
+    }, 1000);
+    //console.log(el);
+  });
+});
 
 const contactToggle = () => {
   document.querySelector(".contact").classList.toggle("contact-hide");
@@ -1864,7 +1886,7 @@ document.querySelector(".open-textarea").addEventListener("click", () => {
 //   });
 // }
 
-const buyButtons = document.querySelectorAll(".menu-item_btn");
-buyButtons.forEach((btn) => {
-  btn.style.cursor = "help";
-});
+// const buyButtons = document.querySelectorAll(".menu-item_btn");
+// buyButtons.forEach((btn) => {
+//   btn.style.cursor = "help";
+// });

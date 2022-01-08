@@ -434,7 +434,7 @@
     </nav>
 <!-- class is "nav-sticky" -->
     <header class="header">
-      <ul class="lightrope">
+      <ul class="lightrope item-hide">
         <li></li>
         <li></li>
         <li></li>
@@ -478,7 +478,7 @@
         <li></li>
         <li></li>
       </ul>
-      <div id="snow"></div>
+      <div id="snow item-hide"></div>
       <!-- <nav class="nav">
         <div class="nav-logo-container">
           <a href="/" class="nav-btn">
@@ -548,20 +548,20 @@
           Hours of operation:
           
         </div> -->
-        <div class="order-by">Mon - Fri (5pm - 2am) Sat - Sun (2pm - 2am)</div>
+        <div class="order-by"><strong>Same day local cocktail kit deliveries!</strong> </div>
+        
         <div class="order-by">
        
-          <strong>No reservations, walk-in only :)</strong>
-        </div>
-        <div class="order-by">
-       
-          Christmas Cocktail Kits are <strong>SOLD OUT!</strong>
+          (order cut off is 10am)
          
         </div>
         <div class="order-by">
        
+          Shipping 1-2 days 
+        </div>
+        <div class="order-by">
        
-          Cocktail Kits are reopening in <strong>JANUARY!</strong>
+          <strong>Closed Sundays and Mondays :)</strong>
         </div>
       </div>
     </header>

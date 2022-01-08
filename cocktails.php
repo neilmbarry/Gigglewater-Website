@@ -502,131 +502,132 @@
       </div> -->
      
       <h2 class="title-push">Cocktail Kits<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
-      <div class="christmas-reminder">
-        <div class="christmas-reminder-box">
+      <div class="christmas-reminder item-hide">
+        <div class="christmas-reminder-box  item-hide">
           <p>Christmas Cocktail Kits are SOLD OUT!<br>
             Cocktail Kits are reopening in JANUARY!</p>
         </div>
         
       </div>
-      <h4 class="cocktail-description item-hide">
-      Easy Drinking, Citrus Forward - Includes 375ml bottle base spirit - Makes 7+ Servings
+      <h4 class="cocktail-description">
+     Crafted with love and care - Makes 7+ Servings
       </h4>
-      <div id="snow"></div>
-      <div class="menu-container item-hide">
+      <!-- <div id="snow"></div> -->
+      <div class="menu-container">
           <div class="menu-item">
             <div class="menu-item_pic">
-                <img src="/Resources/Christmas2021/Jingle Juice.jpg" alt="cocktail-pic">
+                <img src="/Resources/Jan2022/london.jpg" alt="cocktail-pic">
                 <!-- <img src="/Resources/new/golden.jpg" alt="cocktail-pic" class="hover-pic"> -->
 
             </div>
             <div class="menu-item_title">
-              Jingle Juice<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+              London Mist<br><img src="/Icons_wave.svg" alt="" class="wavy3">
             </div>
             <div class="menu-item_description">
-              1800 silver tequila, Passionfruit, agave syrup, lime, & cardamom
+              375ml Maker's Mark Whisky, Cream of Earl Grey, Honey, Vanilla, & Pressed Lemon
             </div>
             <div class="menu-item_price">
-                $70.00
+                $75.00
             </div>
-            <div class="menu-item_btn" id="jingle">
+            <div class="menu-item_btn" id="london">
                 Add to cart!
             </div>
           </div>
           <div class="menu-item">
               <div class="menu-item_pic">
-                  <img src="/Resources/Christmas2021/Mrs Claus Cosmo.jpg" alt="cocktail-pic">
+                  <img src="/Resources/Jan2022/imperial.jpg" alt="cocktail-pic">
                   <!-- <img src="/Resources/new/pine-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
 
               </div>
               <div class="menu-item_title">
-                Mrs. Claus Cosmo<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+                Imperial Blossom<br><img src="/Icons_wave.svg" alt="" class="wavy3">
               </div>
               <div class="menu-item_description">
-                Bombay Sapphire Gin, Cranberry, Pomegranate, Brown Sugar, Winter Spices, Lime, &amp; Orange Bitters
+                375ml Ketel One Vodka, Cherry, Imperial Jasmine, Rosewater, & Pressed Lime
               </div>
               <div class="menu-item_price">
-                  $70.00
+                  $75.00
               </div>
-              <div class="menu-item_btn" id="claus">
+              <div class="menu-item_btn" id="imperial">
                   Add to cart!
               </div>
           </div>
           
           <div class="menu-item">
               <div class="menu-item_pic">
-                  <img src="/Resources/Christmas2021/Soapberry Splash.jpg" alt="cocktail-pic">
+                  <img src="/Resources/Jan2022/OJ-drizzle.jpg" alt="cocktail-pic">
                   <!-- <img src="/Resources/new/deep-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
               </div>
               <div class="menu-item_title">
-                Soapberry Splash<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+                OJ Dizzle<br><img src="/Icons_wave.svg" alt="" class="wavy3">
               </div>
               <div class="menu-item_description">
-                Tito's Vodka, Lychee, Strawberry, Lemon, Citrus Stock, & rosewater 
+                375ml Bombay Sapphire Gin, Pressed Orange, Vanilla, Dill, & Pressed Lemon 
               </div>
               <div class="menu-item_price">
-                    $70.00  
+                    $75.00  
               </div>
-              <div class="menu-item_btn" id="soap">
+              <div class="menu-item_btn" id="oj">
                   Add to cart!
               </div>
               
           </div>
           <div class="menu-item">
               <div class="menu-item_pic">
-                  <img src="/Resources/Christmas2021/Gettin Blitzen.jpg" alt="cocktail-pic">
+                  <img src="/Resources/Jan2022/Bora-bora.jpg" alt="cocktail-pic">
                   <!-- <img src="/Resources/new/mango-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
               </div>
               <div class="menu-item_title">
-                gettin' blitzen<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+                Bora Bora Blues<br><img src="/Icons_wave.svg" alt="" class="wavy3">
               </div>
               <div class="menu-item_description">
-                Maker's Mark Bourbon, Peach, Lemon, Apricot, & Cream of Earl Grey
+                375ml 1800 Blanco Tequila, Pineapple, Coconut, Pressed Lime, Chili Salt, & Blue colouring
               </div>
               <div class="menu-item_price">
-                  $70.00
+                  $75.00
               </div>
-              <div class="menu-item_btn" id="blitzen">
+              <div class="menu-item_btn" id="bora">
                   Add to cart!
               </div>
           </div>
-          <!-- <div class="menu-item ">
-              <div class="menu-item_pic">
-                  <img src="/Resources/May 2021/May2021-2.jpg" alt="cocktail-pic">
-              </div>
-              <div class="menu-item_title">
-                  THE LAFFY TAFFY<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-              </div>
-              <div class="menu-item_description">
-                Bombay Sapphire Gin, Strawberry, apricot peach tea, Lemon, Chocolate bitters, &amp; Banana Essence
-              </div>
-              <div class="menu-item_price">
-                  $67.50
-              </div>
-              <div class="menu-item_btn" id="laffy">
-                  Add to cart!
-              </div>
-              
-          </div> -->
+          
           <div class="menu-item">
             <div class="menu-item_pic">
-                <img src="/Resources/Christmas2021/Naughty or Spice.jpg" alt="cocktail-pic">
+                <img src="/Resources/Jan2022/peanut.jpg" alt="cocktail-pic">
                 <!-- <img src="/Resources/new/golden.jpg" alt="cocktail-pic" class="hover-pic"> -->
 
             </div>
             <div class="menu-item_title">
-                Naughty or spice<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+              Peanut Butter Jelly Time<br><img src="/Icons_wave.svg" alt="" class="wavy3">
             </div>
             <div class="menu-item_description">
-              Appleton's VX Rum, allspice, pear, lime, angostura & orange bitters
+              375ml Appleton Signature Rum, Peanut Orgeat, Raspberry, & Pressed Lime
             </div>
             <div class="menu-item_price">
-                $70.00
+                $75.00
             </div>
-            <div class="menu-item_btn" id="naughty">
+            <div class="menu-item_btn" id="peanut">
                 Add to cart!
             </div>
           </div>
+          <div class="menu-item ">
+            <div class="menu-item_pic">
+                <img src="/Resources/Jan2022/apple-solutely.jpg" alt="cocktail-pic">
+            </div>
+            <div class="menu-item_title">
+              Apple-solutely Old Fashioned <span class="fontweight-normal">(16oz)</span><br><img src="/Icons_wave.svg" alt="" class="wavy3">
+            </div>
+            <div class="menu-item_description">
+              Apple Infused Bushmills Black Irish Whiskey, Winter Spiced Apple Syrup, Angostura Bitters, & Kinsip Black Walnut Bitters
+            </div>
+            <div class="menu-item_price">
+                $75.00
+            </div>
+            <div class="menu-item_btn" id="apple_solutely">
+                Add to cart!
+            </div>
+            
+        </div>
       </div>
       
       <h2 id="blended" class="item-hide">Pre-blended<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>

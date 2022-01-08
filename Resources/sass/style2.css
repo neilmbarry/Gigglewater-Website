@@ -1025,7 +1025,7 @@ ion-icon {
     flex-direction: column; }
   .cart-item {
     display: grid;
-    grid-template-columns: 0% 30% 20% 32% 13% 5%;
+    grid-template-columns: 1% 42% 34% 18% 5%;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.249);
@@ -2982,3 +2982,7 @@ select:-webkit-autofill:focus {
     margin-bottom: 3rem;
     font-weight: bold;
     line-height: 300%; }
+
+.fontweight-normal {
+  font-weight: 100;
+  text-transform: lowercase; }
