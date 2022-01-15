@@ -1104,8 +1104,29 @@ summaryIcon.addEventListener("click", (e) => {
   summaryToggle();
 });
 
+// document.querySelector(".summary-contents").addEventListener("input", (e) => {
+//   if (e.target.id === "custom-tip") console.log("tip changed");
+//   const newTip = document.querySelector("#custom-tip").value;
+//   console.log(newTip);
+//   addDollarTip(newTip);
+// });
+
+// document.querySelector("#add-custom-tip").addEventListener("click", () => {
+//   console.log("tip changed");
+//   const newTip = document.querySelector("#custom-tip").value;
+//   console.log(newTip);
+//   addDollarTip(newTip);
+// });
+
 document.querySelector(".summary-contents").addEventListener("click", (e) => {
   //console.log(e.target);
+
+  if (e.target.id === "add-custom-tip") {
+    const newTip = document.querySelector("#custom-tip").value;
+    console.log(newTip);
+    addDollarTip(newTip);
+  }
+
   if (e.target.classList.contains("back-contact")) {
     summaryToggle();
     contactToggle();
@@ -1124,28 +1145,78 @@ document.querySelector(".summary-contents").addEventListener("click", (e) => {
     //cartToggle();
   }
   if (e.target.classList.contains("summary-tip-option-1")) {
-    state.price.tipOption
-      ? (state.price.tipOption = 0)
-      : (state.price.tipOption = 1);
-    state.price.tipOption ? calcTip(10) : calcTip(0);
-    updateSummaryUI();
-    e.target.classList.toggle("summary-tip-option_active");
+    console.log("10% clicked!!");
+    if (state.price.tipOption === 1) {
+      console.log("10% disabling!!");
+      state.price.tipOption = 0;
+
+      calcTip(0);
+      updateSummaryUI();
+      e.target.classList.remove("summary-tip-option_active");
+    } else {
+      console.log("10% enabling!");
+      state.price.tipOption = 1;
+      e.target.classList.add("summary-tip-option_active");
+      calcTip(10);
+      updateSummaryUI();
+    }
+    // state.price.tipOption = 1
+    //   ? (state.price.tipOption = 0)
+    //   : (state.price.tipOption = 1);
+    // state.price.tipOption ? calcTip(10) : calcTip(0);
+    // updateSummaryUI();
+    // if ((state.price.tipOption = 1)) {
+    //   e.target.classList.add("summary-tip-option_active");
+    // } else {
+    //   e.target.classList.remove("summary-tip-option_active");
+    // }
   }
   if (e.target.classList.contains("summary-tip-option-2")) {
-    state.price.tipOption
-      ? (state.price.tipOption = 0)
-      : (state.price.tipOption = 2);
-    state.price.tipOption ? calcTip(15) : calcTip(0);
-    updateSummaryUI();
-    e.target.classList.toggle("summary-tip-option_active");
+    console.log("10% clicked!!");
+    if (state.price.tipOption === 2) {
+      console.log("10% disabling!!");
+      state.price.tipOption = 0;
+
+      calcTip(0);
+      updateSummaryUI();
+      e.target.classList.remove("summary-tip-option_active");
+    } else {
+      console.log("10% enabling!");
+      state.price.tipOption = 2;
+      e.target.classList.add("summary-tip-option_active");
+      calcTip(15);
+      updateSummaryUI();
+    }
   }
   if (e.target.classList.contains("summary-tip-option-3")) {
+    console.log("10% clicked!!");
+    if (state.price.tipOption === 3) {
+      console.log("10% disabling!!");
+      state.price.tipOption = 0;
+
+      calcTip(0);
+      updateSummaryUI();
+      e.target.classList.remove("summary-tip-option_active");
+    } else {
+      console.log("10% enabling!");
+      state.price.tipOption = 3;
+      e.target.classList.add("summary-tip-option_active");
+      calcTip(20);
+      updateSummaryUI();
+    }
+  }
+  if (e.target.classList.contains("summary-tip-option-other")) {
     state.price.tipOption
       ? (state.price.tipOption = 0)
-      : (state.price.tipOption = 3);
-    state.price.tipOption ? calcTip(20) : calcTip(0);
+      : (state.price.tipOption = 4);
 
-    updateSummaryUI();
+    document
+      .querySelector(".summary-tip-option-other")
+      .classList.toggle("summary-tip-option_active");
+    // document
+    //   .querySelector(".summary-tip-option-other")
+    //   .classList.toggle("summary-tip-option_active");
+    // updateSummaryUI();
   }
 });
 
@@ -1441,20 +1512,25 @@ const updateSummaryUI = () => {
             <div class="summary-item-type">Tip:</div>
             <div class="summary-item-info2">
               <div class="summary-tip">
-                <div class="summary-tip-option-1 summary-tip-option ${
+                <div class="btn summary-tip-option-1 summary-tip-option ${
                   state.price.tipOption === 1 ? `summary-tip-option_active` : ``
                 }">10%</div>
-                <div class="summary-tip-option-2 summary-tip-option ${
+                <div class="btn summary-tip-option-2 summary-tip-option ${
                   state.price.tipOption === 2 ? `summary-tip-option_active` : ``
                 }">15%</div>
-                <div class="summary-tip-option-3 summary-tip-option ${
+                <div class="btn summary-tip-option-3 summary-tip-option ${
                   state.price.tipOption === 3 ? `summary-tip-option_active` : ``
                 }">20%</div>
-              
-              </div>
-              <div class="summary-tip-text">
-              Tips are not expected but always appreciated!
-            </div>
+                
+            
+                </div>
+                <div class="summary-tip-other" ><div class="summary-tip-option-other summary-tip-option" id="no-border">Custom:</div><div>$   </div><input id="custom-tip" type="number" min="0"><button class="btn" id="add-custom-tip">Add!</button></div>
+                <div class="summary-tip-text">
+                  Tips are not expected but always appreciated!
+                </div>
+
+
+
             </div>
           </div>
           <div class="summary-item">
@@ -1605,6 +1681,12 @@ const calcTip = (percentage) => {
   state.price.tip =
     (state.price.subtotal + state.price.tax) * (percentage / 100);
   createTotals();
+};
+
+const addDollarTip = (dollarAmount) => {
+  state.price.tip = +dollarAmount;
+  state.price.tipOption = 4;
+  updateSummaryUI();
 };
 
 const tips1 = document.querySelector(".summary-tip-option-1");
@@ -1817,6 +1899,13 @@ document.querySelector(".open-textarea").addEventListener("click", () => {
   document
     .querySelector(".cart-textbox-icon")
     .classList.toggle("cart-textbox-icon-open");
+});
+
+document.querySelector("#add-custom-tip").addEventListener("click", () => {
+  console.log("tip changed");
+  const newTip = document.querySelector("#custom-tip").value;
+  console.log(newTip);
+  addDollarTip(newTip);
 });
 
 // if (document.getElementById("snow")) {

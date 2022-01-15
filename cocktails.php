@@ -342,13 +342,17 @@
           <div class="summary-item-info2">
             <div class="summary-tip">
               <div class="summary-tip-option-1 summary-tip-option summary-tip-option_active">10%</div>
-              <div class="summary-tip-option-2 summary-tip-option">15%</div>
+              <div class="summary-tip-option-2 summary-tip-option">153%</div>
               <div class="summary-tip-option-3 summary-tip-option">20%</div>
+              
             
             </div>
+            <div class="summary-tip-other" ><div class="summary-tip-option-other summary-tip-option" id="no-border">Custom:</div><div>$   </div><input id="custom-tip" type="number" min="0"><button class="btn" id="add-custom-tip">Add tip!</button></div>
             <div class="summary-tip-text">
               Tips are not expected but always appreciated!
             </div>
+
+            
           </div>
         </div>
         <div class="summary-item">

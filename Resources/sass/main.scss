@@ -287,6 +287,14 @@ body {
   display: none;
 }
 
+#add-custom-tip {
+  padding: 1rem 2rem;
+  margin: 3rem 1rem;
+  margin-top: 2.5rem;
+  font-weight: 900;
+  border: none;
+}
+
 .btn {
   text-transform: uppercase;
   text-decoration: none;
@@ -304,6 +312,7 @@ body {
   backface-visibility: hidden;
   font-weight: 400;
   letter-spacing: 1.5px;
+  cursor: pointer;
   //width: 40%;
   &_disable {
     pointer-events: none;
@@ -1841,7 +1850,7 @@ ion-icon {
   &-tip {
     display: flex;
     margin: 5px;
-    justify-content: center;
+    // justify-content: center;
     &-option {
       padding: 1rem 2rem;
       border: solid grey 1px;
@@ -1853,14 +1862,37 @@ ion-icon {
         background-color: rgb(35, 138, 73);
       }
       &:hover {
-        background-color: rgb(106, 159, 125);
+        background-color: rgba(63, 63, 63, 0.55);
+        color: $giggle-yellow;
       }
     }
     &-text {
-      text-align: center;
+      // text-align: center;
       width: 70%;
 
-      margin: 2rem auto;
+      margin: 1rem;
+    }
+    &-other {
+      text-align: center;
+      display: flex;
+      // justify-content: center;
+      height: 5rem;
+      margin: 2rem 0.5rem;
+      align-items: center;
+      input {
+        margin-left: 1rem;
+        font-size: 2rem;
+        width: 15%;
+        height: 4rem;
+        padding: 1rem;
+        border-radius: 4px;
+        border: none;
+        background: #fffcd5;
+        outline: none;
+        color: #101010;
+        margin-top: -0.5rem;
+        font-family: "Josefin Sans";
+      }
     }
   }
   &-item {
@@ -1869,7 +1901,7 @@ ion-icon {
     display: flex;
     align-items: flex-start;
     padding: 0.4rem;
-    margin-left: 120px;
+    padding-left: 120px;
     //align-items: center;
     //justify-content: center;
     //padding-left: 25%;
@@ -1974,6 +2006,12 @@ ion-icon {
       letter-spacing: 0.2rem;
     }
   }
+}
+
+#no-border {
+  border: none;
+  padding: 0;
+  padding-right: 1rem;
 }
 
 .italic {
