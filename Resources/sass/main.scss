@@ -4155,3 +4155,10 @@ select:-webkit-autofill:focus {
   font-weight: 100;
   text-transform: lowercase;
 }
+
+.email-reminder {
+  background-color: transparent;
+  color: $giggle-yellow;
+  font-size: 2rem;
+  text-align: center;
+}

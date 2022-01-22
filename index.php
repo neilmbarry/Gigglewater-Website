@@ -151,7 +151,15 @@
               id="contact-email"
               placeholder="Your email"
             />
+              
           </div>
+          <div class="contact-item">
+            <label class="contact-label" for="email"></label>
+          <div class="contact-input email-reminder">We will usually respond within 24 hours. Please check your spam folder as sometimes our replies are sent there.</div>
+          </div>
+
+
+          
           <div class="contact-item">
             <label class="contact-label" for="phone">Phone number*</label>
             <input
@@ -751,6 +759,7 @@
                 class="form-textarea"
                 required
               ></textarea>
+              <div class="center-text" >We will usually respond within 24 hours. Please check your spam folder as sometimes our replies are sent there.</div>
             </div>
           </div>
           <button class="btn btn-form">Send it!</button>

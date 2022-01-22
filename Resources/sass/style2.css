@@ -3017,3 +3017,9 @@ select:-webkit-autofill:focus {
 .fontweight-normal {
   font-weight: 100;
   text-transform: lowercase; }
+
+.email-reminder {
+  background-color: transparent;
+  color: #faf6cb;
+  font-size: 2rem;
+  text-align: center; }
