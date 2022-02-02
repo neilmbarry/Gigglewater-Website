@@ -326,10 +326,10 @@ const menuItemRef = {
       name: "No food selected",
       price: 0,
     },
-    // nuts: {
-    //   name: "Naughty Squirrel Mix",
-    //   price: 15,
-    // },
+    mellis: {
+      name: "Mellis Chocolate Bon Bons",
+      price: 12.5,
+    },
     chips: {
       name: "Ruffles Potato Chips",
       price: 0.75,
@@ -462,6 +462,10 @@ const menuItemRef = {
     //   name: "Anchovy-Stuffed Olives",
     //   price: 6,
     // },
+    mellis: {
+      name: "Mellis Chocolate Bon Bons",
+      price: 12.5,
+    },
     chips: {
       name: "Ruffle's Potato Chips",
       price: 0.75,

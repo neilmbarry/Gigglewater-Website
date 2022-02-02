@@ -403,7 +403,7 @@
       <ul class="nav-items nav-items_hide">
         <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
         <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-        <!-- <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li> -->
+        <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
         <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
         <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
         <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>
@@ -549,7 +549,7 @@
           <img src="./drinks.png" alt="drinks" class="banner" />
         </div>
         <div class="landing-btns">
-          <!-- <a href="/menu" class="btn btn-cta btn-header">Dine-In Menu</a> -->
+          <a href="/menu" class="btn btn-cta btn-header">Dine-In Menu</a>
           <a href="/cocktails" class="btn btn-cta btn-header">Order cocktail kits </a>
         </div>
         <!-- <div class="order-by">
@@ -569,7 +569,11 @@
         </div>
         <div class="order-by">
        
-          <strong>Closed Sunday and Monday</strong>
+          <strong>Reopening Feb 1st, 2022. 6pm-2am Daily.</strong>
+        </div>
+        <div class="order-by">
+       
+          No reservations. Walk-in only :)
         </div>
       </div>
     </header>

@@ -400,7 +400,7 @@
       <ul class="nav-items nav-items_hide">
         <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
         <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-        <!-- <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li> -->
+        <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
         <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
         <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
         <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>
@@ -887,6 +887,23 @@
                 $15.00
             </div>
             <div class="menu-item_btn" id="nuts">
+                Add to cart!
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item_pic">
+                <img src="/Resources/Jan2022/mellis.jpg" alt="cocktail-pic">
+            </div>
+            <div class="menu-item_title">
+                Chocolate Bon Bons<br><img src="/Icons_wave.svg" alt="" class="wavy3">
+            </div>
+            <div class="menu-item_description">
+            Mellis Chocolate Bon Bons
+            </div>
+            <div class="menu-item_price">
+                $12.50
+            </div>
+            <div class="menu-item_btn" id="mellis">
                 Add to cart!
             </div>
           </div>
