@@ -1,17 +1,17 @@
 //Shopping Cart
-const cartCheck = () => {
-  const quantity = state.cart2.length;
-  const cartNotification = document.querySelector(".cart-notification");
+// const cartCheck = () => {
+//   const quantity = state.cart2.length;
+//   const cartNotification = document.querySelector(".cart-notification");
 
-  if (!quantity) {
-    cartNotification.classList.remove("cart-notification-hide");
-    cartNotification.classList.add("cart-notification-hide");
-    return;
-  }
+//   if (!quantity) {
+//     cartNotification.classList.remove("cart-notification-hide");
+//     cartNotification.classList.add("cart-notification-hide");
+//     return;
+//   }
 
-  cartNotification.classList.remove("cart-notification-hide");
-  cartNotification.textContent = quantity >= 10 ? "9+" : quantity;
-};
+//   cartNotification.classList.remove("cart-notification-hide");
+//   cartNotification.textContent = quantity >= 10 ? "9+" : quantity;
+// };
 
 const foodCheck = () => {
   //Find out if food is necessary
@@ -326,10 +326,10 @@ const menuItemRef = {
       name: "No food selected",
       price: 0,
     },
-    mellis: {
-      name: "Mellis Chocolate Bon Bons",
-      price: 12.5,
-    },
+    // mellis: {
+    //   name: "Mellis Chocolate Bon Bons",
+    //   price: 12.5,
+    // },
     chips: {
       name: "Ruffles Potato Chips",
       price: 0.75,
@@ -462,10 +462,10 @@ const menuItemRef = {
     //   name: "Anchovy-Stuffed Olives",
     //   price: 6,
     // },
-    mellis: {
-      name: "Mellis Chocolate Bon Bons",
-      price: 12.5,
-    },
+    // mellis: {
+    //   name: "Mellis Chocolate Bon Bons",
+    //   price: 12.5,
+    // },
     chips: {
       name: "Ruffle's Potato Chips",
       price: 0.75,
@@ -885,9 +885,9 @@ const optionSwitch = () => {
 
 //---------------CONTACT-----------------//
 
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
+// contactForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+// });
 
 const updateContactUI = () => {
   const name = document.querySelector("#contact-name");
@@ -979,134 +979,134 @@ const createTotals = () => {
 //   storeState();
 // });
 
-document.querySelectorAll(".menu-item_btn").forEach((el) => {
-  el.addEventListener("click", (e) => {
-    addCartItem(e.target.id);
+// document.querySelectorAll(".menu-item_btn").forEach((el) => {
+//   el.addEventListener("click", (e) => {
+//     addCartItem(e.target.id);
 
-    updateCartUI();
-    storeState();
-  });
-});
+//     updateCartUI();
+//     storeState();
+//   });
+// });
 
 // UNDO BELOW
 
-document.querySelectorAll(".menu-item_btn").forEach((el) => {
-  el.addEventListener("click", () => {
-    el.classList.add("added");
-    el.textContent = "Added!";
-    setTimeout(() => {
-      el.textContent = "Add to cart!";
-    }, 1000);
-    //console.log(el);
-  });
-});
+// document.querySelectorAll(".menu-item_btn").forEach((el) => {
+//   el.addEventListener("click", () => {
+//     el.classList.add("added");
+//     el.textContent = "Added!";
+//     setTimeout(() => {
+//       el.textContent = "Add to cart!";
+//     }, 1000);
+//     //console.log(el);
+//   });
+// });
 
-const contactToggle = () => {
-  document.querySelector(".contact").classList.toggle("contact-hide");
-};
+// const contactToggle = () => {
+//   document.querySelector(".contact").classList.toggle("contact-hide");
+// };
 
-const summaryToggle = () => {
-  document.querySelector(".summary").classList.toggle("summary-hide");
-};
+// const summaryToggle = () => {
+//   document.querySelector(".summary").classList.toggle("summary-hide");
+// };
 
-document.querySelector(".contact-icon").addEventListener("click", (e) => {
-  e.preventDefault();
-  contactToggle();
-});
+// document.querySelector(".contact-icon").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   contactToggle();
+// });
 
-const init2 = function () {
-  //clearBookmarks();
-  const storage = localStorage.getItem("state");
-  if (storage) state = JSON.parse(storage);
-  if (!state.cart2) {
-    state = {
-      cart2: [],
-      contactDetails: {
-        name: "",
-        email: "",
-        phone: "",
-        address: {
-          address1: "",
-          address2: "",
-          city: "",
-          postcode: "",
-        },
-        recipient: {
-          name: "",
-          phone: "",
-        },
-        message: "",
-      },
-      price: {
-        cartTotal: 0,
-        subtotal: 0,
-        delivery: 0,
-        tax: 0,
-        grandTotal: 0,
-        tip: 0,
-        tipOption: 0,
-      },
-      delivered: false,
-      preference: {
-        pickup: "",
-        delivery: "",
-        cart: "",
-      },
-    };
-  }
-  createTotals();
-  updateCartUI();
-  updateContactUI();
-  cartCheck();
-};
+// const init2 = function () {
+//   //clearBookmarks();
+//   const storage = localStorage.getItem("state");
+//   if (storage) state = JSON.parse(storage);
+//   if (!state.cart2) {
+//     state = {
+//       cart2: [],
+//       contactDetails: {
+//         name: "",
+//         email: "",
+//         phone: "",
+//         address: {
+//           address1: "",
+//           address2: "",
+//           city: "",
+//           postcode: "",
+//         },
+//         recipient: {
+//           name: "",
+//           phone: "",
+//         },
+//         message: "",
+//       },
+//       price: {
+//         cartTotal: 0,
+//         subtotal: 0,
+//         delivery: 0,
+//         tax: 0,
+//         grandTotal: 0,
+//         tip: 0,
+//         tipOption: 0,
+//       },
+//       delivered: false,
+//       preference: {
+//         pickup: "",
+//         delivery: "",
+//         cart: "",
+//       },
+//     };
+//   }
+//   createTotals();
+//   // updateCartUI();
+//   updateContactUI();
+//   // cartCheck();
+// };
 
-cartContents.addEventListener("click", (e) => {
-  if (e.target.classList.contains("cart-btn")) {
-    const delID = e.target.closest(".cart-item").id;
-    removeCartItem(delID);
-  }
-  if (e.target.classList.contains("cart-item-increase")) {
-    const increaseID = e.target.closest(".cart-item").id;
+// cartContents.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("cart-btn")) {
+//     const delID = e.target.closest(".cart-item").id;
+//     removeCartItem(delID);
+//   }
+//   if (e.target.classList.contains("cart-item-increase")) {
+//     const increaseID = e.target.closest(".cart-item").id;
 
-    quantityUp(increaseID);
-  }
-  if (e.target.classList.contains("cart-item-decrease")) {
-    const increaseID = e.target.closest(".cart-item").id;
+//     quantityUp(increaseID);
+//   }
+//   if (e.target.classList.contains("cart-item-decrease")) {
+//     const increaseID = e.target.closest(".cart-item").id;
 
-    quantityDown(increaseID);
-  }
-});
+//     quantityDown(increaseID);
+//   }
+// });
 
-cartContents.addEventListener("change", (e) => {
-  if (e.target.classList.contains("cart-item-food")) {
-    const foodChangeID = e.target.closest(".cart-item").id;
-    //console.log(foodChangeID);
-    const foodType = e.target.value;
-    const menuRef = e.target.closest(".cart-item-food").id;
-    //console.log(foodChangeID, foodType);
-    //console.log(foodChangeID, foodType);
-    updateFood(foodChangeID, foodType, menuRef);
-  }
-  if (e.target.classList.contains("stupid-checkbox")) {
-    const festiveChangeID = e.target.closest(".cart-item").id;
-    const festiveType = e.target.checked;
-    console.log(festiveChangeID, festiveType);
-    festiveUpdate(festiveChangeID, festiveType);
-    updateCartUI();
-  }
-});
+// cartContents.addEventListener("change", (e) => {
+//   if (e.target.classList.contains("cart-item-food")) {
+//     const foodChangeID = e.target.closest(".cart-item").id;
+//     //console.log(foodChangeID);
+//     const foodType = e.target.value;
+//     const menuRef = e.target.closest(".cart-item-food").id;
+//     //console.log(foodChangeID, foodType);
+//     //console.log(foodChangeID, foodType);
+//     updateFood(foodChangeID, foodType, menuRef);
+//   }
+//   if (e.target.classList.contains("stupid-checkbox")) {
+//     const festiveChangeID = e.target.closest(".cart-item").id;
+//     const festiveType = e.target.checked;
+//     console.log(festiveChangeID, festiveType);
+//     festiveUpdate(festiveChangeID, festiveType);
+//     updateCartUI();
+//   }
+// });
 
-cartIcon.addEventListener("click", (e) => {
-  e.preventDefault();
-  updateCartUI();
-  cartToggle();
-});
+// cartIcon.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   updateCartUI();
+//   cartToggle();
+// });
 
-summaryIcon.addEventListener("click", (e) => {
-  e.preventDefault();
+// summaryIcon.addEventListener("click", (e) => {
+//   e.preventDefault();
 
-  summaryToggle();
-});
+//   summaryToggle();
+// });
 
 // document.querySelector(".summary-contents").addEventListener("input", (e) => {
 //   if (e.target.id === "custom-tip") console.log("tip changed");
@@ -1122,152 +1122,152 @@ summaryIcon.addEventListener("click", (e) => {
 //   addDollarTip(newTip);
 // });
 
-document.querySelector(".summary-contents").addEventListener("click", (e) => {
-  //console.log(e.target);
+// document.querySelector(".summary-contents").addEventListener("click", (e) => {
+//   //console.log(e.target);
 
-  if (e.target.id === "add-custom-tip") {
-    const newTip = document.querySelector("#custom-tip").value;
-    console.log(newTip);
-    addDollarTip(newTip);
-  }
+//   if (e.target.id === "add-custom-tip") {
+//     const newTip = document.querySelector("#custom-tip").value;
+//     console.log(newTip);
+//     addDollarTip(newTip);
+//   }
 
-  if (e.target.classList.contains("back-contact")) {
-    summaryToggle();
-    contactToggle();
-  }
-  if (e.target.classList.contains("back-cart")) {
-    summaryToggle();
-    cartToggle();
-  }
-  if (e.target.classList.contains("summary-box")) {
-    summaryToggle();
-    populateOrderForm();
-    if (state.contactDetails.email.endsWith(".ru")) {
-      return;
-    }
-    orderForm.submit();
-    //cartToggle();
-  }
-  if (e.target.classList.contains("summary-tip-option-1")) {
-    console.log("10% clicked!!");
-    if (state.price.tipOption === 1) {
-      console.log("10% disabling!!");
-      state.price.tipOption = 0;
+//   if (e.target.classList.contains("back-contact")) {
+//     summaryToggle();
+//     contactToggle();
+//   }
+//   if (e.target.classList.contains("back-cart")) {
+//     summaryToggle();
+//     cartToggle();
+//   }
+//   if (e.target.classList.contains("summary-box")) {
+//     summaryToggle();
+//     populateOrderForm();
+//     if (state.contactDetails.email.endsWith(".ru")) {
+//       return;
+//     }
+//     orderForm.submit();
+//     //cartToggle();
+//   }
+//   if (e.target.classList.contains("summary-tip-option-1")) {
+//     console.log("10% clicked!!");
+//     if (state.price.tipOption === 1) {
+//       console.log("10% disabling!!");
+//       state.price.tipOption = 0;
 
-      calcTip(0);
-      updateSummaryUI();
-      e.target.classList.remove("summary-tip-option_active");
-    } else {
-      console.log("10% enabling!");
-      state.price.tipOption = 1;
-      e.target.classList.add("summary-tip-option_active");
-      calcTip(10);
-      updateSummaryUI();
-    }
-    // state.price.tipOption = 1
-    //   ? (state.price.tipOption = 0)
-    //   : (state.price.tipOption = 1);
-    // state.price.tipOption ? calcTip(10) : calcTip(0);
-    // updateSummaryUI();
-    // if ((state.price.tipOption = 1)) {
-    //   e.target.classList.add("summary-tip-option_active");
-    // } else {
-    //   e.target.classList.remove("summary-tip-option_active");
-    // }
-  }
-  if (e.target.classList.contains("summary-tip-option-2")) {
-    console.log("10% clicked!!");
-    if (state.price.tipOption === 2) {
-      console.log("10% disabling!!");
-      state.price.tipOption = 0;
+//       calcTip(0);
+//       updateSummaryUI();
+//       e.target.classList.remove("summary-tip-option_active");
+//     } else {
+//       console.log("10% enabling!");
+//       state.price.tipOption = 1;
+//       e.target.classList.add("summary-tip-option_active");
+//       calcTip(10);
+//       updateSummaryUI();
+//     }
+//     // state.price.tipOption = 1
+//     //   ? (state.price.tipOption = 0)
+//     //   : (state.price.tipOption = 1);
+//     // state.price.tipOption ? calcTip(10) : calcTip(0);
+//     // updateSummaryUI();
+//     // if ((state.price.tipOption = 1)) {
+//     //   e.target.classList.add("summary-tip-option_active");
+//     // } else {
+//     //   e.target.classList.remove("summary-tip-option_active");
+//     // }
+//   }
+//   if (e.target.classList.contains("summary-tip-option-2")) {
+//     console.log("10% clicked!!");
+//     if (state.price.tipOption === 2) {
+//       console.log("10% disabling!!");
+//       state.price.tipOption = 0;
 
-      calcTip(0);
-      updateSummaryUI();
-      e.target.classList.remove("summary-tip-option_active");
-    } else {
-      console.log("10% enabling!");
-      state.price.tipOption = 2;
-      e.target.classList.add("summary-tip-option_active");
-      calcTip(15);
-      updateSummaryUI();
-    }
-  }
-  if (e.target.classList.contains("summary-tip-option-3")) {
-    console.log("10% clicked!!");
-    if (state.price.tipOption === 3) {
-      console.log("10% disabling!!");
-      state.price.tipOption = 0;
+//       calcTip(0);
+//       updateSummaryUI();
+//       e.target.classList.remove("summary-tip-option_active");
+//     } else {
+//       console.log("10% enabling!");
+//       state.price.tipOption = 2;
+//       e.target.classList.add("summary-tip-option_active");
+//       calcTip(15);
+//       updateSummaryUI();
+//     }
+//   }
+//   if (e.target.classList.contains("summary-tip-option-3")) {
+//     console.log("10% clicked!!");
+//     if (state.price.tipOption === 3) {
+//       console.log("10% disabling!!");
+//       state.price.tipOption = 0;
 
-      calcTip(0);
-      updateSummaryUI();
-      e.target.classList.remove("summary-tip-option_active");
-    } else {
-      console.log("10% enabling!");
-      state.price.tipOption = 3;
-      e.target.classList.add("summary-tip-option_active");
-      calcTip(20);
-      updateSummaryUI();
-    }
-  }
-  if (e.target.classList.contains("summary-tip-option-other")) {
-    state.price.tipOption
-      ? (state.price.tipOption = 0)
-      : (state.price.tipOption = 4);
+//       calcTip(0);
+//       updateSummaryUI();
+//       e.target.classList.remove("summary-tip-option_active");
+//     } else {
+//       console.log("10% enabling!");
+//       state.price.tipOption = 3;
+//       e.target.classList.add("summary-tip-option_active");
+//       calcTip(20);
+//       updateSummaryUI();
+//     }
+//   }
+//   if (e.target.classList.contains("summary-tip-option-other")) {
+//     state.price.tipOption
+//       ? (state.price.tipOption = 0)
+//       : (state.price.tipOption = 4);
 
-    document
-      .querySelector(".summary-tip-option-other")
-      .classList.toggle("summary-tip-option_active");
-    // document
-    //   .querySelector(".summary-tip-option-other")
-    //   .classList.toggle("summary-tip-option_active");
-    // updateSummaryUI();
-  }
-});
+//     document
+//       .querySelector(".summary-tip-option-other")
+//       .classList.toggle("summary-tip-option_active");
+//     // document
+//     //   .querySelector(".summary-tip-option-other")
+//     //   .classList.toggle("summary-tip-option_active");
+//     // updateSummaryUI();
+//   }
+// });
 
-document.querySelector(".back-contact").addEventListener("click", () => {
-  summaryToggle();
-  contactToggle();
-});
+// document.querySelector(".back-contact").addEventListener("click", () => {
+//   summaryToggle();
+//   contactToggle();
+// });
 
-nextBtn.addEventListener("click", () => {
-  contactToggle();
-  cartToggle();
-  storeState();
-  const cartPref = document.querySelector(".cart-textarea").value;
-  state.preference.cart = cartPref;
-});
+// nextBtn.addEventListener("click", () => {
+//   contactToggle();
+//   cartToggle();
+//   storeState();
+//   const cartPref = document.querySelector(".cart-textarea").value;
+//   state.preference.cart = cartPref;
+// });
 
-summaryBtn.addEventListener("click", () => {
-  updateContactState();
-  createTotals();
-  updateSummaryUI();
-  summaryToggle();
-  contactToggle();
-  storeState();
-});
+// summaryBtn.addEventListener("click", () => {
+//   updateContactState();
+//   createTotals();
+//   updateSummaryUI();
+//   summaryToggle();
+//   contactToggle();
+//   storeState();
+// });
 
-postBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log(e);
-  const formPostcode = document.querySelector("#contact-postcode").value;
-  postSearch(formPostcode);
-  document.querySelector(".postage-container").innerHTML = "";
-  const html = state.price.delivery
-    ? `<div class="contact-item postage-price">
-              <label class='contact-label' for="price">Postage:</label>
-              <p>$${state.price.delivery.toFixed(2)}</p>
-              </div>
-            `
-    : `
-      <div class="contact-item postage-price">
-      <label class='contact-label' for="price"></label><p>We couldn't calculate your postage, please inquire!</p>
-      </div>`;
-  document
-    .querySelector(".postage-container")
-    .insertAdjacentHTML("beforeend", html);
-});
+// postBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   console.log(e);
+//   const formPostcode = document.querySelector("#contact-postcode").value;
+//   postSearch(formPostcode);
+//   document.querySelector(".postage-container").innerHTML = "";
+//   const html = state.price.delivery
+//     ? `<div class="contact-item postage-price">
+//               <label class='contact-label' for="price">Postage:</label>
+//               <p>$${state.price.delivery.toFixed(2)}</p>
+//               </div>
+//             `
+//     : `
+//       <div class="contact-item postage-price">
+//       <label class='contact-label' for="price"></label><p>We couldn't calculate your postage, please inquire!</p>
+//       </div>`;
+//   document
+//     .querySelector(".postage-container")
+//     .insertAdjacentHTML("beforeend", html);
+// });
 
-init2();
+// init2();
 
 // const devIcon = document.querySelector(".dev-icon");
 
@@ -1592,150 +1592,386 @@ const orderType = () => {
   console.log("YOOOOOOO");
 };
 
-const postSearch = (postcode) => {
-  const query = postcode.slice(0, 3).toUpperCase();
-  console.log(query);
-  state.price.delivery = 0;
-  Object.keys(deliveryPrices).forEach((price) => {
-    //console.log(price);
-    if (state.price.delivery) return;
-    deliveryPrices[price].find((match) => {
-      //To be optimized
-      if (match === query) {
-        console.log("should work");
-        const newPrice = +price;
+// const postSearch = (postcode) => {
+//   const query = postcode.slice(0, 3).toUpperCase();
+//   console.log(query);
+//   state.price.delivery = 0;
+//   Object.keys(deliveryPrices).forEach((price) => {
+//     //console.log(price);
+//     if (state.price.delivery) return;
+//     deliveryPrices[price].find((match) => {
+//       //To be optimized
+//       if (match === query) {
+//         console.log("should work");
+//         const newPrice = +price;
 
-        state.price.delivery = +newPrice;
-        return;
-      }
-      return match === postcode;
-    });
-  });
-  if (!state.price.delivery) {
-    console.log("Please inquire");
-    state.price.delivery = null;
-  }
-};
+//         state.price.delivery = +newPrice;
+//         return;
+//       }
+//       return match === postcode;
+//     });
+//   });
+//   if (!state.price.delivery) {
+//     console.log("Please inquire");
+//     state.price.delivery = null;
+//   }
+// };
 
-deliveryOptions.addEventListener("click", (e) => {
-  if (e.target.id === "radio-1" && state.delivered === true) {
-    state.delivered = false;
-    optionSwitch();
-  }
-  if (e.target.id === "radio-2" && state.delivered === false) {
-    state.delivered = true;
-    optionSwitch();
-  }
-});
+// deliveryOptions.addEventListener("click", (e) => {
+//   if (e.target.id === "radio-1" && state.delivered === true) {
+//     state.delivered = false;
+//     optionSwitch();
+//   }
+//   if (e.target.id === "radio-2" && state.delivered === false) {
+//     state.delivered = true;
+//     optionSwitch();
+//   }
+// });
 
-const orderFormName = document.querySelector("#order-form-name");
-const orderFormPhone = document.querySelector("#order-form-phone");
-const orderFormEmail = document.querySelector("#order-form-email");
-const orderFormAddress = document.querySelector("#order-form-address");
-const orderFormPreference = document.querySelector("#order-form-preference");
-const orderFormType = document.querySelector("#order-form-type");
-const orderFormCart = document.querySelector("#order-form-cart");
-const orderFormPrice = document.querySelector("#order-form-price");
-const orderFormTip = document.querySelector("#order-form-tip");
-const orderFormRecipName = document.querySelector("#order-form-recip-name");
-const orderFormRecipPhone = document.querySelector("#order-form-recip-phone");
-const orderFormMessage = document.querySelector("#order-form-message");
+// const orderFormName = document.querySelector("#order-form-name");
+// const orderFormPhone = document.querySelector("#order-form-phone");
+// const orderFormEmail = document.querySelector("#order-form-email");
+// const orderFormAddress = document.querySelector("#order-form-address");
+// const orderFormPreference = document.querySelector("#order-form-preference");
+// const orderFormType = document.querySelector("#order-form-type");
+// const orderFormCart = document.querySelector("#order-form-cart");
+// const orderFormPrice = document.querySelector("#order-form-price");
+// const orderFormTip = document.querySelector("#order-form-tip");
+// const orderFormRecipName = document.querySelector("#order-form-recip-name");
+// const orderFormRecipPhone = document.querySelector("#order-form-recip-phone");
+// const orderFormMessage = document.querySelector("#order-form-message");
 
-const populateOrderForm = () => {
-  orderFormName.value = state.contactDetails.name;
-  orderFormPhone.value = state.contactDetails.phone;
-  orderFormEmail.value = state.contactDetails.email;
-  orderFormRecipName.value = state.contactDetails.recipient.name || "n/a";
-  orderFormRecipPhone.value = state.contactDetails.recipient.phone || "n/a";
-  orderFormMessage.value = state.contactDetails.message || "n/a";
-  orderFormAddress.value = `${state.contactDetails.address.address1} - ${state.contactDetails.address.address2} - ${state.contactDetails.address.city} - ${state.contactDetails.address.postcode}`;
-  orderFormPreference.value =
-    state.preference.delivery +
-      state.preference.pickup +
-      state.preference.cart || "n/a";
-  orderFormType.value = `${state.delivered ? "DELIVERY" : "PICK-UP"}`;
-  const formatCart = state.cart2
-    .map((el) => {
-      const isCocktail = Object.keys(menuItemRef.cocktails).includes(el.name);
+// const populateOrderForm = () => {
+//   orderFormName.value = state.contactDetails.name;
+//   orderFormPhone.value = state.contactDetails.phone;
+//   orderFormEmail.value = state.contactDetails.email;
+//   orderFormRecipName.value = state.contactDetails.recipient.name || "n/a";
+//   orderFormRecipPhone.value = state.contactDetails.recipient.phone || "n/a";
+//   orderFormMessage.value = state.contactDetails.message || "n/a";
+//   orderFormAddress.value = `${state.contactDetails.address.address1} - ${state.contactDetails.address.address2} - ${state.contactDetails.address.city} - ${state.contactDetails.address.postcode}`;
+//   orderFormPreference.value =
+//     state.preference.delivery +
+//       state.preference.pickup +
+//       state.preference.cart || "n/a";
+//   orderFormType.value = `${state.delivered ? "DELIVERY" : "PICK-UP"}`;
+//   const formatCart = state.cart2
+//     .map((el) => {
+//       const isCocktail = Object.keys(menuItemRef.cocktails).includes(el.name);
 
-      return `${
-        isCocktail
-          ? menuItemRef.cocktails[el.name].name +
-            ` with ${menuItemRef.food[el.food].name}` +
-            `${el.festive ? " WITH FESTIVE PAPER!" : ""}`
-          : menuItemRef.merch[el.name].name +
-            `${el.size ? " size " + el.size : ""}`
-      }                        `;
-    })
-    .join("");
-  console.log(formatCart);
-  orderFormCart.value = `${formatCart}`;
-  orderFormPrice.value = `Cart total: ${state.price.cartTotal.toFixed(2)}
-               \nDelivery: ${
-                 state.price.delivery ? state.price.delivery.toFixed(2) : "TBA"
-               }
-               Subtotal: ${state.price.subtotal.toFixed(2)}
-                \nTax: ${state.price.tax.toFixed(2)}
-               \nTip: ${state.price.tip ? state.price.tip.toFixed(2) : 0}
-               \n Grand Total: ${state.price.grandTotal.toFixed(2)}`;
-  // orderFormTip.value = state.price.tip.toFixed(2);
-};
+//       return `${
+//         isCocktail
+//           ? menuItemRef.cocktails[el.name].name +
+//             ` with ${menuItemRef.food[el.food].name}` +
+//             `${el.festive ? " WITH FESTIVE PAPER!" : ""}`
+//           : menuItemRef.merch[el.name].name +
+//             `${el.size ? " size " + el.size : ""}`
+//       }                        `;
+//     })
+//     .join("");
+//   console.log(formatCart);
+//   orderFormCart.value = `${formatCart}`;
+//   orderFormPrice.value = `Cart total: ${state.price.cartTotal.toFixed(2)}
+//                \nDelivery: ${
+//                  state.price.delivery ? state.price.delivery.toFixed(2) : "TBA"
+//                }
+//                Subtotal: ${state.price.subtotal.toFixed(2)}
+//                 \nTax: ${state.price.tax.toFixed(2)}
+//                \nTip: ${state.price.tip ? state.price.tip.toFixed(2) : 0}
+//                \n Grand Total: ${state.price.grandTotal.toFixed(2)}`;
+//   // orderFormTip.value = state.price.tip.toFixed(2);
+// };
 
-const calcTip = (percentage) => {
-  state.price.tip =
-    (state.price.subtotal + state.price.tax) * (percentage / 100);
-  createTotals();
-};
+// const calcTip = (percentage) => {
+//   state.price.tip =
+//     (state.price.subtotal + state.price.tax) * (percentage / 100);
+//   createTotals();
+// };
 
-const addDollarTip = (dollarAmount) => {
-  state.price.tip = +dollarAmount;
-  state.price.tipOption = 4;
-  updateSummaryUI();
-};
+// const addDollarTip = (dollarAmount) => {
+//   state.price.tip = +dollarAmount;
+//   state.price.tipOption = 4;
+//   updateSummaryUI();
+// };
 
-const tips1 = document.querySelector(".summary-tip-option-1");
-const tips2 = document.querySelector(".summary-tip-option-2");
-const tips3 = document.querySelector(".summary-tip-option-3");
+// const tips1 = document.querySelector(".summary-tip-option-1");
+// const tips2 = document.querySelector(".summary-tip-option-2");
+// const tips3 = document.querySelector(".summary-tip-option-3");
 
-tips1.addEventListener("click", (e) => {
-  if (e.target.classList.contains("summary-tip-option-1")) {
-    calcTip(10);
-    updateSummaryUI();
-  }
-  if (e.target.classList.contains("summary-tip-option-2")) {
-    calcTip(15);
-    updateSummaryUI();
-  }
-  if (e.target.classList.contains("summary-tip-option-3")) {
-    calcTip(20);
-    updateSummaryUI();
-  }
-});
+// tips1.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("summary-tip-option-1")) {
+//     calcTip(10);
+//     updateSummaryUI();
+//   }
+//   if (e.target.classList.contains("summary-tip-option-2")) {
+//     calcTip(15);
+//     updateSummaryUI();
+//   }
+//   if (e.target.classList.contains("summary-tip-option-3")) {
+//     calcTip(20);
+//     updateSummaryUI();
+//   }
+// });
 
-const closeSummary = document.querySelector(".summary-close");
-const closeContact = document.querySelector(".contact-close");
-const closeCart = document.querySelector(".cart-close");
+// const closeSummary = document.querySelector(".summary-close");
+// const closeContact = document.querySelector(".contact-close");
+// const closeCart = document.querySelector(".cart-close");
 
-const backSummary = document.querySelector(".summary-backward");
-const backContact = document.querySelector(".contact-backward");
+// const backSummary = document.querySelector(".summary-backward");
+// const backContact = document.querySelector(".contact-backward");
 
-closeSummary.addEventListener("click", () => {
-  summaryToggle();
-});
-closeContact.addEventListener("click", () => {
-  contactToggle();
-});
-closeCart.addEventListener("click", () => {
-  cartToggle();
-});
-backSummary.addEventListener("click", () => {
-  summaryToggle();
-  contactToggle();
-});
-backContact.addEventListener("click", () => {
-  cartToggle();
-  contactToggle();
-});
+// closeSummary.addEventListener("click", () => {
+//   summaryToggle();
+// });
+// closeContact.addEventListener("click", () => {
+//   contactToggle();
+// });
+// closeCart.addEventListener("click", () => {
+//   cartToggle();
+// });
+// backSummary.addEventListener("click", () => {
+//   summaryToggle();
+//   contactToggle();
+// });
+// backContact.addEventListener("click", () => {
+//   cartToggle();
+//   contactToggle();
+// });
+
+// const successSend = document.querySelector(".success-send");
+
+// if (successSend) {
+//   console.log("YAAAAY!");
+//   clearState();
+//   cartCheck();
+// }
+
+// const isNumericInput = (event) => {
+//   const key = event.keyCode;
+//   return (
+//     (key >= 48 && key <= 57) || // Allow number line
+//     (key >= 96 && key <= 105) // Allow number pad
+//   );
+// };
+
+// const isModifierKey = (event) => {
+//   const key = event.keyCode;
+//   return (
+//     event.shiftKey === true ||
+//     key === 35 ||
+//     key === 36 || // Allow Shift, Home, End
+//     key === 8 ||
+//     key === 9 ||
+//     key === 13 ||
+//     key === 46 || // Allow Backspace, Tab, Enter, Delete
+//     (key > 36 && key < 41) || // Allow left, up, right, down
+//     // Allow Ctrl/Command + A,C,V,X,Z
+//     ((event.ctrlKey === true || event.metaKey === true) &&
+//       (key === 65 || key === 67 || key === 86 || key === 88 || key === 90))
+//   );
+// };
+
+// const enforceFormat = (event) => {
+//   // Input must be of a valid number format or a modifier key, and not longer than ten digits
+//   if (!isNumericInput(event) && !isModifierKey(event)) {
+//     event.preventDefault();
+//   }
+// };
+
+// //------Phone Number Formater-----//
+
+// const formatToPhone = (event) => {
+//   if (isModifierKey(event)) {
+//     return;
+//   }
+
+//   // I am lazy and don't like to type things more than once
+//   const target = event.target;
+//   const input = event.target.value.replace(/\D/g, "").substring(0, 10); // First ten digits of input only
+//   const zip = input.substring(0, 3);
+//   const middle = input.substring(3, 6);
+//   const last = input.substring(6, 10);
+
+//   if (input.length > 6) {
+//     target.value = `(${zip}) ${middle} - ${last}`;
+//   } else if (input.length > 3) {
+//     target.value = `(${zip}) ${middle}`;
+//   } else if (input.length > 0) {
+//     target.value = `(${zip}`;
+//   }
+// };
+
+// const inputElement = document.getElementById("contact-phone");
+// const inputRecipElement = document.getElementById("recip-phone");
+
+// inputElement.addEventListener("keydown", enforceFormat);
+// inputElement.addEventListener("keyup", formatToPhone);
+// inputRecipElement.addEventListener("keydown", enforceFormat);
+// inputRecipElement.addEventListener("keyup", formatToPhone);
+
+// const validityCheckPickUp = () => {
+//   const nameValid = document.querySelector("#contact-name").value.length > 0;
+
+//   const emailValid = document.querySelector("#contact-email").value.length > 0;
+
+//   const phoneValid =
+//     document.querySelector("#contact-phone").value.length >= 16;
+
+//   if (nameValid && emailValid && phoneValid) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// const validityCheckDelivery = () => {
+//   const nameValid = document.querySelector("#contact-name").value.length > 0;
+
+//   const emailValid = document.querySelector("#contact-email").value.length > 0;
+
+//   const phoneValid =
+//     document.querySelector("#contact-phone").value.length >= 16;
+
+//   const addressValid =
+//     document.querySelector("#contact-address1").value.length > 0;
+
+//   const postalValid =
+//     document.querySelector("#contact-postcode").value.length >= 6;
+
+//   if (nameValid && emailValid && phoneValid && addressValid && postalValid) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// const validityCheck = () => {
+//   if (state.delivered)
+//     console.log(
+//       validityCheckDelivery() ? "Form is valid!" : "Form is invalid!"
+//     );
+
+//   if (state.delivered) {
+//     if (validityCheckDelivery()) {
+//       document.querySelector(".contact-box").style.display = "block";
+//       document.querySelector(".contact-box").style.opacity = "1";
+//       document.querySelector(".required-box").style.display = "none";
+//       document.querySelector(".required-box").style.opacity = "0";
+//     } else {
+//       document.querySelector(".contact-box").style.display = "none";
+//       document.querySelector(".contact-box").style.opacity = "0";
+//       document.querySelector(".required-box").style.display = "block";
+//       document.querySelector(".required-box").style.opacity = "1";
+//     }
+//   } else {
+//     if (validityCheckPickUp()) {
+//       document.querySelector(".contact-box").style.display = "block";
+//       document.querySelector(".contact-box").style.opacity = "1";
+//       document.querySelector(".required-box").style.display = "none";
+//       document.querySelector(".required-box").style.opacity = "0";
+//     } else {
+//       document.querySelector(".contact-box").style.display = "none";
+//       document.querySelector(".contact-box").style.opacity = "0";
+//       document.querySelector(".required-box").style.display = "block";
+//       document.querySelector(".required-box").style.opacity = "1";
+//     }
+//   }
+// };
+
+// document.querySelectorAll(".valid").forEach((el) => {
+//   el.addEventListener("input", validityCheck);
+// });
+
+// document.querySelector(".open-textarea").addEventListener("click", () => {
+//   setTimeout(() => {
+//     document.querySelector(".cart-textarea").value = "";
+//   }, 600);
+
+//   document
+//     .querySelector(".cart-textarea")
+//     .classList.toggle("cart-textarea-show");
+//   document
+//     .querySelector(".cart-textbox-icon")
+//     .classList.toggle("cart-textbox-icon-open");
+// });
+
+// document.querySelector("#add-custom-tip")?.addEventListener("click", () => {
+//   console.log("tip changed");
+//   const newTip = document.querySelector("#custom-tip").value;
+//   console.log(newTip);
+//   addDollarTip(newTip);
+// });
+
+// // if (document.getElementById("snow")) {
+// //   document.addEventListener("DOMContentLoaded", function () {
+// //     var script = document.createElement("script");
+// //     script.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
+// //     script.onload = function () {
+// //       particlesJS("snow", {
+// //         particles: {
+// //           number: {
+// //             value: 200,
+// //             density: {
+// //               enable: true,
+// //               value_area: 800,
+// //             },
+// //           },
+// //           color: {
+// //             value: "#ffffff",
+// //           },
+// //           opacity: {
+// //             value: 0.7,
+// //             random: false,
+// //             anim: {
+// //               enable: false,
+// //             },
+// //           },
+// //           size: {
+// //             value: 5,
+// //             random: true,
+// //             anim: {
+// //               enable: false,
+// //             },
+// //           },
+// //           line_linked: {
+// //             enable: false,
+// //           },
+// //           move: {
+// //             enable: true,
+// //             speed: 3,
+// //             direction: "bottom",
+// //             random: true,
+// //             straight: false,
+// //             out_mode: "out",
+// //             bounce: false,
+// //             attract: {
+// //               enable: true,
+// //               rotateX: 300,
+// //               rotateY: 1200,
+// //             },
+// //           },
+// //         },
+// //         interactivity: {
+// //           events: {
+// //             onhover: {
+// //               enable: false,
+// //             },
+// //             onclick: {
+// //               enable: false,
+// //             },
+// //             resize: false,
+// //           },
+// //         },
+// //         retina_detect: true,
+// //       });
+// //     };
+// //     document.head.append(script);
+// //   });
+// // }
+
+// // const buyButtons = document.querySelectorAll(".menu-item_btn");
+// // buyButtons.forEach((btn) => {
+// //   btn.style.cursor = "help";
+// // });
 
 const burgerIcon = document.querySelector(".burger-container");
 const menuItems = document.querySelector(".nav-items");
@@ -1747,239 +1983,3 @@ burgerIcon.addEventListener("click", () => {
   burgerOpen.classList.toggle("burger-hide");
   burgerClose.classList.toggle("burger-hide");
 });
-
-const successSend = document.querySelector(".success-send");
-
-if (successSend) {
-  console.log("YAAAAY!");
-  clearState();
-  cartCheck();
-}
-
-const isNumericInput = (event) => {
-  const key = event.keyCode;
-  return (
-    (key >= 48 && key <= 57) || // Allow number line
-    (key >= 96 && key <= 105) // Allow number pad
-  );
-};
-
-const isModifierKey = (event) => {
-  const key = event.keyCode;
-  return (
-    event.shiftKey === true ||
-    key === 35 ||
-    key === 36 || // Allow Shift, Home, End
-    key === 8 ||
-    key === 9 ||
-    key === 13 ||
-    key === 46 || // Allow Backspace, Tab, Enter, Delete
-    (key > 36 && key < 41) || // Allow left, up, right, down
-    // Allow Ctrl/Command + A,C,V,X,Z
-    ((event.ctrlKey === true || event.metaKey === true) &&
-      (key === 65 || key === 67 || key === 86 || key === 88 || key === 90))
-  );
-};
-
-const enforceFormat = (event) => {
-  // Input must be of a valid number format or a modifier key, and not longer than ten digits
-  if (!isNumericInput(event) && !isModifierKey(event)) {
-    event.preventDefault();
-  }
-};
-
-//------Phone Number Formater-----//
-
-const formatToPhone = (event) => {
-  if (isModifierKey(event)) {
-    return;
-  }
-
-  // I am lazy and don't like to type things more than once
-  const target = event.target;
-  const input = event.target.value.replace(/\D/g, "").substring(0, 10); // First ten digits of input only
-  const zip = input.substring(0, 3);
-  const middle = input.substring(3, 6);
-  const last = input.substring(6, 10);
-
-  if (input.length > 6) {
-    target.value = `(${zip}) ${middle} - ${last}`;
-  } else if (input.length > 3) {
-    target.value = `(${zip}) ${middle}`;
-  } else if (input.length > 0) {
-    target.value = `(${zip}`;
-  }
-};
-
-const inputElement = document.getElementById("contact-phone");
-const inputRecipElement = document.getElementById("recip-phone");
-
-inputElement.addEventListener("keydown", enforceFormat);
-inputElement.addEventListener("keyup", formatToPhone);
-inputRecipElement.addEventListener("keydown", enforceFormat);
-inputRecipElement.addEventListener("keyup", formatToPhone);
-
-const validityCheckPickUp = () => {
-  const nameValid = document.querySelector("#contact-name").value.length > 0;
-
-  const emailValid = document.querySelector("#contact-email").value.length > 0;
-
-  const phoneValid =
-    document.querySelector("#contact-phone").value.length >= 16;
-
-  if (nameValid && emailValid && phoneValid) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const validityCheckDelivery = () => {
-  const nameValid = document.querySelector("#contact-name").value.length > 0;
-
-  const emailValid = document.querySelector("#contact-email").value.length > 0;
-
-  const phoneValid =
-    document.querySelector("#contact-phone").value.length >= 16;
-
-  const addressValid =
-    document.querySelector("#contact-address1").value.length > 0;
-
-  const postalValid =
-    document.querySelector("#contact-postcode").value.length >= 6;
-
-  if (nameValid && emailValid && phoneValid && addressValid && postalValid) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const validityCheck = () => {
-  if (state.delivered)
-    console.log(
-      validityCheckDelivery() ? "Form is valid!" : "Form is invalid!"
-    );
-
-  if (state.delivered) {
-    if (validityCheckDelivery()) {
-      document.querySelector(".contact-box").style.display = "block";
-      document.querySelector(".contact-box").style.opacity = "1";
-      document.querySelector(".required-box").style.display = "none";
-      document.querySelector(".required-box").style.opacity = "0";
-    } else {
-      document.querySelector(".contact-box").style.display = "none";
-      document.querySelector(".contact-box").style.opacity = "0";
-      document.querySelector(".required-box").style.display = "block";
-      document.querySelector(".required-box").style.opacity = "1";
-    }
-  } else {
-    if (validityCheckPickUp()) {
-      document.querySelector(".contact-box").style.display = "block";
-      document.querySelector(".contact-box").style.opacity = "1";
-      document.querySelector(".required-box").style.display = "none";
-      document.querySelector(".required-box").style.opacity = "0";
-    } else {
-      document.querySelector(".contact-box").style.display = "none";
-      document.querySelector(".contact-box").style.opacity = "0";
-      document.querySelector(".required-box").style.display = "block";
-      document.querySelector(".required-box").style.opacity = "1";
-    }
-  }
-};
-
-document.querySelectorAll(".valid").forEach((el) => {
-  el.addEventListener("input", validityCheck);
-});
-
-document.querySelector(".open-textarea").addEventListener("click", () => {
-  setTimeout(() => {
-    document.querySelector(".cart-textarea").value = "";
-  }, 600);
-
-  document
-    .querySelector(".cart-textarea")
-    .classList.toggle("cart-textarea-show");
-  document
-    .querySelector(".cart-textbox-icon")
-    .classList.toggle("cart-textbox-icon-open");
-});
-
-document.querySelector("#add-custom-tip").addEventListener("click", () => {
-  console.log("tip changed");
-  const newTip = document.querySelector("#custom-tip").value;
-  console.log(newTip);
-  addDollarTip(newTip);
-});
-
-// if (document.getElementById("snow")) {
-//   document.addEventListener("DOMContentLoaded", function () {
-//     var script = document.createElement("script");
-//     script.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
-//     script.onload = function () {
-//       particlesJS("snow", {
-//         particles: {
-//           number: {
-//             value: 200,
-//             density: {
-//               enable: true,
-//               value_area: 800,
-//             },
-//           },
-//           color: {
-//             value: "#ffffff",
-//           },
-//           opacity: {
-//             value: 0.7,
-//             random: false,
-//             anim: {
-//               enable: false,
-//             },
-//           },
-//           size: {
-//             value: 5,
-//             random: true,
-//             anim: {
-//               enable: false,
-//             },
-//           },
-//           line_linked: {
-//             enable: false,
-//           },
-//           move: {
-//             enable: true,
-//             speed: 3,
-//             direction: "bottom",
-//             random: true,
-//             straight: false,
-//             out_mode: "out",
-//             bounce: false,
-//             attract: {
-//               enable: true,
-//               rotateX: 300,
-//               rotateY: 1200,
-//             },
-//           },
-//         },
-//         interactivity: {
-//           events: {
-//             onhover: {
-//               enable: false,
-//             },
-//             onclick: {
-//               enable: false,
-//             },
-//             resize: false,
-//           },
-//         },
-//         retina_detect: true,
-//       });
-//     };
-//     document.head.append(script);
-//   });
-// }
-
-// const buyButtons = document.querySelectorAll(".menu-item_btn");
-// buyButtons.forEach((btn) => {
-//   btn.style.cursor = "help";
-// });

@@ -4,6 +4,8 @@ const sectionAboutCards = document.querySelector(".cards-container");
 const sectionReviews = document.querySelector(".section-reviews");
 const sectionReviewsTitle = document.querySelector(".section-reviews-title");
 const sectionReviewsCards = document.querySelector(".slider");
+sectionReviewsTitle.classList.remove("title-hidden");
+sectionReviewsCards.classList.remove("slider-blur");
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
@@ -62,8 +64,8 @@ const sectionObserver2 = new IntersectionObserver(revealSection2, {
   // rootMargin: "-300px",
 });
 
-sectionObserver.observe(sectionAbout);
-sectionObserver2.observe(sectionReviews);
+// sectionObserver.observe(sectionAbout);
+// sectionObserver2.observe(sectionReviews);
 //---delete me---//section.classList.add('section--hidden');
 
 const slides = document.querySelectorAll(".slide");

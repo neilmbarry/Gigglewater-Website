@@ -96,8 +96,6 @@ body {
   align-items: center;
   margin: auto;
   align-items: center;
-  animation: moveInTop 0.4s ease-out 0.2s;
-  animation-fill-mode: backwards;
   letter-spacing: 2px;
   font-weight: 400;
   position: absolute;
@@ -132,11 +130,12 @@ body {
 .logo {
   width: 100%; }
 
+.text-center {
+  text-align: center; }
+
 .header {
   height: 100vh;
   position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   background-image: radial-gradient(rgba(19, 18, 14, 0.5) 0%, #181714 70%), url(/gallery4.jpg);
   background-position: center center;
   background-attachment: fixed;
@@ -174,6 +173,12 @@ body {
   font-weight: 900;
   border: none; }
 
+.contact-resos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10000; }
+
 .btn {
   text-transform: uppercase;
   text-decoration: none;
@@ -204,6 +209,11 @@ body {
     animation-fill-mode: backwards;
     font-size: 1.6rem;
     margin: 1rem; }
+  .btn-contact {
+    padding: 1rem 2rem;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 130%; }
   .btn-card {
     margin: 0px 40px 20px 40px;
     padding: 10px;
@@ -1652,6 +1662,49 @@ select:-webkit-autofill:focus {
   display: block;
   margin: 0 2rem; }
 
+.reservations {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem; }
+  .reservations-box {
+    max-width: 750px;
+    background-color: rgba(34, 34, 34, 0.762);
+    padding: 4rem 10rem;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #faf6cb; }
+  .reservations-text {
+    z-index: -10;
+    text-align: center;
+    margin-bottom: 1rem; }
+    .reservations-text p {
+      font-size: 2.2rem !important;
+      line-height: 2.5rem; }
+  .reservations-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+    overflow: hidden; }
+    .reservations-bg img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      z-index: -5;
+      filter: blur(2px); }
+  .reservations-logo {
+    width: 100px;
+    margin: auto;
+    margin-top: 3rem; }
+
+.transparent {
+  color: transparent; }
+
 @media only screen and (max-width: 1023px) {
   html {
     font-size: 50%; }
@@ -1668,8 +1721,6 @@ select:-webkit-autofill:focus {
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    animation: moveInTop 0.4s ease-out 0.6s;
-    animation-fill-mode: backwards;
     letter-spacing: 2px;
     font-weight: 400;
     width: 100%;
@@ -2182,6 +2233,19 @@ select:-webkit-autofill:focus {
       display: block; } }
 
 @media only screen and (max-width: 480px) {
+  .btn-contact {
+    padding: 1rem;
+    font-size: 37%; }
+  .reservations {
+    min-height: 75vh;
+    margin-top: 10rem; }
+    .reservations-box {
+      margin: 3rem;
+      font-size: 3rem;
+      padding: 4rem 2rem; }
+    .reservations-text p {
+      font-size: 2.5rem !important;
+      line-height: 3rem; }
   .large-screen {
     display: none; }
   .small-screen {
@@ -2878,7 +2942,7 @@ select:-webkit-autofill:focus {
 
 .mobile-menu-container {
   margin: auto;
-  max-width: 1200px;
+  max-width: 700px;
   margin-top: 10rem; }
   .mobile-menu-container img {
     width: 95%;

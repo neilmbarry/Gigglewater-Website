@@ -398,48 +398,50 @@
         </a>
       </div>
       <ul class="nav-items nav-items_hide">
-        <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
-        <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-        <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
-        <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
-        <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
-        <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>
-        <li class="nav-list-item"><a href="/gallery" class="nav-item">Gallery</a></li>
-        <!-- <li><a href="#" class="nav-item">Reviews</a></li> -->
-        <!-- <li class="nav-list-item"><a href="#contact-us" class="nav-item">Find Us</a></li> -->
-        <li class="nav-list-item"><a href="/#contact-us" class="nav-item">Contact</a></li>
-        <li>
-          
+      <li class="nav-list-item">
+          <a href="/menu" class="nav-item">Dine-In Menu</a>
         </li>
-        <li class="development">
-          <a href="#" class="nav-item contact-icon"
-            ><ion-icon name="card-outline"></ion-icon
-          ></a>
+        <li class="nav-list-item">
+          <a href="/cocktails" class="nav-item">Cocktail Kits</a>
         </li>
-        <li class="development">
-          <a href="#" class="nav-item summary-icon"
-            ><ion-icon name="paper-plane-outline"></ion-icon
-          ></a>
+      
+
+        
+        <li class="nav-list-item">
+          <a href="/gallery" class="nav-item">Gallery</a>
         </li>
+
+        <li class="nav-list-item">
+          <a href="/reservations" class="nav-item">Reservations</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="/contact" class="nav-item">Contact</a>
+        </li>
+        <li></li>
       </ul>
       <div class="hidden">X</div>
-      
-      <a href="#" class="cart-icon"
-          ><ion-icon name="cart-outline"></ion-icon
-        >
-      <div class="cart-notification cart-notification-hide">
-        3
-      </div>
-      </a>
-      <div class="burger">
-          <div class="burger-container">
-            <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>
-            <ion-icon name="close-outline" class="burger-icon burger-close burger-hide"></ion-icon>
 
-          </div>
+      <!-- <a href="#" class="cart-icon item-hide"
+            ><ion-icon name="cart-outline"></ion-icon
+            >
+        <div class="cart-notification cart-notification-hide">
+            3
+        </div>
+        </a> -->
+      <div class="burger">
+        <div class="burger-container">
+          <ion-icon
+            name="menu-outline"
+            class="burger-icon burger-open"
+          ></ion-icon>
+          <ion-icon
+            name="close-outline"
+            class="burger-icon burger-close burger-hide"
+          ></ion-icon>
+        </div>
       </div>
     </nav>
-    <div class="row">
+    <!-- <div class="row">
       <?php
       if($_GET['success'] == 1){
           echo "<div class=\"form-messages success\">
@@ -450,665 +452,36 @@
           <p>Oops! Something went wrong, please try again.</p>
       </div>";}
       ?>
-    </div>
+    </div> -->
     
 
    
 
    
-    <main>
-      <!-- <h2 class="title-push">Month of cinco de mayo Feature!<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
-      <div class="feature">
-        <div class="feature-box">
-          <div class="feature-image">
-            
-          </div>
-          <div class="feature-info">
-            <h2 class="feature-title">Margarita month</h2>
-            <h4 class="feature-description">Kit includes:</h4>
-           
-              <h4 class="feature-description">1x 750ml bottle of 1800 Blanco Tequila</h4>
-              <h4 class="feature-description">1x 8oz Pineapple Coconut Marg Mix</h4>
-              <h4 class="feature-description">1x 8oz Habanero Blood Orange Marg Mix</h4>
-              <h4 class="feature-description">1x 8oz Classic Tommy's Marg Mix</h4>
-              <h4 class="feature-description">1x 2oz Spicy Chili Salt</h4>
-          
-            
-            <h4 class="feature-price">$130.00</h4>
-            <h4 class="feature-servings">15 servings</h4>
-            <div class="menu-item_btn feature-btn" id="cinco">
-              Add to cart!
-            </div>
-            
-          </div>
-        </div>
-      </div> -->
-      <!-- <div class="feature mt-3">
-        <div class="feature-box feature-box2">
-          
-          <div class="feature-info">
-            <h2 class="feature-title2">Summer Spirit Forward</h2>
-            <h4 class="feature-description">Kit includes:</h4>
-           
-              <h4 class="feature-description">1x 750ml bottle of 1800 Blanco Tequila</h4>
-              <h4 class="feature-description">1x 8oz Pineapple Coconut Marg Mix</h4>
-              <h4 class="feature-description">1x 8oz Habanero Blood Orange Marg Mix</h4>
-              <h4 class="feature-description">1x 8oz Classic Tommy's Marg Mix</h4>
-              <h4 class="feature-description">1x 2oz Spicy Chili Salt</h4>
-          
-            
-            <h4 class="feature-price">$130.00</h4>
-            <h4 class="feature-servings">15 servings</h4>
-            <div class="menu-item_btn feature-btn" id="cinco">
-              Add to cart!
-            </div>
-             <h4 class="feature-servings">First 15 orders will receive a complimentary<strong> Tequila tasting kit.</strong> <br><span class='italic'>*Includes four samples of our favourite tequila and mezcal, with an accompanying virtual class.</span> </h4> 
-          </div>
-          <div class="feature-image">
-            
-          </div>
-        </div>
-      </div> -->
-     
-      <h2 class="title-push">Cocktail Kits<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
-      <div class="christmas-reminder item-hide">
-        <div class="christmas-reminder-box  item-hide">
-          <p>Christmas Cocktail Kits are SOLD OUT!<br>
-            Cocktail Kits are reopening in JANUARY!</p>
-        </div>
-        
-      </div>
-      <h4 class="cocktail-description">
-     Crafted with love and care - Makes 8 Servings
-      </h4>
-      <!-- <div id="snow"></div> -->
-      <div class="menu-container">
-          <div class="menu-item">
-            <div class="menu-item_pic">
-                <img src="/Resources/Jan2022/london.jpg" alt="cocktail-pic">
-                <!-- <img src="/Resources/new/golden.jpg" alt="cocktail-pic" class="hover-pic"> -->
-
-            </div>
-            <div class="menu-item_title">
-              London Mist<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-              375ml Maker's Mark Whisky, Cream of Earl Grey, Honey, Vanilla, & Pressed Lemon
-            </div>
-            <div class="menu-item_price">
-                $75.00
-            </div>
-            <div class="menu-item_btn" id="london">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item">
-              <div class="menu-item_pic">
-                  <img src="/Resources/Jan2022/imperial.jpg" alt="cocktail-pic">
-                  <!-- <img src="/Resources/new/pine-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
-
-              </div>
-              <div class="menu-item_title">
-                Imperial Blossom<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-              </div>
-              <div class="menu-item_description">
-                375ml Ketel One Vodka, Cherry, Imperial Jasmine, Rosewater, & Pressed Lime
-              </div>
-              <div class="menu-item_price">
-                  $75.00
-              </div>
-              <div class="menu-item_btn" id="imperial">
-                  Add to cart!
-              </div>
-          </div>
-          
-          <div class="menu-item">
-              <div class="menu-item_pic">
-                  <img src="/Resources/Jan2022/OJ-drizzle.jpg" alt="cocktail-pic">
-                  <!-- <img src="/Resources/new/deep-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
-              </div>
-              <div class="menu-item_title">
-                OJ Dizzle<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-              </div>
-              <div class="menu-item_description">
-                375ml Bombay Sapphire Gin, Pressed Orange, Vanilla, Dill, & Pressed Lemon 
-              </div>
-              <div class="menu-item_price">
-                    $75.00  
-              </div>
-              <div class="menu-item_btn" id="oj">
-                  Add to cart!
-              </div>
-              
-          </div>
-          <div class="menu-item">
-              <div class="menu-item_pic">
-                  <img src="/Resources/Jan2022/Bora-bora.jpg" alt="cocktail-pic">
-                  <!-- <img src="/Resources/new/mango-box.jpg" alt="cocktail-pic" class="hover-pic"> -->
-              </div>
-              <div class="menu-item_title">
-                Bora Bora Blues<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-              </div>
-              <div class="menu-item_description">
-                375ml 1800 Blanco Tequila, Pineapple, Coconut, Pressed Lime, Chili Salt, & Blue colouring
-              </div>
-              <div class="menu-item_price">
-                  $75.00
-              </div>
-              <div class="menu-item_btn" id="bora">
-                  Add to cart!
-              </div>
-          </div>
-          
-          <div class="menu-item">
-            <div class="menu-item_pic">
-                <img src="/Resources/Jan2022/peanut.jpg" alt="cocktail-pic">
-                <!-- <img src="/Resources/new/golden.jpg" alt="cocktail-pic" class="hover-pic"> -->
-
-            </div>
-            <div class="menu-item_title">
-              Peanut Butter Jelly Time<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-              375ml Appleton Signature Rum, Peanut Orgeat, Raspberry, & Pressed Lime
-            </div>
-            <div class="menu-item_price">
-                $75.00
-            </div>
-            <div class="menu-item_btn" id="peanut">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item ">
-            <div class="menu-item_pic">
-                <img src="/Resources/Jan2022/apple-solutely.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-              Apple-solutely Old Fashioned <br><span class="fontweight-normal">(16oz Pre-batch)</span><br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-              Apple Infused Bushmills Black Irish Whiskey, Winter Spiced Apple Syrup, Angostura Bitters, & Kinsip Black Walnut Bitters
-            </div>
-            <div class="menu-item_price">
-                $75.00
-            </div>
-            <div class="menu-item_btn" id="apple_solutely">
-                Add to cart!
-            </div>
-            
-        </div>
-      </div>
-      
-      <h2 id="blended" class="item-hide">Pre-blended<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
-      <h4 class="cocktail-description item-hide">
-       Ready to serve - Presented as 473ml bottled cocktail - Makes 5+ Servings
-      </h4>
-      
-      <div class="menu-container item-hide">
+    <section class="reservations">
+            <div class="reservations-box">
+                <div class="reservations-bg">
+                    <img src="./Resources/Jan2022/OJ-drizzle.jpg" alt="">
+                </div>
+                <div class="reservations-text"><p> 
+                  <!-- <span class="transparent">...</span> -->
+                  It’s been an absolute blast providing you all with cocktail kits these past two years but it’s time for us to turn it down and focus on our dine-in service.</p></div>
+                <!-- <div class="reservations-text transparent">.</div> -->
                 
-        <div class="menu-item item-hide">
-          <div class="menu-item_pic">
-              <img src="/Resources/May 2021/Peach355.jpg" alt="cocktail-pic">
-          </div>
-          <div class="menu-item_title">
-              Peach Perfect<br>
-              <!-- *Super popular!*<br> -->
-              <img src="/Icons_wave.svg" alt="wave" class="wavy3">
-          </div>
-          <div class="menu-item_description">
-            <strong>355ml can / 1 serving <br> 7% ABV</strong> <br><br>
-            Bombay Sapphire Gin, St<span class="tilda">~</span>Germain Elderflower Liqueur, Peach Nectar, Cream of Earl Grey Tea &amp; Acidulants (Ya, we fancy!)
-            
-          </div>
-          <div class="menu-item_price">
-              $10.00 / Can
-              
-          </div>
-          <div class="menu-item_btn" id="perfect">
-              Add to cart!
-              <!-- Temporarily sold out! -->
-          </div>
-          <div class="menu-item_price">
-            
-            $55.00 / 6-Pack
-          </div>
-          <!-- <div class="space"></div> -->
-          <div class="menu-item_btn" id="perfect6">
-            Add to cart!
-            <!-- Temporarily sold out! -->
-          </div>
-        </div>  
-        <!-- <div class="menu-item">
-          <div class="menu-item_pic">
-              <img src="/Resources/new/perfect3.jpg" alt="cocktail-pic">
-          </div>
-          <div class="menu-item_title">
-              Peach Perfect<br>
-              *6-Pack*<br><img src="/Icons_wave.svg" alt="wave" class="wavy3">
-          </div>
-          <div class="menu-item_description">
-            <strong>240ml cans / 6 servings <br> 7% ABV</strong> <br><br>
-            Bombay Sapphire Gin, St<span class="tilda">~</span>Germain Elderflower Liqueur, Peach Nectar, Cream of Earl Grey Tea &amp; Acidulants (Ya, we fancy!)
-            
-          </div>
-          <div class="menu-item_price">
-              $32.50
-          </div>
-          <div class="menu-item_btn" id="perfect6">
-              Add to cart!
-          </div>
-        </div>           -->
-        <div class="menu-item">
-          <div class="menu-item_pic">
-              <img src="/Resources/Christmas2021/Gingerbread Negroni.jpg" alt="cocktail-pic">
-          </div>
-          <div class="menu-item_title">
-            gingerbread negroni<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-          </div>
-          <div class="menu-item_description">
-            gingerbread spiced citadelle gin, sweet vermouth, amaro montenegro, campari, & maple syrup 
-          </div>
-                    <div class="menu-item_price">
-                     16oz / $67.50  
+                <div class="reservations-text">
+                    <p>
+                        We will still consider larger custom orders of $1000 (before delivery fees) and above. Please email us at cocktails@projectgigglewater and we can discuss some tailored options!<br>
+                        
+                    </p>
+                    
                 </div>
-                <div class="menu-item_btn" id="gingNegroniSml">
-                    Add to cart!
+                <!-- <div class="reservations-text bold"><p><strong> So walk on in any night you like, we can’t wait to see you!</strong></p></div> -->
+                <div class="reservations-logo">
+                    <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
                 </div>
-                <div class="menu-item_price">
-              
-                  32oz / $115.00 
-                </div>
-                <!-- <div class="space"></div> -->
-                <div class="menu-item_btn" id="gingNegroniLrg">
-                  Add to cart!
-                  <!-- Temporarily sold out! -->
-                </div>
-        </div>
-          <div class="menu-item">
-              <div class="menu-item_pic">
-                  <img src="/Resources/new/Deshler.jpg" alt="cocktail-pic">
-              </div>
-              <div class="menu-item_title">
-                  APPLEWOOD DESHLER<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-              </div>
-              <div class="menu-item_description">
-                Wild Turkey bourbon blend, Dubonnet, Grand Marnier, Peychauds bitters, Angostura bitters, charred applewood chips, &amp; orange zest
-              </div>
-              <div class="menu-item_price">
-                  $70.00
-              </div>
-              <div class="menu-item_btn" id="deshler">
-                  Add to cart!
-              </div>
-          </div>
-          <div class="menu-item item-hide">
-              <div class="menu-item_pic">
-                  <img src="/Resources/new/SummerSpirit.jpg" alt="cocktail-pic">
-              </div>
-              <div class="menu-item_title">
-                Summer Spirit Forward<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-              </div>
-              <div class="menu-item_description">
-                1x 8oz Pina Colada Old Fashioned<br>
-                1x 8oz Jamaican Manhattan<br>
-                1x 8oz Raspberry tequila negroni<br>
-                <strong>10+ servings</strong><br>
-                *SALE UNTIL SOLD OUT*
-
-              </div>
-              <div class="menu-item_price">
-                $90.00
-              </div>
-              <div class="menu-item_btn" id="summer">
-                  Add to cart!
-                  
-              </div>
-          </div>
-          <div class="menu-item item-hide">
-              <div class="menu-item_pic">
-                  <img src="/Resources/new/PopIt.jpg" alt="cocktail-pic">
-              </div>
-              <div class="menu-item_title">
-                  POP IT LIKE IT'S HOT
-              </div>
-              <div class="menu-item_description">
-                Corn pop infused St. remy brandy, lillet blanc, green chartreuse, maple syrup, &amp; peach bitters
-              </div>
-              <div class="menu-item_price">
-                * 2 REMAINING! *
-                  $67.50
-              </div>
-              <div class="menu-item_btn" id="popit">
-                  Add to cart!
-              </div>
-          </div>
-          <div class="menu-item item-hide">
-              <div class="menu-item_pic">
-                  <img src="/Resources/new/paperPlane.jpg" alt="cocktail-pic">
-              </div>
-              <div class="menu-item_title">
-                  PAPER FLAME<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-              </div>
-              <div class="menu-item_description">
-                Flor De Cana 5yo Rum, Aperitivo blend, Amaro Nonino, overproof rum, &amp; Fresh Lime
-                          
-                          
-              </div>
-              <div class="menu-item_price">
-                  $67.50
-              </div>
-              <div class="menu-item_btn" id="paper">
-                  Add to cart!
-              </div>
-          </div>
-          <div class="menu-item item-hide">
-              <div class="menu-item_pic">
-                  <img src="/Resources/new/after8.jpg" alt="cocktail-pic">
-              </div>
-              <div class="menu-item_title">
-                  AFTER EIGHT, BEFORE NINE
-              </div>
-              <div class="menu-item_description">
-                Beattie's peppermint Vanilla Vodka, Creme de menthe isabelle, &amp; creme de cacao<br/><span class="bold">Only 2 remaining!</span>
-              </div>
-              <div class="menu-item_price">
-                  $67.50
-              </div>
-              <div class="menu-item_btn" id="after">
-                  Add to cart!
-              </div>
-          </div>
-          <div class="menu-item item-hide">
-              <div class="menu-item_pic">
-                  <img src="/Resources/new/butter.jpg" alt="cocktail-pic">
-              </div>
-              <div class="menu-item_title">
-                  HOT BUTTERED RUM
-              </div>
-              <div class="menu-item_description">
-                Mount Gay Eclipse rum, Spiced Butter, &amp; Cinnamon
-              </div>
-              <div class="menu-item_price">
-                  $20.00
-              </div>
-              <div class="menu-item_btn" id="butter">
-                  Add to cart!
-              </div>
-          </div>
-      </div>
-      <!-- <div class="feature mt-3">
-        <div class="feature-box feature-box2">
-          <div class="feature-image feature-image2 small-screen">
-            
-          </div>
-          
-          <div class="feature-info">
-            <h2 class="feature-title2">Summer Spirit Forward</h2>
-            <h4 class="feature-description">Kit includes:</h4>
-           
-              <h4 class="feature-description capitalize"><strong>1x 8oz Pina Colada Old Fashioned</strong></h4>
-              <h4 class="feature-description capitalize">Pineapple infused wild turkey bourbon, toasted coconut, tiki bitters</h4>
-              
-          
-              <h4 class="feature-description capitalize"><strong>1x 8oz Jamaican Manhattan</strong></h4>
-              <h4 class="feature-description capitalize">appleton estate 8yr rum, fernet branca, amontillado sherry, rhubarb Liqueur</h4>
-              <h4 class="feature-description capitalize"><strong>1x 8oz Raspberry tequila negroni</strong></h4>
-              <h4 class="feature-description capitalize">Espolon Blanco tequila, raspberry campari, mezcal agua santa, sweet vermouth</h4>
-              
-            
-            <h4 class="feature-price">$110.00</h4>
-            <h4 class="feature-servings"><strong>10+ servings</strong></h4>
-            <div class="menu-item_btn feature-btn" id="summer">
-              Add to cart!
             </div>
-             
-          </div>
-          <div class="feature-image feature-image2 large-screen">
-            
-          </div>
-        </div>
-      </div> -->
-      
-      <h2 class=''>Food<br><img src="/Icons_wave.svg" alt="" class="wavy2"></h2>
-      
-      <div class="menu-container">
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/May 2021/nuts.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Naughty Squirrel Mix<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-            Almonds, Cashews, Raisins, Cranberries, Chocolate Toffee<br>
-                300g
-            </div>
-            <div class="menu-item_price">
-                $15.00
-            </div>
-            <div class="menu-item_btn" id="nuts">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item_pic">
-                <img src="/Resources/Jan2022/mellis.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Chocolate Bon Bons<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-            Mellis Chocolate Bon Bons
-            </div>
-            <div class="menu-item_price">
-                $12.50
-            </div>
-            <div class="menu-item_btn" id="mellis">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item_pic">
-                <img src="/Resources/Christmas2021/popcorn.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Old Fashioned Kettle Corn<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-            Toronto Popcorn Company<br>80g
-            </div>
-            <div class="menu-item_price">
-                $5.00
-            </div>
-            <div class="menu-item_btn" id="popcorn">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/soul-matcha.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Soul Chocolate<br>Matcha 36%<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-            Flavour notes: Matcha Latte, Honey<br>
-                White Chocolate - 25g
-            </div>
-            <div class="menu-item_price">
-                $6.50
-            </div>
-            <div class="menu-item_btn" id="soul_matcha">
-                Add to cart!
-            </div>
-          </div>
-          
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/soul_dom.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Soul Chocolate<br>Dominican 70%<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-                Flavour notes: Caramel, Honey, Grape<br>
-                Dark Chocolate - 25g
-            </div>
-            <div class="menu-item_price">
-                $6.50
-            </div>
-            <div class="menu-item_btn btn_disable" id="soul_dom">
-                <!-- Add to cart! -->
-                Temporarily sold out!
-            </div>
-          </div>
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/soul_guat.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Soul Chocolate<br>Guatemala 68%<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-                Flavour notes: Clementine, Honey, Black Tea<br>
-                Dark Chocolate - 25g
-            </div>
-            <div class="menu-item_price">
-                $6.50
-            </div>
-            <div class="menu-item_btn" id="soul_guat">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/soul_mad.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Soul Chocolate<br>Madagascar 60%<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-                Flavour notes: Toffee, Caramel<br>
-                Dark Milk Chocolate - 25g
-            </div>
-            <div class="menu-item_price">
-                $6.50
-            </div>
-            <div class="menu-item_btn btn_disable" id="soul_mad">
-                <!-- Add to cart! -->
-                Temporarily sold out!
-            </div>
-          </div>
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/soul_papua.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Soul Chocolate<br>Papua New Guinea 77%<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-                Flavour notes: Dried Fruit, Molasses, Mesquite<br>
-                Dark Chocolate - 25g
-            </div>
-            <div class="menu-item_price">
-                $6.50
-            </div>
-            <div class="menu-item_btn" id="soul_papua">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/soul_ven.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Soul Chocolate<br>Venezuela 75%<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-                Flavour notes: Almond, Cinnamon, Silky<br>
-                Dark Chocolate - 25g
-            </div>
-            <div class="menu-item_price">
-                $6.50
-            </div>
-            <div class="menu-item_btn" id="soul_ven">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/ONYX_Box4-2.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                Onyx Box Assorted Bon-Bons<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-              Contains dairy, soy, and coloured cocoa butter. May contain traces of nuts and gluten.
-            </div>
-            <div class="menu-item_price">
-                $15.00
-            </div>
-            <div class="menu-item_btn" id="choc">
-                Add to cart!
-            </div>
-          </div>
-          <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/olives.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                ANCHOVY-STUFFED OLIVES<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-                José Lou - Green Olives stuffed with Anchovy - 0.37l
-            </div>
-            <div class="menu-item_price">
-                $6.00
-            </div>
-            <div class="menu-item_btn" id="olives">
-                Add to cart!
-            </div>
-        </div>
+        </section>
     
-        <div class="menu-item">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/chips.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                POTATO CHIPS<br><img src="/Icons_wave.svg" alt="" class="wavy3">
-            </div>
-            <div class="menu-item_description">
-                Ruffles Regular Potato Chips - 40g 
-            </div>
-            <div class="menu-item_price">
-                $0.75
-            </div>
-            <div class="menu-item_btn" id="chips">
-                Add to cart!
-            </div>
-        </div>
-        
-        <div class="menu-item item-hide">
-            <div class="menu-item_pic">
-                <img src="/Resources/new/falernum.jpg" alt="cocktail-pic">
-            </div>
-            <div class="menu-item_title">
-                HOUSE-MADE FALERNUM
-                (CONTAINS NUTS) 240ML / 8OZ
-            </div>
-            <!-- <div class="menu-item_description">
-                APPLETON SIGNATURE RUM
-            </div> -->
-            <div class="menu-item_price">
-                $10.00
-            </div>
-            <div class="menu-item_btn" id="falernum">
-                Add to cart!
-            </div>
-        </div>
-        
-      </div>  
-    </main>
   
     <footer class="footer">
       <a href="#" class="footer-logo">
@@ -1127,7 +500,7 @@
         <div ><a href="https://www.instagram.com/projectgigglewater/?hl=en" target="_blacnk"><ion-icon name="logo-instagram" class="instagram"></ion-icon></a></div>
       </div>
     </footer>
-      <form method="post" action="orderForm.php" class="order-form" >
+      <!-- <form method="post" action="orderForm.php" class="order-form" >
         <input type="text" name='name' id="order-form-name"/>
         <input type="text" name='email' id="order-form-email"/>
         <input type="text" name='phone' id="order-form-phone"/>
@@ -1145,7 +518,7 @@
         <input type="text" name='message' id="order-form-message"/>
         <input id='submit1' class="submit" type="submit" value="Send it!"/>
         
-      </form>
+      </form> -->
   
       <!-- <section class="hidden">
         <div class="hours">

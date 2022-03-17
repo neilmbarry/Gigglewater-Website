@@ -392,48 +392,51 @@
         </a>
       </div>
       <ul class="nav-items nav-items_hide">
-        <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
-        <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-        <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
-        <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
-        <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
-        <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>
-        <li class="nav-list-item"><a href="/gallery" class="nav-item">Gallery</a></li>
-        <!-- <li><a href="#" class="nav-item">Reviews</a></li> -->
-        <!-- <li class="nav-list-item"><a href="#contact-us" class="nav-item">Find Us</a></li> -->
-        <li class="nav-list-item"><a href="/#contact-us" class="nav-item">Contact</a></li>
-        <li>
-          
+      <li class="nav-list-item">
+          <a href="/menu" class="nav-item">Dine-In Menu</a>
         </li>
-        <li class="development">
-          <a href="#" class="nav-item contact-icon"
-            ><ion-icon name="card-outline"></ion-icon
-          ></a>
+        <li class="nav-list-item">
+          <a href="/cocktails" class="nav-item">Cocktail Kits</a>
         </li>
-        <li class="development">
-          <a href="#" class="nav-item summary-icon"
-            ><ion-icon name="paper-plane-outline"></ion-icon
-          ></a>
+        
+
+        
+        <li class="nav-list-item">
+          <a href="/gallery" class="nav-item">Gallery</a>
         </li>
+
+        <li class="nav-list-item">
+            <a href="/reservations" class="nav-item">Reservations</a>
+          </li>
+
+        <li class="nav-list-item">
+          <a href="/contact" class="nav-item">Contact</a>
+        </li>
+        <li></li>
       </ul>
       <div class="hidden">X</div>
-      
-      <a href="#" class="cart-icon item-hide"
-          ><ion-icon name="cart-outline"></ion-icon
-        >
-      <div class="cart-notification cart-notification-hide">
-        3
-      </div>
-      </a>
-      <div class="burger">
-          <div class="burger-container">
-            <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>
-            <ion-icon name="close-outline" class="burger-icon burger-close burger-hide"></ion-icon>
 
-          </div>
+      <!-- <a href="#" class="cart-icon item-hide"
+            ><ion-icon name="cart-outline"></ion-icon
+            >
+        <div class="cart-notification cart-notification-hide">
+            3
+        </div>
+        </a> -->
+      <div class="burger">
+        <div class="burger-container">
+          <ion-icon
+            name="menu-outline"
+            class="burger-icon burger-open"
+          ></ion-icon>
+          <ion-icon
+            name="close-outline"
+            class="burger-icon burger-close burger-hide"
+          ></ion-icon>
+        </div>
       </div>
     </nav>
-    <div class="row">
+    <!-- <div class="row">
       <?php
       if($_GET['success'] == 1){
           echo "<div class=\"form-messages success\">
@@ -444,12 +447,19 @@
           <p>Oops! Something went wrong, please try again.</p>
       </div>";}
       ?>
-    </div>
+    </div> -->
 <section>
   <div class="mobile-menu-container">
 
-    <img src="/menu1.jpeg" alt="">
-    <img src="/menu2.jpeg" alt="">
+
+    <img src="/Menu-2022-Feb/Gigglewater - Winter Menu 2022 (Print)_1.jpg" alt="">
+    <img src="/Menu-2022-Feb/Gigglewater - Winter Menu 2022 (Print)_2.jpg" alt="">
+    <img src="/Menu-2022-Feb/Gigglewater - Winter Menu 2022 (Print)_3.jpg" alt="">
+    <img src="/Menu-2022-Feb/Gigglewater - Winter Menu 2022 (Print)_4.jpg" alt="">
+    <img src="/Menu-2022-Feb/Gigglewater - Winter Menu 2022 (Print)_5.jpg" alt="">
+    <img src="/Menu-2022-Feb/Gigglewater - Winter Menu 2022 (Print)_6.jpg" alt="">
+    <img src="/Menu-2022-Feb/Gigglewater - Winter Menu 2022 (Print)_7.jpg" alt="">
+    <img src="/Menu-2022-Feb/Gigglewater - Winter Menu 2022 (Print)_8.jpg" alt="">
   </div>
 </section>
 <footer class="footer">

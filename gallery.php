@@ -390,45 +390,48 @@
           </a>
         </div>
         <ul class="nav-items nav-items_hide">
-          <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
-          <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-          <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
-        <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
-        <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
-        <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>
-        <li class="nav-list-item"><a href="/gallery" class="nav-item">Gallery</a></li>
-        <!-- <li><a href="#" class="nav-item">Reviews</a></li> -->
-        <!-- <li class="nav-list-item"><a href="#contact-us" class="nav-item">Find Us</a></li> -->
-        <li class="nav-list-item"><a href="/#contact-us" class="nav-item">Contact</a></li>
-          <li>
-            
+        <li class="nav-list-item">
+            <a href="/menu" class="nav-item">Dine-In Menu</a>
           </li>
-          <li class="development">
-            <a href="#" class="nav-item contact-icon"
-              ><ion-icon name="card-outline"></ion-icon
-            ></a>
+          <li class="nav-list-item">
+            <a href="/cocktails" class="nav-item">Cocktail Kits</a>
           </li>
-          <li class="development">
-            <a href="#" class="nav-item summary-icon"
-              ><ion-icon name="paper-plane-outline"></ion-icon
-            ></a>
+          
+  
+         
+          <li class="nav-list-item">
+            <a href="/gallery" class="nav-item">Gallery</a>
           </li>
+
+          <li class="nav-list-item">
+            <a href="/reservations" class="nav-item">Reservations</a>
+          </li>
+  
+          <li class="nav-list-item">
+            <a href="/contact" class="nav-item">Contact</a>
+          </li>
+          <li></li>
         </ul>
         <div class="hidden">X</div>
-        
-        <a href="#" class="cart-icon"
-            ><ion-icon name="cart-outline"></ion-icon
-          >
-          <div class="cart-notification cart-notification-hide">
-        3
-      </div>
-        </a>
-        <div class="burger">
-            <div class="burger-container">
-              <ion-icon name="menu-outline" class="burger-icon burger-open"></ion-icon>
-              <ion-icon name="close-outline" class="burger-icon burger-close burger-hide"></ion-icon>
   
-            </div>
+        <!-- <a href="#" class="cart-icon item-hide"
+              ><ion-icon name="cart-outline"></ion-icon
+              >
+          <div class="cart-notification cart-notification-hide">
+              3
+          </div>
+          </a> -->
+        <div class="burger">
+          <div class="burger-container">
+            <ion-icon
+              name="menu-outline"
+              class="burger-icon burger-open"
+            ></ion-icon>
+            <ion-icon
+              name="close-outline"
+              class="burger-icon burger-close burger-hide"
+            ></ion-icon>
+          </div>
         </div>
       </nav>
       <div class="row">
@@ -703,7 +706,7 @@
         <div ><a href="https://www.instagram.com/projectgigglewater/?hl=en" target="_blacnk"><ion-icon name="logo-instagram" class="instagram"></ion-icon></a></div>
       </div>
     </footer>
-      <form method="post" action="orderForm.php" class="order-form" >
+      <!-- <form method="post" action="orderForm.php" class="order-form" >
         <input type="text" name='name' id="order-form-name">
         <input type="text" name='email' id="order-form-email">
         <input type="text" name='phone' id="order-form-phone">
@@ -717,7 +720,7 @@
         <input type="text" name='recip-phone' id="order-form-recip-phone">
         <input type="text" name='message' id="order-form-message">
         <input id='submit1' class="submit" type="submit" value="Send it!">
-      </form>
+      </form> -->
   
       <!-- <section class="hidden">
         <div class="hours">
