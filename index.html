@@ -10,8 +10,11 @@
       src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"
     ></script>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-     
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
     <meta
       name="description"
       content="Craft cocktails and tasty shareable plates in a friendly intimate atmosphere. Corporate and consumer cocktail kits available for delivery and takeout."
@@ -19,12 +22,12 @@
 
     <link rel="stylesheet" type="text/css" href="Resources/sass/style2.css" />
 
-    <!-- <link rel="stylesheet" type="text/css" href="Resources/css/queries2.css" /> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <script src="snowstorm.js"></script>
 
     <title>Project Gigglewater</title>
 
@@ -74,34 +77,12 @@
         }
       }
     </script>
+    <script
+      src="https://kit.fontawesome.com/4208deb245.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <!-- <section class="test">
-      <div class="box">
-        YO!
-        <div class="cover"></div>
-      </div>
-    </section> -->
-    <!-- <div class="dev-menu">
-      <ion-icon
-        class="dev-icon dev-icon-down"
-        name="chevron-down-outline"
-      ></ion-icon>
-    </div>
-    <section class="shopping">
-      <div class="shopping-item shopping-item-1" id="pine">Pineapple</div>
-      <div class="shopping-item shopping-item-2" id="mango">Mango</div>
-      <div class="shopping-item shopping-item-3" id="popit">Pop</div>
-      <div class="shopping-item shopping-item-4" id="deep">Deep Dive</div>
-      <div class="shopping-item-checkout" id="checkout">Check-Out</div>
-      <div class="shopping-item-clear" id="clear">Clear</div>
-      
-    </section> -->
-    <div class="welcome-message item-hide">
-      <strong>Welcome to our brand spanking new website!</strong><br/>
-      We are continually improving our site but if you run in to any issues feel free to contact us directly:</br>
-      <a href="mailto:cocktails@projectgigglewater.com" class="welcome-email"><strong>cocktails@projectgigglewater.com</strong></a>
-    </div>
     <nav class="nav">
       <div class="nav-logo-container">
         <a href="/" class="nav-btn">
@@ -110,23 +91,17 @@
       </div>
       <ul class="nav-items nav-items_hide">
         <li class="nav-list-item">
-          <a href="/menu" class="nav-item">Dine-In Menu</a>
+          <a href="/menu" class="nav-item">Bar Menu</a>
         </li>
         <li class="nav-list-item">
           <a href="/cocktails" class="nav-item">Cocktail Kits</a>
         </li>
-
-        <!-- <li class="nav-list-item">
-          <a href="/groups" class="nav-item">Corporate / Groups</a>
-        </li> -->
         <li class="nav-list-item">
           <a href="/gallery" class="nav-item">Gallery</a>
         </li>
-
         <li class="nav-list-item">
           <a href="/reservations" class="nav-item">Reservations</a>
         </li>
-
         <li class="nav-list-item">
           <a href="/contact" class="nav-item">Contact</a>
         </li>
@@ -134,13 +109,6 @@
       </ul>
       <div class="hidden">X</div>
 
-      <!-- <a href="#" class="cart-icon item-hide"
-            ><ion-icon name="cart-outline"></ion-icon
-            >
-        <div class="cart-notification cart-notification-hide">
-            3
-        </div>
-        </a> -->
       <div class="burger">
         <div class="burger-container">
           <ion-icon
@@ -154,9 +122,8 @@
         </div>
       </div>
     </nav>
-    
     <header class="header">
-      <ul class="lightrope item-hide">
+      <ul class="lightrope">
         <li></li>
         <li></li>
         <li></li>
@@ -200,9 +167,9 @@
         <li></li>
         <li></li>
       </ul>
-      <div id="snow item-hide"></div>
+      <div id="snow"></div>
       <div class="row">
-        <?php
+        <!-- <?php
         if($_GET['success'] == 1){
             echo "<div class=\"form-messages form-messages-success success-send \">
             <p>Thank you, your message has been sent!<br> We will email back shortly!<br>(Please check your spam folder if you don't hear from us!)</p>
@@ -211,44 +178,61 @@
             echo "<div class=\"form-messages form-messages-error\">
             <p>Oops! Please check you email address and try again.</p> 
         </div>";}
-        ?>
+        ?> -->
       </div>
+      <!-- <img src="/images/snow.gif" class="snow-gif" /> -->
       <div class="header-box">
+        <!-- <h2 class="grey-text margin0">Welcome to</h2> -->
         <div class="header-box-title">
           <img src="./title.png" alt="Project Gigglewater" class="title" />
+          <img src="/images/CHristmas.png" class="christmas-icon" />
         </div>
         <div class="header-box-banner">
           <img src="./drinks.png" alt="drinks" class="banner" />
         </div>
-        <div class="landing-btns">
-          <a href="/menu" class="btn btn-cta btn-header">Dine-In Menu</a>
-          <!-- <a href="/cocktails" class="btn btn-cta btn-header">Order cocktail kits </a> -->
-        </div>
+
         <!-- <div class="order-by">
-          Hours of operation:
-          
+          <strong>"Your friendly neighbourhood cocktail bar."</strong>
         </div> -->
-        <div class="order-by"><strong>Your friendly neighbourhood cocktail bar.</strong> </div>
-        
+        <div class="landing-btns">
+          <a href="/menu" class="btn btn-cta btn-header">Christmas Menu</a>
+          <a href="/menu" class="btn btn-cta btn-header greyed-out"
+            >No reservations</a
+          >
+        </div>
+
         <div class="order-by">
-       
-          Closed Mondays. Tues-Sun 6pm-2am.
-         
+          <i class="margin-right fa-solid fa-location-dot"></i> 1369 Dundas
+          Street West, Toronto
+        </div>
+
+        <div class="order-by">
+          <i class="margin-right fa-regular fa-clock"></i> 5PM - 2AM, Daily
         </div>
         <div class="order-by">
-       
-          Full food menu till close.
+          <i class="margin-right fa-solid fa-hourglass-half"></i> 60 minute max
+          seating (ask for extension)
         </div>
         <div class="order-by">
-       
-          <strong>No reservations.</strong>
+          <i class="margin-right fa-solid fa-percent"></i> Auto Gratuity for
+          groups 6 or more (max 8 FRI/SAT)
         </div>
+        <div class="order-by">
+          <i class="margin-right fa-solid fa-utensils"></i> Kitchen open all
+          night
+        </div>
+
+        <!-- <div class="order-by">Full food menu till close.</div>
+        <div class="order-by"></div> -->
       </div>
     </header>
-
     <section class="section-reviews">
       <h2 class="section-reviews-title title-hidden">
-        Hear what our guests had to say<br><img src="/Icons_wave.svg" alt="" class="wavy2">
+        Hear what our guests had to say<br /><img
+          src="/Icons_wave.svg"
+          alt=""
+          class="wavy2"
+        />
       </h2>
 
       <div class="slider slider-blur">
@@ -317,10 +301,7 @@
         <button class="slider__btn slider__btn--right">&rarr;</button>
         <div class="dots"></div>
       </div>
-
     </section>
-
-
     <footer class="footer">
       <a href="#" class="footer-logo">
         <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
@@ -331,11 +312,23 @@
         >
       </div>
       <div class="footer-contact">
-        <a href="mailto:cocktails@projectgigglewater.com" class="footer-email">cocktails@projectgigglewater.com</a>
+        <a href="mailto:cocktails@projectgigglewater.com" class="footer-email"
+          >cocktails@projectgigglewater.com</a
+        >
       </div>
       <div class="footer-socials">
-        <div><a href="https://www.facebook.com/ProjectGigglewater/" target="_blank"><ion-icon name="logo-facebook" class="facebook"></ion-icon></a></div>
-        <div ><a href="https://www.instagram.com/projectgigglewater/?hl=en" target="_blacnk"><ion-icon name="logo-instagram" class="instagram"></ion-icon></a></div>
+        <div>
+          <a href="https://www.facebook.com/ProjectGigglewater/" target="_blank"
+            ><ion-icon name="logo-facebook" class="facebook"></ion-icon
+          ></a>
+        </div>
+        <div>
+          <a
+            href="https://www.instagram.com/projectgigglewater/?hl=en"
+            target="_blacnk"
+            ><ion-icon name="logo-instagram" class="instagram"></ion-icon
+          ></a>
+        </div>
       </div>
     </footer>
     <script src="app.js"></script>

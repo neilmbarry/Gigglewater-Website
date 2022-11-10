@@ -133,10 +133,49 @@ body {
 .text-center {
   text-align: center; }
 
+.grey-text {
+  color: #9b9f9f; }
+
+.margin0 {
+  margin: 0;
+  padding: 0; }
+
+.margin-right {
+  margin-right: 0.1rem; }
+
+.giggle-yellow {
+  color: #faf6cb; }
+
+.gap {
+  color: transparent; }
+
+.greyed-out {
+  color: grey; }
+  .greyed-out * {
+    color: grey; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+.snow-gif {
+  width: 100%;
+  position: absolute;
+  opacity: 0.3; }
+
+.christmas-icon {
+  position: absolute;
+  width: 40% !important;
+  top: -70px;
+  z-index: 200;
+  right: -70px;
+  transform: rotate(20deg);
+  filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.375)) drop-shadow(-5px -5px 15px rgba(0, 0, 0, 0.375)); }
+
 .header {
   height: 100vh;
   position: relative;
-  background-image: radial-gradient(rgba(19, 18, 14, 0.5) 0%, #181714 70%), url(/gallery4.jpg);
+  background-image: radial-gradient(rgba(19, 18, 14, 0.4) 0%, #181714 80%), url(/gallery4.jpg);
+  background-image: radial-gradient(rgba(19, 18, 14, 0.3) 0%, #181714 90%), url(/images/chris.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-size: cover; }
@@ -148,20 +187,23 @@ body {
     text-align: center;
     top: 45%;
     left: 50%;
+    display: flex;
     flex-direction: column;
     transform: translate(-50%, -50%); }
     .header-box-title {
+      position: relative;
       animation: moveInLeft 1s ease-out; }
       .header-box-title img {
         width: 100%;
         padding: 1.6rem 0; }
     .header-box-banner {
-      width: 90%;
+      width: 95%;
       margin: auto;
       animation: moveInRight 1s ease-out; }
       .header-box-banner img {
         width: 100%;
-        padding-bottom: 1rem; }
+        padding-bottom: 1rem;
+        filter: saturate(0%) contrast(50%) brightness(50%) invert(80%) sepia(0%) hue-rotate(20deg); }
 
 .hidden {
   display: none; }
@@ -184,12 +226,11 @@ body {
   text-decoration: none;
   will-change: transform;
   display: inline-block;
-  border-radius: 0.5rem;
   transition: all 0.3s ease;
   position: relative;
   background-color: rgba(16, 16, 16, 0.2);
   color: #fffcd5;
-  border: 2px solid #504e4b;
+  border: 2px solid #faf6cb;
   margin-top: 1rem;
   backface-visibility: hidden;
   font-weight: 400;
@@ -231,7 +272,6 @@ body {
   .btn-arrow:hover {
     transform: translateX(130px); }
   .btn:hover {
-    transform: translateY(-0.3rem);
     background-color: #fffcd5;
     box-shadow: 0 1rem 2rem rgba(16, 16, 16, 0.2);
     color: #101010; }
@@ -1594,7 +1634,8 @@ select:-webkit-autofill:focus {
 .order-by {
   padding: 1rem;
   font-size: 2.2rem;
-  animation: fadeIn ease 1s 1s backwards; }
+  animation: fadeIn ease 1s 0.3s backwards;
+  text-shadow: 1px 1px black; }
 
 .menu-container {
   display: flex;
@@ -2233,6 +2274,14 @@ select:-webkit-autofill:focus {
       display: block; } }
 
 @media only screen and (max-width: 480px) {
+  .christmas-icon {
+    position: absolute;
+    width: 40% !important;
+    top: -70px;
+    z-index: 200;
+    right: -20px;
+    transform: rotate(20deg);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.375)) drop-shadow(-5px -5px 15px rgba(0, 0, 0, 0.375)); }
   .btn-contact {
     padding: 1rem;
     font-size: 37%; }
@@ -2711,9 +2760,8 @@ select:-webkit-autofill:focus {
     height: 0px;
     padding: 0; }
   .header-box {
-    width: 80%;
-    flex-direction: column;
-    transform: translate(-50%, -70%); }
+    width: 95%;
+    flex-direction: column; }
   .section-about-title {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -2969,7 +3017,7 @@ select:-webkit-autofill:focus {
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
-  z-index: -99;
+  z-index: 99;
   margin: -15px 0 0 0;
   padding: 0;
   pointer-events: none;
