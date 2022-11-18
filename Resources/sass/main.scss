@@ -130,6 +130,10 @@ html {
   margin: 0.5rem;
 }
 
+.pink {
+  color: rgb(225, 132, 147) !important;
+}
+
 body {
   //font-size: 62.5%;
 
@@ -251,9 +255,9 @@ body {
 .christmas-icon {
   position: absolute;
   width: 40% !important;
-  top: -70px;
+  top: 90px;
   z-index: 200;
-  right: -70px;
+  right: -150px;
   transform: rotate(20deg);
   filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.375))
     drop-shadow(-5px -5px 15px rgba(0, 0, 0, 0.375));
@@ -3180,7 +3184,7 @@ select:-webkit-autofill:focus {
   .christmas-icon {
     position: absolute;
     width: 40% !important;
-    top: -70px;
+    top: -100px;
     z-index: 200;
     right: -20px;
     transform: rotate(20deg);
