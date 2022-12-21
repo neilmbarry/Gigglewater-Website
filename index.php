@@ -21,7 +21,7 @@
     />
 
     <link rel="stylesheet" type="text/css" href="Resources/sass/style2.css" />
-    <link rel="stylesheet" type="text/css" href="Resources/sass/test.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="Resources/sass/test.css" /> -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -100,9 +100,9 @@
         <li class="nav-list-item">
           <a href="/gallery" class="nav-item">Gallery</a>
         </li>
-        <li class="nav-list-item">
+        <!-- <li class="nav-list-item">
           <a href="/reservations" class="nav-item">Reservations</a>
-        </li>
+        </li> -->
         <li class="nav-list-item">
           <a href="/contact" class="nav-item">Contact</a>
         </li>
@@ -197,9 +197,12 @@
         </div> -->
         <div class="landing-btns">
           <a href="/menu" class="btn btn-cta btn-header pink">Christmas Menu</a>
-          <a href="/reservations" class="btn btn-cta btn-header greyed-out"
+          <a href="#" class="btn btn-cta btn-header greyed-out"
             >No reservations</a
           >
+          <!-- <a href="/reservations" class="btn btn-cta btn-header greyed-out"
+            >No reservations</a
+          > -->
         </div>
         <div class="order-by">
           <i class="pink margin-right fa-regular fa-clock"></i> 5PM - 2AM, Daily
@@ -214,8 +217,14 @@
           max seating (ask for extension)
         </div>
         <div class="order-by">
-          <i class="pink margin-right fa-solid fa-percent"></i> Auto Gratuity
+          <span class='pink bold'>20</span><i class="pink margin-right fa-solid fa-percent"></i> Auto Gratuity
           for groups 6 or more
+        </div>
+        <div class="order-by">
+          <i class="pink margin-right fa-solid fa-money-bill-1-wave"></i> We can split a cheque a maximum of (2) two ways
+        </div>
+        <div class="order-by">
+          <i class="pink margin-right fa-solid fa-gamepad"></i> $1 from every cocktail sold will be donated to Toys for Tots Canada
         </div>
         <div class="order-by">
           <i class="pink margin-right fa-solid fa-people-group"></i></i> Maximum group

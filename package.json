@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "sass:compile": "node-sass Resources/sass/main.scss Resources/sass/test.css -w"
+    "sass:compile": "node-sass Resources/sass/main.scss Resources/sass/style2.css -w"
   },
   "repository": {
     "type": "git",

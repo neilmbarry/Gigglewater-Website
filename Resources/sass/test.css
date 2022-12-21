@@ -175,7 +175,7 @@ body {
   filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.375)) drop-shadow(-5px -5px 15px rgba(0, 0, 0, 0.375)); }
 
 .header {
-  height: 100vh;
+  min-height: 115vh;
   position: relative;
   background-image: radial-gradient(rgba(19, 18, 14, 0.4) 0%, #181714 80%), url(/gallery4.jpg);
   background-image: radial-gradient(rgba(19, 18, 14, 0.3) 0%, #181714 90%), url(/images/chris.jpg);
@@ -184,6 +184,7 @@ body {
   background-size: cover; }
   .header-box {
     margin: auto;
+    margin-top: 5vh;
     padding-top: 10rem;
     max-width: 700px;
     position: absolute;

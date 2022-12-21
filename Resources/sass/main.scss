@@ -285,8 +285,8 @@ body {
   * {
     // text-shadow: 1px 1px black;
   }
-  height: 100vh;
-  //padding: 5rem;
+  min-height: 115vh;
+  // border: dashed 3px red;
   //z-index: 3433;
   position: relative;
   // -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
@@ -309,6 +309,7 @@ body {
   &-box {
     //width: 75%;
     margin: auto;
+    margin-top: 5vh;
     padding-top: 10rem;
     max-width: 700px;
     position: absolute;
