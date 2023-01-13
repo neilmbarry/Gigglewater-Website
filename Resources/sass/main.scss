@@ -293,8 +293,8 @@ body {
   // clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   background-image: radial-gradient(rgba(#13120e, 0.4) 0%, rgba(#181714, 1) 80%),
     url(/gallery4.jpg);
-  background-image: radial-gradient(rgba(19, 18, 14, 0.3) 0%, #181714 90%),
-    url(/images/chris.jpg);
+  // background-image: radial-gradient(rgba(19, 18, 14, 0.3) 0%, #181714 90%),
+  //   url(/images/chris.jpg);
   // background-image: radial-gradient(
   //     rgba(#13120e, 0.5) 0%,
   //     rgba(#181714, 0.9) 90%
@@ -309,8 +309,8 @@ body {
   &-box {
     //width: 75%;
     margin: auto;
-    margin-top: 5vh;
-    padding-top: 10rem;
+    // margin-top: 5vh;
+    // padding-top: 10rem;
     max-width: 700px;
     position: absolute;
     text-align: center;

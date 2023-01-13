@@ -28,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
-    <script src="snowstorm.js"></script>
+    <!-- <script src="snowstorm.js"></script> -->
 
     <title>Project Gigglewater</title>
 
@@ -92,7 +92,8 @@
       </div>
       <ul class="nav-items nav-items_hide">
         <li class="nav-list-item">
-          <a href="/menu" class="nav-item">Bar Menu</a>
+          <a href="#" class="nav-item">Bar Menu</a>
+          <!-- <a href="/menu" class="nav-item">Bar Menu</a> -->
         </li>
         <li class="nav-list-item">
           <a href="/cocktails" class="nav-item">Cocktail Kits</a>
@@ -124,7 +125,7 @@
       </div>
     </nav>
     <header class="header">
-      <ul class="lightrope">
+      <!-- <ul class="lightrope">
         <li></li>
         <li></li>
         <li></li>
@@ -168,7 +169,7 @@
         <li></li>
         <li></li>
       </ul>
-      <div id="snow"></div>
+      <div id="snow"></div> -->
       <div class="row">
         <!-- <?php
         if($_GET['success'] == 1){
@@ -186,7 +187,7 @@
         <!-- <h2 class="grey-text margin0">Welcome to</h2> -->
         <div class="header-box-title">
           <img src="./title.png" alt="Project Gigglewater" class="title" />
-          <img src="/images/CHristmas.png" class="christmas-icon" />
+          <!-- <img src="/images/CHristmas.png" class="christmas-icon" /> -->
         </div>
         <div class="header-box-banner">
           <img src="./drinks.png" alt="drinks" class="banner" />
@@ -196,7 +197,8 @@
           <strong>"Your friendly neighbourhood cocktail bar."</strong>
         </div> -->
         <div class="landing-btns">
-          <a href="/menu" class="btn btn-cta btn-header pink">Christmas Menu</a>
+          <a href="#" class="btn btn-cta btn-header">Bar Menu</a>
+          <!-- <a href="/menu" class="btn btn-cta btn-header">Bar Menu</a> -->
           <a href="#" class="btn btn-cta btn-header greyed-out"
             >No reservations</a
           >
@@ -205,39 +207,48 @@
           > -->
         </div>
         <div class="order-by">
-          <i class="pink margin-right fa-regular fa-clock"></i> 5PM - 2AM, Daily
-        </div>
-        <div class="order-by">
-          <i class="pink margin-right fa-solid fa-location-dot"></i> 1369 Dundas
+          <i class="margin-right fa-solid fa-location-dot"></i> 1369 Dundas
           Street West, Toronto
         </div>
-
+        <!-- <div class="order-by">
+          <i class="margin-right fa-regular fa-clock"></i> Closed from January
+          1st to 11th
+        </div> -->
         <div class="order-by">
-          <i class="pink margin-right fa-solid fa-hourglass-half"></i> 60 minute
+          <i class="margin-right fa-regular fa-clock"></i> 6PM - 2AM, Tuesday -
+          Sunday
+        </div>
+        <div class="order-by">
+          <i class="margin-right fa-solid fa-utensils"></i> Kitchen open all
+          night
+        </div>
+
+        <!-- <div class="order-by">
+          <i class=" margin-right fa-solid fa-hourglass-half"></i> 60 minute
           max seating (ask for extension)
         </div>
         <div class="order-by">
-          <span class='pink bold'>20</span><i class="pink margin-right fa-solid fa-percent"></i> Auto Gratuity
+          <span class=' bold'>20</span><i class=" margin-right fa-solid fa-percent"></i> Auto Gratuity
           for groups 6 or more
         </div>
         <div class="order-by">
-          <i class="pink margin-right fa-solid fa-money-bill-1-wave"></i> We can split a cheque a maximum of (2) two ways
+          <i class=" margin-right fa-solid fa-money-bill-1-wave"></i> We can split a cheque a maximum of (2) two ways
         </div>
         <div class="order-by">
-          <i class="pink margin-right fa-solid fa-gamepad"></i> $1 from every cocktail sold will be donated to Toys for Tots Canada
+          <i class=" margin-right fa-solid fa-gamepad"></i> $1 from every cocktail sold will be donated to Toys for Tots Canada
         </div>
         <div class="order-by">
-          <i class="pink margin-right fa-solid fa-people-group"></i></i> Maximum group
+          <i class=" margin-right fa-solid fa-people-group"></i></i> Maximum group
           size of 8 (FRI/SAT)
         </div>
         <div class="order-by">
-          <i class="pink margin-right fa-solid fa-people-arrows"></i> Groups to fully
+          <i class=" margin-right fa-solid fa-people-arrows"></i> Groups to fully
           arrive before being seated
-        </div>
-        <div class="order-by">
-          <i class="pink margin-right fa-solid fa-utensils"></i> Kitchen open
-          all night
-        </div>
+        </div> -->
+        <!-- <div class="order-by">
+          <i class="margin-right fa-solid fa-utensils"></i> Kitchen open all
+          night
+        </div> -->
 
         <!-- <div class="order-by">Full food menu till close.</div>
         <div class="order-by"></div> -->
