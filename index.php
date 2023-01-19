@@ -92,7 +92,7 @@
       </div>
       <ul class="nav-items nav-items_hide">
         <li class="nav-list-item">
-          <a href="#" class="nav-item">Bar Menu</a>
+          <a href="/menu" class="nav-item">Menu</a>
           <!-- <a href="/menu" class="nav-item">Bar Menu</a> -->
         </li>
         <li class="nav-list-item">
@@ -197,7 +197,7 @@
           <strong>"Your friendly neighbourhood cocktail bar."</strong>
         </div> -->
         <div class="landing-btns">
-          <a href="#" class="btn btn-cta btn-header">Bar Menu</a>
+          <a href="/menu" class="btn btn-cta btn-header">Menu</a>
           <!-- <a href="/menu" class="btn btn-cta btn-header">Bar Menu</a> -->
           <a href="#" class="btn btn-cta btn-header greyed-out"
             >No reservations</a
