@@ -390,7 +390,7 @@
       <ul class="nav-items nav-items_hide">
         <!--<li><a href="smash" class="nav-btn">Smash Burgers</a></li>-->
         <li class="nav-list-item"><a href="/cocktails" class="nav-item">Cocktail Kits</a></li>
-        <li class="nav-list-item"><a href="/menu" class="nav-item">Dine-In Menu</a></li>
+        <li class="nav-list-item"><a href="/menu" class="nav-item">Menu</a></li>
         <!-- <li><a href="#" class="nav-item">Bottle Shop</a></li> -->
         <li class="nav-list-item"><a href="/merch" class="nav-item">Merchandise</a></li>
         <li class="nav-list-item"><a href="/groups" class="nav-item">Corporate / Groups</a></li>

@@ -371,7 +371,7 @@
             </div>
             <ul class="nav-items nav-items_hide">
             <li class="nav-list-item">
-                <a href="/menu" class="nav-item">Dine-In Menu</a>
+                <a href="/menu" class="nav-item">Menu</a>
               </li>
               <li class="nav-list-item">
                 <a href="/cocktails" class="nav-item">Cocktail Kits</a>
@@ -431,9 +431,9 @@
                 <div class="reservations-bg">
                     <img src="./Resources/Gallery/gallery13.jpg" alt="">
                 </div>
-                <div class="reservations-text"><p>We don’t take reservations or private buyouts. While we love hosting such events, the unintentional side-effect is shutting our doors to regulars, friends, and people discovering us for the first time. It is for this reason that we only accept walk-ins.</p></div>
+                <div class="reservations-text"><p>We are updating our reservations policy...</p></div>
                 <!-- <div class="reservations-text transparent">.</div> -->
-                <div class="reservations-text">
+                <!-- <div class="reservations-text">
                     <p>
                          However, if you let us know in advance, we will do our best to accommodate your group by leaving some tables open for your group until the space fills up.   <br></p>
                         
@@ -444,7 +444,7 @@
                         
                     </p>
                     
-                </div>
+                </div> -->
                 <!-- <div class="reservations-text bold"><p><strong> So walk on in any night you like, we can’t wait to see you!</strong></p></div> -->
                 <div class="reservations-logo">
                     <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />

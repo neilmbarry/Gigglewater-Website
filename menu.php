@@ -393,7 +393,7 @@
       </div>
       <ul class="nav-items nav-items_hide">
       <li class="nav-list-item">
-          <a href="/menu" class="nav-item">Dine-In Menu</a>
+          <a href="/menu" class="nav-item">Menu</a>
         </li>
         <li class="nav-list-item">
           <a href="/cocktails" class="nav-item">Cocktail Kits</a>
