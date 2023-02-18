@@ -404,7 +404,9 @@
         <li class="nav-list-item">
           <a href="/gallery" class="nav-item">Gallery</a>
         </li>
-
+        <li class="nav-list-item">
+                <a href="/reservations" class="nav-item">Reservations</a>
+              </li>
         <!-- <li class="nav-list-item">
             <a href="/reservations" class="nav-item">Reservations</a>
           </li> -->

@@ -431,11 +431,12 @@
                 <div class="reservations-bg">
                     <img src="./Resources/Gallery/gallery13.jpg" alt="">
                 </div>
-                <div class="reservations-text"><p>We are updating our reservations policy...</p></div>
+                <!-- <div class="reservations-text"><p>We are updating our reservations policy...</p></div> -->
+                <div class="reservations-text"><p>We don’t take reservations or private buyouts. While we love hosting such events, the unintentional side-effect is shutting our doors to regulars, friends, and people discovering us for the first time. It is for this reason that we only accept walk-ins.</p></div>
                 <!-- <div class="reservations-text transparent">.</div> -->
-                <!-- <div class="reservations-text">
+                <div class="reservations-text">
                     <p>
-                         However, if you let us know in advance, we will do our best to accommodate your group by leaving some tables open for your group until the space fills up.   <br></p>
+                         However, for parties of 6 or more, please reach out to us at cocktails@projectgigglewater.com. We won’t be able to guarantee your seating but we will let you know what to expect.  <br></p>
                         
                 </div>
                 <div class="reservations-text">
@@ -444,7 +445,7 @@
                         
                     </p>
                     
-                </div> -->
+                </div>
                 <!-- <div class="reservations-text bold"><p><strong> So walk on in any night you like, we can’t wait to see you!</strong></p></div> -->
                 <div class="reservations-logo">
                     <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />

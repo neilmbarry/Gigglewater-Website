@@ -411,9 +411,9 @@
           <a href="/gallery" class="nav-item">Gallery</a>
         </li>
 
-        <!-- <li class="nav-list-item">
+        <li class="nav-list-item">
           <a href="/reservations" class="nav-item">Reservations</a>
-        </li> -->
+        </li>
         <li class="nav-list-item">
           <a href="/contact" class="nav-item">Contact</a>
         </li>
