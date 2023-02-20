@@ -222,16 +222,16 @@
           <i class="margin-right fa-solid fa-utensils"></i> Kitchen open all
           night
         </div>
-
+        <div class="order-by">
+          <span class="bold">20</span
+          ><i class="margin-right fa-solid fa-percent"></i> Auto gratuity for
+          groups 6 or more
+        </div>
+        <div class="order-by">
+          <i class="margin-right fa-solid fa-hourglass-half"></i> 90 minute
+          seating window policy
+        </div>
         <!-- <div class="order-by">
-          <i class=" margin-right fa-solid fa-hourglass-half"></i> 60 minute
-          max seating (ask for extension)
-        </div>
-        <div class="order-by">
-          <span class=' bold'>20</span><i class=" margin-right fa-solid fa-percent"></i> Auto Gratuity
-          for groups 6 or more
-        </div>
-        <div class="order-by">
           <i class=" margin-right fa-solid fa-money-bill-1-wave"></i> We can split a cheque a maximum of (2) two ways
         </div>
         <div class="order-by">
