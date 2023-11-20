@@ -177,7 +177,7 @@ body {
 .header {
   min-height: 115vh;
   position: relative;
-  background-image: radial-gradient(rgba(19, 18, 14, 0.4) 0%, #181714 80%), url(/gallery4.jpg);
+  background-image: radial-gradient(rgba(19, 18, 14, 0.3) 0%, #181714 90%), url(/images/chris.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-size: cover; }
