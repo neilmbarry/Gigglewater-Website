@@ -15,7 +15,7 @@
      user-scalable=0" />
     <meta
       name="description"
-      content="Craft cocktails and tasty shareable plates in a friendly intimate atmosphere. Corporate and consumer cocktail kits available for delivery and takeout."
+      content="Innovative and seasonal cocktails in a friendly intimate atmosphere on Dundas West. Also, the best place to order classic cocktails! We offer elevated share plates till close!"
     />
 
     <link rel="stylesheet" type="text/css" href="Resources/sass/style2.css" />

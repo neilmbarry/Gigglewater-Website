@@ -427,13 +427,13 @@
         ?>
         </div> -->
         <section class="reservations">
-            <div class="reservations-box">
+            <!-- <div class="reservations-box">
                 <div class="reservations-bg">
                     <img src="./Resources/Gallery/gallery13.jpg" alt="">
                 </div>
-                <!-- <div class="reservations-text"><p>We are updating our reservations policy...</p></div> -->
+               
                 <div class="reservations-text"><p>We don’t take reservations or private buyouts. While we love hosting such events, the unintentional side-effect is shutting our doors to regulars, friends, and people discovering us for the first time. It is for this reason that we only accept walk-ins.</p></div>
-                <!-- <div class="reservations-text transparent">.</div> -->
+               
                 <div class="reservations-text">
                     <p>
                          However, for parties of 6 or more, please reach out to us at cocktails@projectgigglewater.com. We won’t be able to guarantee your seating but we will let you know what to expect.  <br></p>
@@ -446,11 +446,12 @@
                     </p>
                     
                 </div>
-                <!-- <div class="reservations-text bold"><p><strong> So walk on in any night you like, we can’t wait to see you!</strong></p></div> -->
+              
                 <div class="reservations-logo">
                     <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
                 </div>
-            </div>
+            </div> -->
+            <script type='text/javascript' src='//www.opentable.com/widget/reservation/loader?rid=1314121&type=standard&theme=standard&color=1&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website'></script>
         </section>
         <footer class="footer">
             <a href="#" class="footer-logo">
