@@ -1,6 +1,6 @@
 $giggle-yellow: #faf6cb;
 $giggle-yellow2: #fffcd5;
-$color-black: #101010;
+$color-black: #0d0d0d;
 // $giggle-secondary: rgb(136, 86, 32);
 $giggle-secondary: #9b8560;
 $giggle-yellow-dark: #9b8560;
@@ -62,6 +62,16 @@ $color2: #8031ee;
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .wavy {
   width: 40%;
 }
@@ -83,17 +93,6 @@ h2 {
   font-weight: 400;
   text-align: center;
   padding: 5rem 0;
-  // &:after {
-  //   content: "";
-  //   border-bottom: 1px solid $giggle-yellow2;
-
-  //   width: 10%;
-
-  //   display: block;
-  //   margin: auto;
-  //   margin-top: 1.6rem;
-  //   //z-index: 999;
-  // }
 }
 
 h5 {
@@ -134,12 +133,19 @@ html {
   color: rgb(225, 132, 147) !important;
 }
 
+header,
+section,
+footer {
+  animation: fadeIn 1s ease-in-out backwards;
+  animation-delay: 0.3s;
+}
+
 body {
   //font-size: 62.5%;
 
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
-  background-color: rgb(24, 24, 20);
+  background-color: $color-black;
   color: $giggle-yellow;
   overflow-x: hidden;
 }
@@ -155,18 +161,17 @@ body {
 .nav {
   display: flex;
   padding: 1.6rem 3.2rem;
-  //justify-content: space-between;
+  // border: 2px solid red;
   align-items: center;
-  //max-width: 1500px;
+
   margin: auto;
   align-items: center;
-  // animation: moveInTop 0.4s ease-out 0.2s;
-  // animation-fill-mode: backwards;
+
   letter-spacing: 2px;
   font-weight: 400;
-  position: absolute;
+  position: fixed;
   top: 0;
-
+  background-color: $color-black;
   width: 100%;
   z-index: 2343;
   &-sticky {
@@ -186,19 +191,24 @@ body {
   }
   &-items {
     display: flex;
+    gap: 2rem;
     flex: 1;
+
     align-items: center;
     font-size: 1.6rem;
     list-style: none;
-    justify-content: flex-end;
+    text-transform: uppercase;
+    justify-content: center;
     a {
       text-decoration: none;
       color: $giggle-yellow;
+      font-size: 1.5rem;
     }
   }
   &-item {
-    margin-left: 2.2rem;
-    padding: 1.6rem;
+    // margin-left: 2.2rem;
+    padding: 1.2rem;
+    // border: 1px solid red;
     transition: all 0.3s ease;
     &:hover {
       color: $giggle-secondary;
@@ -264,76 +274,71 @@ body {
   // animation: sticker 0.4s ease-out 0.6s backwards;
 }
 
-// @keyframes sticker {
-//   0% {
-//     opacity: 0;
-//     scale: 2;
-//     transform: rotate(20deg) translateY(200px);
-//     // top: 200px;
-//     /* transform: rotate(-180deg); */
-//   }
-//   100% {
-//     opacity: 1;
-//     scale: 1;
-//     transform: rotate(20deg) translateY(200px);
-//     // top: 200px;
-//     /* transform: rotate(20deg); */
-//   }
-// }
-
 .header {
-  * {
-    // text-shadow: 1px 1px black;
-  }
-  min-height: 115vh;
-  // border: dashed 3px red;
-  //z-index: 3433;
+  min-height: 100vh;
   position: relative;
-  // -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-  // clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-  // background-image: radial-gradient(rgba(#13120e, 0.4) 0%, rgba(#181714, 1) 80%),
-  //   url(/gallery4.jpg);
-  background-image: radial-gradient(rgba(19, 18, 14, 0.8) 0%, #181714 80%),
-    url(/assets/gallery4.jpg);
-  // background-image: radial-gradient(
-  //     rgba(#13120e, 0.5) 0%,
-  //     rgba(#181714, 0.9) 90%
-  //   ),
-  //   url(/images/c8dafc54a15312aef9f5653da008a206.jpg);
-  background-position: center center;
-  background-attachment: fixed;
-  //background-repeat: no-repeat;
-  background-size: cover;
-  //filter: blur(2px);
+  &-background {
+    min-height: 100vh;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
 
+    background-image: url(/assets/bar-backgroumd.jpg);
+    background-position: center center;
+    // background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.4;
+  }
+  &-wrapper {
+    margin-top: 4rem;
+    min-height: 70vh;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), $color-black);
+  }
+  &-wrapper2 {
+    margin-top: 4rem;
+    min-height: 70vh;
+    width: 100%;
+    z-index: 3;
+    bottom: 0;
+    position: absolute;
+    // border: dashed 1px red;
+
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      $color-black
+    );
+  }
   &-box {
-    //width: 75%;
     margin: auto;
-    // margin-top: 5vh;
-    // padding-top: 10rem;
-    max-width: 700px;
+    z-index: 3;
+    max-width: 550px;
     position: absolute;
     text-align: center;
-    top: 45%;
+    top: 33%;
     left: 50%;
-    //animation: moveInLeft 1s ease;
     display: flex;
+
+    gap: 0rem;
     flex-direction: column;
     transform: translate(-50%, -50%);
     &-title {
       position: relative;
-      animation: moveInLeft 1s ease-out;
+
       img {
         width: 100%;
         padding: 1.6rem 0;
-        //animation: moveInLeft 1s ease;
-        //animation: moveInLeft 0.3 ease;
       }
     }
     &-banner {
-      width: 95%;
+      width: 75%;
       margin: auto;
-      animation: moveInRight 1s ease-out;
+
       img {
         width: 100%;
         padding-bottom: 1rem;
@@ -343,34 +348,6 @@ body {
     }
   }
 }
-
-// &-btn {
-//   font-size: 0.8rem;
-//   text-transform: uppercase;
-//   text-align: center;
-//   display: inline-block;
-//   align-items: center;
-//   justify-content: center;
-//   margin: 1.5rem auto;
-//   padding: 0.7rem 1.6rem;
-//   background-color: rgba($color-black, 0.2);
-//   color: $giggle-yellow2;
-//   text-decoration: none;
-//   border-radius: 50rem;
-//   border: 1px solid #504e4b;
-//   transition: all 0.2s ease;
-//   &:hover {
-//     background-color: rgba($giggle-yellow2, 1);
-//     color: $color-black;
-//     transform: translateY(-4px);
-//     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-//     border: none;
-//   }
-//   &:active {
-//     transform: translateY(-2px);
-//     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
-//   }
-// }
 
 .hidden {
   display: none;
@@ -745,22 +722,29 @@ ion-icon {
 
 .footer {
   display: flex;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  padding: 0 5rem;
+  height: 5rem;
+
   align-items: center;
-  flex-direction: column;
+  // flex-direction: column;
   justify-content: space-between;
-  font-size: 2.5rem;
-  padding: 2.6rem;
-  padding-bottom: 0;
+
   width: 100%;
-  line-height: 3rem;
-  background-color: rgba(57, 42, 37, 0.646);
+  background-color: $color-black;
   &-logo {
-    width: 7rem;
+    width: 3rem;
   }
   &-socials {
+    width: 5rem;
     display: flex;
-    div {
-      padding: 1rem;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+    ion-icon {
+      font-size: 2rem;
     }
   }
   &-email {
@@ -774,9 +758,11 @@ ion-icon {
   }
   &-address {
     color: $giggle-yellow2;
-    transition: all 0.3s ease;
+    // transition: all 0.3s ease;
     text-decoration: none;
-    margin: 14px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    // margin: 14px;
     &:hover {
       color: $giggle-secondary;
     }
