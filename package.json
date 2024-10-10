@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "sass:compile": "node-sass Resources/sass/main.scss Resources/sass/style2.css -w"
+    "sass:compile": "sass styles/main.scss styles/styles.css -w"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,10 @@
     "url": "https://github.com/neilmbarry/Gigglewater-Website/issues"
   },
   "homepage": "https://github.com/neilmbarry/Gigglewater-Website#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  },
   "devDependencies": {
-    "node-sass": "^5.0.0"
+    "sass": "^1.79.4"
   }
 }
