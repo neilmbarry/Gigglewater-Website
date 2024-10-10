@@ -42,21 +42,21 @@ const sectionObserver = new IntersectionObserver(revealSection, {
   // rootMargin: "-300px",
 });
 
-const navigationObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      console.log(entry.intersectionRatio);
-      if (entry.intersectionRatio <= 0.2) {
-        navigation.classList.add("nav-sticky");
-      } else {
-        navigation.classList.remove("nav-sticky");
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+// const navigationObserver = new IntersectionObserver(
+//   (entries, observer) => {
+//     entries.forEach((entry) => {
+//       console.log(entry.intersectionRatio);
+//       if (entry.intersectionRatio <= 0.2) {
+//         navigation.classList.add("nav-sticky");
+//       } else {
+//         navigation.classList.remove("nav-sticky");
+//       }
+//     });
+//   },
+//   { threshold: 0.2 }
+// );
 
-navigationObserver.observe(header);
+// navigationObserver.observe(header);
 
 const sectionObserver2 = new IntersectionObserver(revealSection2, {
   root: null,
