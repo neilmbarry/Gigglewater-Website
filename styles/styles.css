@@ -39,7 +39,7 @@
     transform: translateY(0);
   }
 }
-@keyframes fadeIn {
+@keyframes fadeIn1 {
   0% {
     opacity: 0;
   }
@@ -110,10 +110,14 @@ html {
 }
 
 header,
-section,
-footer {
-  animation: fadeIn 1s ease-in-out backwards;
+section {
+  animation: fadeIn1 1s ease-in-out backwards;
   animation-delay: 0.3s;
+}
+
+footer {
+  animation: fadeIn1 1s ease-in-out backwards;
+  animation-delay: 1.2s;
 }
 
 body {
@@ -256,7 +260,7 @@ body {
   background-image: url(/assets/bar-backgroumd.jpg);
   background-position: center center;
   background-size: cover;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 .header-wrapper {
   margin-top: 4rem;
@@ -284,6 +288,8 @@ body {
   top: 33%;
   left: 50%;
   display: flex;
+  animation: fadeIn1 1s ease-in-out backwards;
+  animation-delay: 0.7s;
   gap: 0rem;
   flex-direction: column;
   transform: translate(-50%, -50%);
@@ -1613,48 +1619,6 @@ ion-icon {
   box-shadow: 1px 2px 3px rgba(31, 31, 31, 0.473);
 }
 
-.radio {
-  margin: 0.8rem;
-  display: flex;
-  align-items: center;
-}
-.radio-container {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-  align-items: center;
-}
-.radio input[type=radio] {
-  position: absolute;
-  opacity: 0;
-}
-.radio input[type=radio] + .radio-label:before {
-  content: "";
-  background: #f4f4f4;
-  border-radius: 100%;
-  border: 1px solid rgb(180.25, 180.25, 180.25);
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  position: relative;
-  top: 165%;
-  margin-right: 1em;
-  cursor: pointer;
-  text-align: center;
-  transition: all 250ms ease;
-}
-.radio input[type=radio]:checked + .radio-label:before {
-  background-color: #8031ee;
-  box-shadow: inset 0 0 0 4px #f4f4f4;
-}
-.radio input[type=radio]:focus + .radio-label:before {
-  outline: none;
-  border-color: #8031ee;
-}
-.radio input[type=radio] + .radio-label:empty:before {
-  margin-right: 0;
-}
-
 .submit-text {
   width: 70%;
   text-align: center;
@@ -1955,7 +1919,7 @@ select:-webkit-autofill:focus {
   display: none;
 }
 
-@keyframes fadeIn {
+@keyframes fadeIn1 {
   0% {
     opacity: 0;
   }
@@ -1977,7 +1941,7 @@ select:-webkit-autofill:focus {
   padding: 1rem 3rem;
   line-height: 3rem;
   border-radius: 5px;
-  animation: fadeIn 0.5s ease 0.8s backwards;
+  animation: fadeIn1 0.5s ease 0.8s backwards;
 }
 .welcome-email {
   text-decoration: none;
@@ -1988,7 +1952,7 @@ select:-webkit-autofill:focus {
   color: rgb(167, 89, 47);
 }
 
-@keyframes fadeIn {
+@keyframes fadeIn1 {
   0% {
     opacity: 0;
   }
@@ -1999,7 +1963,7 @@ select:-webkit-autofill:focus {
 .order-by {
   padding: 1rem;
   font-size: 2.2rem;
-  animation: fadeIn ease 1s 0.3s backwards;
+  animation: fadeIn1 ease 1s 0.3s backwards;
   text-shadow: 1px 1px black;
 }
 

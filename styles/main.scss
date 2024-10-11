@@ -62,7 +62,7 @@ $color2: #8031ee;
   }
 }
 
-@keyframes fadeIn {
+@keyframes fadeIn1 {
   0% {
     opacity: 0;
   }
@@ -134,10 +134,15 @@ html {
 }
 
 header,
-section,
-footer {
-  animation: fadeIn 1s ease-in-out backwards;
+section
+ {
+  animation: fadeIn1 1s ease-in-out backwards;
   animation-delay: 0.3s;
+}
+
+footer{
+  animation: fadeIn1 1s ease-in-out backwards;
+  animation-delay: 1.2s;
 }
 
 body {
@@ -320,7 +325,7 @@ body {
     background-position: center center;
     // background-attachment: fixed;
     background-size: cover;
-    opacity: 0.4;
+    opacity: 0.6;
   }
   &-wrapper {
     margin-top: 4rem;
@@ -355,7 +360,8 @@ body {
     top: 33%;
     left: 50%;
     display: flex;
-
+    animation: fadeIn1 1s ease-in-out backwards;
+    animation-delay: 0.7s;
     gap: 0rem;
     flex-direction: column;
     transform: translate(-50%, -50%);
@@ -1855,64 +1861,6 @@ ion-icon {
   }
 }
 
-.radio {
-  &-container {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    align-items: center;
-  }
-  margin: 0.8rem;
-  display: flex;
-  align-items: center;
-  input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    + .radio-label {
-      &:before {
-        content: "";
-        background: $color1;
-        border-radius: 100%;
-        border: 1px solid darken($color1, 25%);
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        position: relative;
-        top: 165%;
-        margin-right: 1em;
-        //vertical-align: top;
-        cursor: pointer;
-        text-align: center;
-        transition: all 250ms ease;
-      }
-    }
-    &:checked {
-      + .radio-label {
-        &:before {
-          background-color: $color2;
-          box-shadow: inset 0 0 0 4px $color1;
-        }
-      }
-    }
-    &:focus {
-      + .radio-label {
-        &:before {
-          outline: none;
-          border-color: $color2;
-        }
-      }
-    }
-
-    + .radio-label {
-      &:empty {
-        &:before {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-}
-
 .submit-text {
   width: 70%;
   text-align: center;
@@ -2267,7 +2215,7 @@ select:-webkit-autofill:focus {
   display: none;
 }
 
-@keyframes fadeIn {
+@keyframes fadeIn1 {
   0% {
     opacity: 0;
   }
@@ -2295,7 +2243,7 @@ select:-webkit-autofill:focus {
     padding: 1rem 3rem;
     line-height: 3rem;
     border-radius: 5px;
-    animation: fadeIn 0.5s ease 0.8s backwards;
+    animation: fadeIn1 0.5s ease 0.8s backwards;
   }
   &-email {
     text-decoration: none;
@@ -2307,7 +2255,7 @@ select:-webkit-autofill:focus {
   }
 }
 
-@keyframes fadeIn {
+@keyframes fadeIn1 {
   0% {
     opacity: 0;
   }
@@ -2319,7 +2267,7 @@ select:-webkit-autofill:focus {
 .order-by {
   padding: 1rem;
   font-size: 2.2rem;
-  animation: fadeIn ease 1s 0.3s backwards;
+  animation: fadeIn1 ease 1s 0.3s backwards;
   text-shadow: 1px 1px black;
 }
 
