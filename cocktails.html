@@ -10,7 +10,11 @@
       src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"
     ></script>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+     user-scalable=0"
+    />
     <meta
       name="description"
       content="Innovative and seasonal cocktails in a friendly intimate atmosphere on Dundas West. Also, the best place to order classic cocktails! We offer elevated share plates till close!"
@@ -77,11 +81,7 @@
   <body>
     <nav class="nav nav-sub">
       <a href="/" class="nav-logo">
-        <img
-          class=""
-          src="./assets/title.png"
-          alt="Project Gigglewater"
-        />
+        <img class="" src="./assets/title.png" alt="Project Gigglewater" />
       </a>
       <ul class="nav-items nav-items_hide">
         <li class="nav-list-item">
@@ -116,22 +116,36 @@
       </div>
     </nav>
 
-    <section>
-      <div class="mobile-menu-container">
-        <img src="assets/Menu-2024-Sep/Menu-Page-1.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-2.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-3.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-4.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-5.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-6.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-7.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-8.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-9.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-10.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-11.jpg" alt="" />
-        <img src="assets/Menu-2024-Sep/Menu-Page-12.jpg" alt="" />
+    <section class="reservations">
+      <div class="reservations-box">
+        <div class="reservations-bg">
+          <img src="assets/Resources/Jan2022/OJ-drizzle.jpg" alt="" />
+        </div>
+        <div class="reservations-text">
+          <p>
+            <!-- <span class="transparent">...</span> -->
+            It’s been an absolute blast providing you all with cocktail kits
+            these past two years but it’s time for us to turn it down and focus
+            on our dine-in service.
+          </p>
+        </div>
+        <!-- <div class="reservations-text transparent">.</div> -->
+
+        <div class="reservations-text">
+          <p>
+            We will still consider larger custom orders of $1000 (before
+            delivery fees) and above. Please email us at
+            cocktails@projectgigglewater and we can discuss some tailored
+            options!<br />
+          </p>
+        </div>
+        <!-- <div class="reservations-text bold"><p><strong> So walk on in any night you like, we can’t wait to see you!</strong></p></div> -->
+        <div class="reservations-logo">
+          <img class="logo" src="assets/logo-big.png" alt="Project Gigglewater" />
+        </div>
       </div>
     </section>
+
     <footer class="footer">
       <div class="footer-socials">
         <div>
@@ -162,5 +176,6 @@
         </a>
       </div>
     </footer>
+    <script src="cart.js"></script>
   </body>
 </html>

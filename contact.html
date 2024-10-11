@@ -16,7 +16,7 @@
       content="Craft cocktails and tasty shareable plates in a friendly intimate atmosphere. Corporate and consumer cocktail kits available for delivery and takeout."
     />
 
-    <link rel="stylesheet" type="text/css" href="Resources/sass/style2.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
 
     <!-- <link rel="stylesheet" type="text/css" href="Resources/css/queries2.css" /> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -50,7 +50,7 @@
       href="Resources/Favicons/safari-pinned-tab.svg"
       color="#5bbad5"
     />
-    <link rel="shortcut icon" href="Resources/Favicons/favicon.ico" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta
       name="msapplication-config"
@@ -75,44 +75,29 @@
     </script>
   </head>
   <body>
-    <nav class="nav nav-sticky">
-      <div class="nav-logo-container">
-        <a href="/" class="nav-btn">
-          <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
-        </a>
-      </div>
+    <nav class="nav nav-sub">
+      <a href="/" class="nav-logo">
+        <img class="" src="./assets/title.png" alt="Project Gigglewater" />
+      </a>
       <ul class="nav-items nav-items_hide">
-      <li class="nav-list-item">
-          <a href="/menu" class="nav-item">Menu</a>
+        <li class="nav-list-item">
+          <a href="/menu.html" class="nav-item nav-item-active">Menu</a>
         </li>
         <li class="nav-list-item">
-          <a href="/cocktails" class="nav-item">Cocktail Kits</a>
+          <a href="/cocktails.html" class="nav-item">Cocktail Kits</a>
         </li>
-        
-
-       
         <li class="nav-list-item">
-          <a href="/gallery" class="nav-item">Gallery</a>
+          <a href="/gallery.html" class="nav-item">Gallery</a>
         </li>
-
         <li class="nav-list-item">
-          <a href="/reservations" class="nav-item">Reservations</a>
+          <a href="/reservations.html" class="nav-item">Reservations</a>
         </li>
-
         <li class="nav-list-item">
-          <a href="/contact" class="nav-item">Contact</a>
+          <a href="/contact.html" class="nav-item">Contact</a>
         </li>
         <li></li>
       </ul>
       <div class="hidden">X</div>
-
-      <!-- <a href="#" class="cart-icon item-hide"
-            ><ion-icon name="cart-outline"></ion-icon
-            >
-        <div class="cart-notification cart-notification-hide">
-            3
-        </div>
-        </a> -->
       <div class="burger">
         <div class="burger-container">
           <ion-icon
@@ -126,22 +111,11 @@
         </div>
       </div>
     </nav>
-    <!-- <div class="row">
-        <?php
-        if($_GET['success'] == 1){
-            echo "<div class=\"form-messages success\">
-            <p>Thank you, your message has been sent!<br> We will email back shortly!<br>(Please check your spam folder if you don't hear from us!)</p>
-        </div>";}
-        if($_GET['success'] == -1){
-            echo "<div class=\"form-messages error\">
-            <p>Oops! Something went wrong, please try again.</p>
-        </div>";}
-        ?>
-        </div> -->
+
     <section class="reservations">
       <div class="reservations-box">
         <div class="reservations-bg">
-          <img src="./Resources/Gallery/gallery23.jpg" alt="" />
+          <img src="assets/Resources/Gallery/gallery23.jpg" alt="" />
         </div>
         <div class="reservations-text contact-resos">
           <p class="text-center">Please reach us through email at</p>
@@ -163,24 +137,11 @@
         </div>
 
         <div class="reservations-logo">
-          <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
+          <img class="logo" src="assets/logo-big.png" alt="Project Gigglewater" />
         </div>
       </div>
     </section>
     <footer class="footer">
-      <a href="#" class="footer-logo">
-        <img class="logo" src="./logo-big.png" alt="Project Gigglewater" />
-      </a>
-      <div class="footer-hours">
-        <a href="#" class="footer-address"
-          >1369 Dundas Street West, Toronto M6J 1Y3</a
-        >
-      </div>
-      <div class="footer-contact">
-        <a href="mailto:cocktails@projectgigglewater.com" class="footer-email"
-          >cocktails@projectgigglewater.com</a
-        >
-      </div>
       <div class="footer-socials">
         <div>
           <a href="https://www.facebook.com/ProjectGigglewater/" target="_blank"
@@ -190,29 +151,27 @@
         <div>
           <a
             href="https://www.instagram.com/projectgigglewater/?hl=en"
-            target="_blacnk"
+            target="_blank"
             ><ion-icon name="logo-instagram" class="instagram"></ion-icon
           ></a>
         </div>
       </div>
+      <div class="footer-hours">
+        <a href="#" class="footer-address"
+          >1369 Dundas Street West, Toronto M6J 1Y3</a
+        >
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="footer-logo">
+          <img
+            class="logo"
+            src="./assets/logo-big.png"
+            alt="Project Gigglewater"
+          />
+        </a>
+      </div>
     </footer>
-    <!-- <form method="post" action="orderForm.php" class="order-form">
-      <input type="text" name="name" id="order-form-name" />
-      <input type="text" name="email" id="order-form-email" />
-      <input type="text" name="phone" id="order-form-phone" />
-      <input type="text" name="address" id="order-form-address" />
-      <input type="text" name="type" id="order-form-type" />
-      <input type="text" name="price" id="order-form-price" />
-      <input type="text" name="tip" id="order-form-tip" />
-      <input type="text" name="preference" id="order-form-preference" />
-
-      <input name="cart" id="order-form-cart" />
-
-      <input type="text" name="recip-name" id="order-form-recip-name" />
-      <input type="text" name="recip-phone" id="order-form-recip-phone" />
-      <input type="text" name="message" id="order-form-message" />
-      <input id="submit1" class="submit" type="submit" value="Send it!" />
-    </form> -->
+ 
     <script src="cart.js"></script>
   </body>
 </html>
